@@ -26,7 +26,7 @@ Encode AccessUrl
 
 ``` purescript
 newtype AddIpRoutesRequest
-  = AddIpRoutesRequest { "DirectoryId" :: DirectoryId, "IpRoutes" :: IpRoutes, "UpdateSecurityGroupForDirectoryControllers" :: NullOrUndefined (UpdateSecurityGroupForDirectoryControllers) }
+  = AddIpRoutesRequest { "DirectoryId" :: DirectoryId, "IpRoutes" :: IpRoutes, "UpdateSecurityGroupForDirectoryControllers" :: Maybe (UpdateSecurityGroupForDirectoryControllers) }
 ```
 
 ##### Instances
@@ -49,7 +49,7 @@ Constructs AddIpRoutesRequest from required parameters
 #### `newAddIpRoutesRequest'`
 
 ``` purescript
-newAddIpRoutesRequest' :: DirectoryId -> IpRoutes -> ({ "DirectoryId" :: DirectoryId, "IpRoutes" :: IpRoutes, "UpdateSecurityGroupForDirectoryControllers" :: NullOrUndefined (UpdateSecurityGroupForDirectoryControllers) } -> { "DirectoryId" :: DirectoryId, "IpRoutes" :: IpRoutes, "UpdateSecurityGroupForDirectoryControllers" :: NullOrUndefined (UpdateSecurityGroupForDirectoryControllers) }) -> AddIpRoutesRequest
+newAddIpRoutesRequest' :: DirectoryId -> IpRoutes -> ({ "DirectoryId" :: DirectoryId, "IpRoutes" :: IpRoutes, "UpdateSecurityGroupForDirectoryControllers" :: Maybe (UpdateSecurityGroupForDirectoryControllers) } -> { "DirectoryId" :: DirectoryId, "IpRoutes" :: IpRoutes, "UpdateSecurityGroupForDirectoryControllers" :: Maybe (UpdateSecurityGroupForDirectoryControllers) }) -> AddIpRoutesRequest
 ```
 
 Constructs AddIpRoutesRequest's fields from required parameters
@@ -154,7 +154,7 @@ Encode AliasName
 
 ``` purescript
 newtype Attribute
-  = Attribute { "Name" :: NullOrUndefined (AttributeName), "Value" :: NullOrUndefined (AttributeValue) }
+  = Attribute { "Name" :: Maybe (AttributeName), "Value" :: Maybe (AttributeValue) }
 ```
 
 <p>Represents a named directory attribute.</p>
@@ -179,7 +179,7 @@ Constructs Attribute from required parameters
 #### `newAttribute'`
 
 ``` purescript
-newAttribute' :: ({ "Name" :: NullOrUndefined (AttributeName), "Value" :: NullOrUndefined (AttributeValue) } -> { "Name" :: NullOrUndefined (AttributeName), "Value" :: NullOrUndefined (AttributeValue) }) -> Attribute
+newAttribute' :: ({ "Name" :: Maybe (AttributeName), "Value" :: Maybe (AttributeValue) } -> { "Name" :: Maybe (AttributeName), "Value" :: Maybe (AttributeValue) }) -> Attribute
 ```
 
 Constructs Attribute's fields from required parameters
@@ -236,7 +236,7 @@ Encode Attributes
 
 ``` purescript
 newtype AuthenticationFailedException
-  = AuthenticationFailedException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = AuthenticationFailedException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>An authentication error occurred.</p>
@@ -261,7 +261,7 @@ Constructs AuthenticationFailedException from required parameters
 #### `newAuthenticationFailedException'`
 
 ``` purescript
-newAuthenticationFailedException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> AuthenticationFailedException
+newAuthenticationFailedException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> AuthenticationFailedException
 ```
 
 Constructs AuthenticationFailedException's fields from required parameters
@@ -382,7 +382,7 @@ Encode CidrIps
 
 ``` purescript
 newtype ClientException
-  = ClientException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = ClientException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>A client exception has occurred.</p>
@@ -407,7 +407,7 @@ Constructs ClientException from required parameters
 #### `newClientException'`
 
 ``` purescript
-newClientException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> ClientException
+newClientException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> ClientException
 ```
 
 Constructs ClientException's fields from required parameters
@@ -432,7 +432,7 @@ Encode CloudOnlyDirectoriesLimitReached
 
 ``` purescript
 newtype Computer
-  = Computer { "ComputerId" :: NullOrUndefined (SID), "ComputerName" :: NullOrUndefined (ComputerName), "ComputerAttributes" :: NullOrUndefined (Attributes) }
+  = Computer { "ComputerId" :: Maybe (SID), "ComputerName" :: Maybe (ComputerName), "ComputerAttributes" :: Maybe (Attributes) }
 ```
 
 <p>Contains information about a computer account in a directory.</p>
@@ -457,7 +457,7 @@ Constructs Computer from required parameters
 #### `newComputer'`
 
 ``` purescript
-newComputer' :: ({ "ComputerId" :: NullOrUndefined (SID), "ComputerName" :: NullOrUndefined (ComputerName), "ComputerAttributes" :: NullOrUndefined (Attributes) } -> { "ComputerId" :: NullOrUndefined (SID), "ComputerName" :: NullOrUndefined (ComputerName), "ComputerAttributes" :: NullOrUndefined (Attributes) }) -> Computer
+newComputer' :: ({ "ComputerId" :: Maybe (SID), "ComputerName" :: Maybe (ComputerName), "ComputerAttributes" :: Maybe (Attributes) } -> { "ComputerId" :: Maybe (SID), "ComputerName" :: Maybe (ComputerName), "ComputerAttributes" :: Maybe (Attributes) }) -> Computer
 ```
 
 Constructs Computer's fields from required parameters
@@ -498,7 +498,7 @@ Encode ComputerPassword
 
 ``` purescript
 newtype ConditionalForwarder
-  = ConditionalForwarder { "RemoteDomainName" :: NullOrUndefined (RemoteDomainName), "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs), "ReplicationScope" :: NullOrUndefined (ReplicationScope) }
+  = ConditionalForwarder { "RemoteDomainName" :: Maybe (RemoteDomainName), "DnsIpAddrs" :: Maybe (DnsIpAddrs), "ReplicationScope" :: Maybe (ReplicationScope) }
 ```
 
 <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
@@ -523,7 +523,7 @@ Constructs ConditionalForwarder from required parameters
 #### `newConditionalForwarder'`
 
 ``` purescript
-newConditionalForwarder' :: ({ "RemoteDomainName" :: NullOrUndefined (RemoteDomainName), "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs), "ReplicationScope" :: NullOrUndefined (ReplicationScope) } -> { "RemoteDomainName" :: NullOrUndefined (RemoteDomainName), "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs), "ReplicationScope" :: NullOrUndefined (ReplicationScope) }) -> ConditionalForwarder
+newConditionalForwarder' :: ({ "RemoteDomainName" :: Maybe (RemoteDomainName), "DnsIpAddrs" :: Maybe (DnsIpAddrs), "ReplicationScope" :: Maybe (ReplicationScope) } -> { "RemoteDomainName" :: Maybe (RemoteDomainName), "DnsIpAddrs" :: Maybe (DnsIpAddrs), "ReplicationScope" :: Maybe (ReplicationScope) }) -> ConditionalForwarder
 ```
 
 Constructs ConditionalForwarder's fields from required parameters
@@ -548,7 +548,7 @@ Encode ConditionalForwarders
 
 ``` purescript
 newtype ConnectDirectoryRequest
-  = ConnectDirectoryRequest { "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: ConnectPassword, "Description" :: NullOrUndefined (Description), "Size" :: DirectorySize, "ConnectSettings" :: DirectoryConnectSettings }
+  = ConnectDirectoryRequest { "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: ConnectPassword, "Description" :: Maybe (Description), "Size" :: DirectorySize, "ConnectSettings" :: DirectoryConnectSettings }
 ```
 
 <p>Contains the inputs for the <a>ConnectDirectory</a> operation.</p>
@@ -573,7 +573,7 @@ Constructs ConnectDirectoryRequest from required parameters
 #### `newConnectDirectoryRequest'`
 
 ``` purescript
-newConnectDirectoryRequest' :: DirectoryConnectSettings -> DirectoryName -> ConnectPassword -> DirectorySize -> ({ "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: ConnectPassword, "Description" :: NullOrUndefined (Description), "Size" :: DirectorySize, "ConnectSettings" :: DirectoryConnectSettings } -> { "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: ConnectPassword, "Description" :: NullOrUndefined (Description), "Size" :: DirectorySize, "ConnectSettings" :: DirectoryConnectSettings }) -> ConnectDirectoryRequest
+newConnectDirectoryRequest' :: DirectoryConnectSettings -> DirectoryName -> ConnectPassword -> DirectorySize -> ({ "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: ConnectPassword, "Description" :: Maybe (Description), "Size" :: DirectorySize, "ConnectSettings" :: DirectoryConnectSettings } -> { "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: ConnectPassword, "Description" :: Maybe (Description), "Size" :: DirectorySize, "ConnectSettings" :: DirectoryConnectSettings }) -> ConnectDirectoryRequest
 ```
 
 Constructs ConnectDirectoryRequest's fields from required parameters
@@ -582,7 +582,7 @@ Constructs ConnectDirectoryRequest's fields from required parameters
 
 ``` purescript
 newtype ConnectDirectoryResult
-  = ConnectDirectoryResult { "DirectoryId" :: NullOrUndefined (DirectoryId) }
+  = ConnectDirectoryResult { "DirectoryId" :: Maybe (DirectoryId) }
 ```
 
 <p>Contains the results of the <a>ConnectDirectory</a> operation.</p>
@@ -607,7 +607,7 @@ Constructs ConnectDirectoryResult from required parameters
 #### `newConnectDirectoryResult'`
 
 ``` purescript
-newConnectDirectoryResult' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId) }) -> ConnectDirectoryResult
+newConnectDirectoryResult' :: ({ "DirectoryId" :: Maybe (DirectoryId) } -> { "DirectoryId" :: Maybe (DirectoryId) }) -> ConnectDirectoryResult
 ```
 
 Constructs ConnectDirectoryResult's fields from required parameters
@@ -682,7 +682,7 @@ Constructs CreateAliasRequest's fields from required parameters
 
 ``` purescript
 newtype CreateAliasResult
-  = CreateAliasResult { "DirectoryId" :: NullOrUndefined (DirectoryId), "Alias" :: NullOrUndefined (AliasName) }
+  = CreateAliasResult { "DirectoryId" :: Maybe (DirectoryId), "Alias" :: Maybe (AliasName) }
 ```
 
 <p>Contains the results of the <a>CreateAlias</a> operation.</p>
@@ -707,7 +707,7 @@ Constructs CreateAliasResult from required parameters
 #### `newCreateAliasResult'`
 
 ``` purescript
-newCreateAliasResult' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "Alias" :: NullOrUndefined (AliasName) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "Alias" :: NullOrUndefined (AliasName) }) -> CreateAliasResult
+newCreateAliasResult' :: ({ "DirectoryId" :: Maybe (DirectoryId), "Alias" :: Maybe (AliasName) } -> { "DirectoryId" :: Maybe (DirectoryId), "Alias" :: Maybe (AliasName) }) -> CreateAliasResult
 ```
 
 Constructs CreateAliasResult's fields from required parameters
@@ -716,7 +716,7 @@ Constructs CreateAliasResult's fields from required parameters
 
 ``` purescript
 newtype CreateComputerRequest
-  = CreateComputerRequest { "DirectoryId" :: DirectoryId, "ComputerName" :: ComputerName, "Password" :: ComputerPassword, "OrganizationalUnitDistinguishedName" :: NullOrUndefined (OrganizationalUnitDN), "ComputerAttributes" :: NullOrUndefined (Attributes) }
+  = CreateComputerRequest { "DirectoryId" :: DirectoryId, "ComputerName" :: ComputerName, "Password" :: ComputerPassword, "OrganizationalUnitDistinguishedName" :: Maybe (OrganizationalUnitDN), "ComputerAttributes" :: Maybe (Attributes) }
 ```
 
 <p>Contains the inputs for the <a>CreateComputer</a> operation.</p>
@@ -741,7 +741,7 @@ Constructs CreateComputerRequest from required parameters
 #### `newCreateComputerRequest'`
 
 ``` purescript
-newCreateComputerRequest' :: ComputerName -> DirectoryId -> ComputerPassword -> ({ "DirectoryId" :: DirectoryId, "ComputerName" :: ComputerName, "Password" :: ComputerPassword, "OrganizationalUnitDistinguishedName" :: NullOrUndefined (OrganizationalUnitDN), "ComputerAttributes" :: NullOrUndefined (Attributes) } -> { "DirectoryId" :: DirectoryId, "ComputerName" :: ComputerName, "Password" :: ComputerPassword, "OrganizationalUnitDistinguishedName" :: NullOrUndefined (OrganizationalUnitDN), "ComputerAttributes" :: NullOrUndefined (Attributes) }) -> CreateComputerRequest
+newCreateComputerRequest' :: ComputerName -> DirectoryId -> ComputerPassword -> ({ "DirectoryId" :: DirectoryId, "ComputerName" :: ComputerName, "Password" :: ComputerPassword, "OrganizationalUnitDistinguishedName" :: Maybe (OrganizationalUnitDN), "ComputerAttributes" :: Maybe (Attributes) } -> { "DirectoryId" :: DirectoryId, "ComputerName" :: ComputerName, "Password" :: ComputerPassword, "OrganizationalUnitDistinguishedName" :: Maybe (OrganizationalUnitDN), "ComputerAttributes" :: Maybe (Attributes) }) -> CreateComputerRequest
 ```
 
 Constructs CreateComputerRequest's fields from required parameters
@@ -750,7 +750,7 @@ Constructs CreateComputerRequest's fields from required parameters
 
 ``` purescript
 newtype CreateComputerResult
-  = CreateComputerResult { "Computer" :: NullOrUndefined (Computer) }
+  = CreateComputerResult { "Computer" :: Maybe (Computer) }
 ```
 
 <p>Contains the results for the <a>CreateComputer</a> operation.</p>
@@ -775,7 +775,7 @@ Constructs CreateComputerResult from required parameters
 #### `newCreateComputerResult'`
 
 ``` purescript
-newCreateComputerResult' :: ({ "Computer" :: NullOrUndefined (Computer) } -> { "Computer" :: NullOrUndefined (Computer) }) -> CreateComputerResult
+newCreateComputerResult' :: ({ "Computer" :: Maybe (Computer) } -> { "Computer" :: Maybe (Computer) }) -> CreateComputerResult
 ```
 
 Constructs CreateComputerResult's fields from required parameters
@@ -836,7 +836,7 @@ Encode CreateConditionalForwarderResult
 
 ``` purescript
 newtype CreateDirectoryRequest
-  = CreateDirectoryRequest { "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: Password, "Description" :: NullOrUndefined (Description), "Size" :: DirectorySize, "VpcSettings" :: NullOrUndefined (DirectoryVpcSettings) }
+  = CreateDirectoryRequest { "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: Password, "Description" :: Maybe (Description), "Size" :: DirectorySize, "VpcSettings" :: Maybe (DirectoryVpcSettings) }
 ```
 
 <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>
@@ -861,7 +861,7 @@ Constructs CreateDirectoryRequest from required parameters
 #### `newCreateDirectoryRequest'`
 
 ``` purescript
-newCreateDirectoryRequest' :: DirectoryName -> Password -> DirectorySize -> ({ "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: Password, "Description" :: NullOrUndefined (Description), "Size" :: DirectorySize, "VpcSettings" :: NullOrUndefined (DirectoryVpcSettings) } -> { "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: Password, "Description" :: NullOrUndefined (Description), "Size" :: DirectorySize, "VpcSettings" :: NullOrUndefined (DirectoryVpcSettings) }) -> CreateDirectoryRequest
+newCreateDirectoryRequest' :: DirectoryName -> Password -> DirectorySize -> ({ "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: Password, "Description" :: Maybe (Description), "Size" :: DirectorySize, "VpcSettings" :: Maybe (DirectoryVpcSettings) } -> { "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: Password, "Description" :: Maybe (Description), "Size" :: DirectorySize, "VpcSettings" :: Maybe (DirectoryVpcSettings) }) -> CreateDirectoryRequest
 ```
 
 Constructs CreateDirectoryRequest's fields from required parameters
@@ -870,7 +870,7 @@ Constructs CreateDirectoryRequest's fields from required parameters
 
 ``` purescript
 newtype CreateDirectoryResult
-  = CreateDirectoryResult { "DirectoryId" :: NullOrUndefined (DirectoryId) }
+  = CreateDirectoryResult { "DirectoryId" :: Maybe (DirectoryId) }
 ```
 
 <p>Contains the results of the <a>CreateDirectory</a> operation.</p>
@@ -895,7 +895,7 @@ Constructs CreateDirectoryResult from required parameters
 #### `newCreateDirectoryResult'`
 
 ``` purescript
-newCreateDirectoryResult' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId) }) -> CreateDirectoryResult
+newCreateDirectoryResult' :: ({ "DirectoryId" :: Maybe (DirectoryId) } -> { "DirectoryId" :: Maybe (DirectoryId) }) -> CreateDirectoryResult
 ```
 
 Constructs CreateDirectoryResult's fields from required parameters
@@ -904,7 +904,7 @@ Constructs CreateDirectoryResult's fields from required parameters
 
 ``` purescript
 newtype CreateMicrosoftADRequest
-  = CreateMicrosoftADRequest { "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: Password, "Description" :: NullOrUndefined (Description), "VpcSettings" :: DirectoryVpcSettings, "Edition" :: NullOrUndefined (DirectoryEdition) }
+  = CreateMicrosoftADRequest { "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: Password, "Description" :: Maybe (Description), "VpcSettings" :: DirectoryVpcSettings, "Edition" :: Maybe (DirectoryEdition) }
 ```
 
 <p>Creates a Microsoft AD in the AWS cloud.</p>
@@ -929,7 +929,7 @@ Constructs CreateMicrosoftADRequest from required parameters
 #### `newCreateMicrosoftADRequest'`
 
 ``` purescript
-newCreateMicrosoftADRequest' :: DirectoryName -> Password -> DirectoryVpcSettings -> ({ "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: Password, "Description" :: NullOrUndefined (Description), "VpcSettings" :: DirectoryVpcSettings, "Edition" :: NullOrUndefined (DirectoryEdition) } -> { "Name" :: DirectoryName, "ShortName" :: NullOrUndefined (DirectoryShortName), "Password" :: Password, "Description" :: NullOrUndefined (Description), "VpcSettings" :: DirectoryVpcSettings, "Edition" :: NullOrUndefined (DirectoryEdition) }) -> CreateMicrosoftADRequest
+newCreateMicrosoftADRequest' :: DirectoryName -> Password -> DirectoryVpcSettings -> ({ "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: Password, "Description" :: Maybe (Description), "VpcSettings" :: DirectoryVpcSettings, "Edition" :: Maybe (DirectoryEdition) } -> { "Name" :: DirectoryName, "ShortName" :: Maybe (DirectoryShortName), "Password" :: Password, "Description" :: Maybe (Description), "VpcSettings" :: DirectoryVpcSettings, "Edition" :: Maybe (DirectoryEdition) }) -> CreateMicrosoftADRequest
 ```
 
 Constructs CreateMicrosoftADRequest's fields from required parameters
@@ -938,7 +938,7 @@ Constructs CreateMicrosoftADRequest's fields from required parameters
 
 ``` purescript
 newtype CreateMicrosoftADResult
-  = CreateMicrosoftADResult { "DirectoryId" :: NullOrUndefined (DirectoryId) }
+  = CreateMicrosoftADResult { "DirectoryId" :: Maybe (DirectoryId) }
 ```
 
 <p>Result of a CreateMicrosoftAD request.</p>
@@ -963,7 +963,7 @@ Constructs CreateMicrosoftADResult from required parameters
 #### `newCreateMicrosoftADResult'`
 
 ``` purescript
-newCreateMicrosoftADResult' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId) }) -> CreateMicrosoftADResult
+newCreateMicrosoftADResult' :: ({ "DirectoryId" :: Maybe (DirectoryId) } -> { "DirectoryId" :: Maybe (DirectoryId) }) -> CreateMicrosoftADResult
 ```
 
 Constructs CreateMicrosoftADResult's fields from required parameters
@@ -988,7 +988,7 @@ Encode CreateSnapshotBeforeSchemaExtension
 
 ``` purescript
 newtype CreateSnapshotRequest
-  = CreateSnapshotRequest { "DirectoryId" :: DirectoryId, "Name" :: NullOrUndefined (SnapshotName) }
+  = CreateSnapshotRequest { "DirectoryId" :: DirectoryId, "Name" :: Maybe (SnapshotName) }
 ```
 
 <p>Contains the inputs for the <a>CreateSnapshot</a> operation.</p>
@@ -1013,7 +1013,7 @@ Constructs CreateSnapshotRequest from required parameters
 #### `newCreateSnapshotRequest'`
 
 ``` purescript
-newCreateSnapshotRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "Name" :: NullOrUndefined (SnapshotName) } -> { "DirectoryId" :: DirectoryId, "Name" :: NullOrUndefined (SnapshotName) }) -> CreateSnapshotRequest
+newCreateSnapshotRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "Name" :: Maybe (SnapshotName) } -> { "DirectoryId" :: DirectoryId, "Name" :: Maybe (SnapshotName) }) -> CreateSnapshotRequest
 ```
 
 Constructs CreateSnapshotRequest's fields from required parameters
@@ -1022,7 +1022,7 @@ Constructs CreateSnapshotRequest's fields from required parameters
 
 ``` purescript
 newtype CreateSnapshotResult
-  = CreateSnapshotResult { "SnapshotId" :: NullOrUndefined (SnapshotId) }
+  = CreateSnapshotResult { "SnapshotId" :: Maybe (SnapshotId) }
 ```
 
 <p>Contains the results of the <a>CreateSnapshot</a> operation.</p>
@@ -1047,7 +1047,7 @@ Constructs CreateSnapshotResult from required parameters
 #### `newCreateSnapshotResult'`
 
 ``` purescript
-newCreateSnapshotResult' :: ({ "SnapshotId" :: NullOrUndefined (SnapshotId) } -> { "SnapshotId" :: NullOrUndefined (SnapshotId) }) -> CreateSnapshotResult
+newCreateSnapshotResult' :: ({ "SnapshotId" :: Maybe (SnapshotId) } -> { "SnapshotId" :: Maybe (SnapshotId) }) -> CreateSnapshotResult
 ```
 
 Constructs CreateSnapshotResult's fields from required parameters
@@ -1056,7 +1056,7 @@ Constructs CreateSnapshotResult's fields from required parameters
 
 ``` purescript
 newtype CreateTrustRequest
-  = CreateTrustRequest { "DirectoryId" :: DirectoryId, "RemoteDomainName" :: RemoteDomainName, "TrustPassword" :: TrustPassword, "TrustDirection" :: TrustDirection, "TrustType" :: NullOrUndefined (TrustType), "ConditionalForwarderIpAddrs" :: NullOrUndefined (DnsIpAddrs) }
+  = CreateTrustRequest { "DirectoryId" :: DirectoryId, "RemoteDomainName" :: RemoteDomainName, "TrustPassword" :: TrustPassword, "TrustDirection" :: TrustDirection, "TrustType" :: Maybe (TrustType), "ConditionalForwarderIpAddrs" :: Maybe (DnsIpAddrs) }
 ```
 
 <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p> <p>This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.</p>
@@ -1081,7 +1081,7 @@ Constructs CreateTrustRequest from required parameters
 #### `newCreateTrustRequest'`
 
 ``` purescript
-newCreateTrustRequest' :: DirectoryId -> RemoteDomainName -> TrustDirection -> TrustPassword -> ({ "DirectoryId" :: DirectoryId, "RemoteDomainName" :: RemoteDomainName, "TrustPassword" :: TrustPassword, "TrustDirection" :: TrustDirection, "TrustType" :: NullOrUndefined (TrustType), "ConditionalForwarderIpAddrs" :: NullOrUndefined (DnsIpAddrs) } -> { "DirectoryId" :: DirectoryId, "RemoteDomainName" :: RemoteDomainName, "TrustPassword" :: TrustPassword, "TrustDirection" :: TrustDirection, "TrustType" :: NullOrUndefined (TrustType), "ConditionalForwarderIpAddrs" :: NullOrUndefined (DnsIpAddrs) }) -> CreateTrustRequest
+newCreateTrustRequest' :: DirectoryId -> RemoteDomainName -> TrustDirection -> TrustPassword -> ({ "DirectoryId" :: DirectoryId, "RemoteDomainName" :: RemoteDomainName, "TrustPassword" :: TrustPassword, "TrustDirection" :: TrustDirection, "TrustType" :: Maybe (TrustType), "ConditionalForwarderIpAddrs" :: Maybe (DnsIpAddrs) } -> { "DirectoryId" :: DirectoryId, "RemoteDomainName" :: RemoteDomainName, "TrustPassword" :: TrustPassword, "TrustDirection" :: TrustDirection, "TrustType" :: Maybe (TrustType), "ConditionalForwarderIpAddrs" :: Maybe (DnsIpAddrs) }) -> CreateTrustRequest
 ```
 
 Constructs CreateTrustRequest's fields from required parameters
@@ -1090,7 +1090,7 @@ Constructs CreateTrustRequest's fields from required parameters
 
 ``` purescript
 newtype CreateTrustResult
-  = CreateTrustResult { "TrustId" :: NullOrUndefined (TrustId) }
+  = CreateTrustResult { "TrustId" :: Maybe (TrustId) }
 ```
 
 <p>The result of a CreateTrust request.</p>
@@ -1115,7 +1115,7 @@ Constructs CreateTrustResult from required parameters
 #### `newCreateTrustResult'`
 
 ``` purescript
-newCreateTrustResult' :: ({ "TrustId" :: NullOrUndefined (TrustId) } -> { "TrustId" :: NullOrUndefined (TrustId) }) -> CreateTrustResult
+newCreateTrustResult' :: ({ "TrustId" :: Maybe (TrustId) } -> { "TrustId" :: Maybe (TrustId) }) -> CreateTrustResult
 ```
 
 Constructs CreateTrustResult's fields from required parameters
@@ -1242,7 +1242,7 @@ Constructs DeleteDirectoryRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteDirectoryResult
-  = DeleteDirectoryResult { "DirectoryId" :: NullOrUndefined (DirectoryId) }
+  = DeleteDirectoryResult { "DirectoryId" :: Maybe (DirectoryId) }
 ```
 
 <p>Contains the results of the <a>DeleteDirectory</a> operation.</p>
@@ -1267,7 +1267,7 @@ Constructs DeleteDirectoryResult from required parameters
 #### `newDeleteDirectoryResult'`
 
 ``` purescript
-newDeleteDirectoryResult' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId) }) -> DeleteDirectoryResult
+newDeleteDirectoryResult' :: ({ "DirectoryId" :: Maybe (DirectoryId) } -> { "DirectoryId" :: Maybe (DirectoryId) }) -> DeleteDirectoryResult
 ```
 
 Constructs DeleteDirectoryResult's fields from required parameters
@@ -1310,7 +1310,7 @@ Constructs DeleteSnapshotRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteSnapshotResult
-  = DeleteSnapshotResult { "SnapshotId" :: NullOrUndefined (SnapshotId) }
+  = DeleteSnapshotResult { "SnapshotId" :: Maybe (SnapshotId) }
 ```
 
 <p>Contains the results of the <a>DeleteSnapshot</a> operation.</p>
@@ -1335,7 +1335,7 @@ Constructs DeleteSnapshotResult from required parameters
 #### `newDeleteSnapshotResult'`
 
 ``` purescript
-newDeleteSnapshotResult' :: ({ "SnapshotId" :: NullOrUndefined (SnapshotId) } -> { "SnapshotId" :: NullOrUndefined (SnapshotId) }) -> DeleteSnapshotResult
+newDeleteSnapshotResult' :: ({ "SnapshotId" :: Maybe (SnapshotId) } -> { "SnapshotId" :: Maybe (SnapshotId) }) -> DeleteSnapshotResult
 ```
 
 Constructs DeleteSnapshotResult's fields from required parameters
@@ -1344,7 +1344,7 @@ Constructs DeleteSnapshotResult's fields from required parameters
 
 ``` purescript
 newtype DeleteTrustRequest
-  = DeleteTrustRequest { "TrustId" :: TrustId, "DeleteAssociatedConditionalForwarder" :: NullOrUndefined (DeleteAssociatedConditionalForwarder) }
+  = DeleteTrustRequest { "TrustId" :: TrustId, "DeleteAssociatedConditionalForwarder" :: Maybe (DeleteAssociatedConditionalForwarder) }
 ```
 
 <p>Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the external domain.</p>
@@ -1369,7 +1369,7 @@ Constructs DeleteTrustRequest from required parameters
 #### `newDeleteTrustRequest'`
 
 ``` purescript
-newDeleteTrustRequest' :: TrustId -> ({ "TrustId" :: TrustId, "DeleteAssociatedConditionalForwarder" :: NullOrUndefined (DeleteAssociatedConditionalForwarder) } -> { "TrustId" :: TrustId, "DeleteAssociatedConditionalForwarder" :: NullOrUndefined (DeleteAssociatedConditionalForwarder) }) -> DeleteTrustRequest
+newDeleteTrustRequest' :: TrustId -> ({ "TrustId" :: TrustId, "DeleteAssociatedConditionalForwarder" :: Maybe (DeleteAssociatedConditionalForwarder) } -> { "TrustId" :: TrustId, "DeleteAssociatedConditionalForwarder" :: Maybe (DeleteAssociatedConditionalForwarder) }) -> DeleteTrustRequest
 ```
 
 Constructs DeleteTrustRequest's fields from required parameters
@@ -1378,7 +1378,7 @@ Constructs DeleteTrustRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteTrustResult
-  = DeleteTrustResult { "TrustId" :: NullOrUndefined (TrustId) }
+  = DeleteTrustResult { "TrustId" :: Maybe (TrustId) }
 ```
 
 <p>The result of a DeleteTrust request.</p>
@@ -1403,7 +1403,7 @@ Constructs DeleteTrustResult from required parameters
 #### `newDeleteTrustResult'`
 
 ``` purescript
-newDeleteTrustResult' :: ({ "TrustId" :: NullOrUndefined (TrustId) } -> { "TrustId" :: NullOrUndefined (TrustId) }) -> DeleteTrustResult
+newDeleteTrustResult' :: ({ "TrustId" :: Maybe (TrustId) } -> { "TrustId" :: Maybe (TrustId) }) -> DeleteTrustResult
 ```
 
 Constructs DeleteTrustResult's fields from required parameters
@@ -1464,7 +1464,7 @@ Encode DeregisterEventTopicResult
 
 ``` purescript
 newtype DescribeConditionalForwardersRequest
-  = DescribeConditionalForwardersRequest { "DirectoryId" :: DirectoryId, "RemoteDomainNames" :: NullOrUndefined (RemoteDomainNames) }
+  = DescribeConditionalForwardersRequest { "DirectoryId" :: DirectoryId, "RemoteDomainNames" :: Maybe (RemoteDomainNames) }
 ```
 
 <p>Describes a conditional forwarder.</p>
@@ -1489,7 +1489,7 @@ Constructs DescribeConditionalForwardersRequest from required parameters
 #### `newDescribeConditionalForwardersRequest'`
 
 ``` purescript
-newDescribeConditionalForwardersRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "RemoteDomainNames" :: NullOrUndefined (RemoteDomainNames) } -> { "DirectoryId" :: DirectoryId, "RemoteDomainNames" :: NullOrUndefined (RemoteDomainNames) }) -> DescribeConditionalForwardersRequest
+newDescribeConditionalForwardersRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "RemoteDomainNames" :: Maybe (RemoteDomainNames) } -> { "DirectoryId" :: DirectoryId, "RemoteDomainNames" :: Maybe (RemoteDomainNames) }) -> DescribeConditionalForwardersRequest
 ```
 
 Constructs DescribeConditionalForwardersRequest's fields from required parameters
@@ -1498,7 +1498,7 @@ Constructs DescribeConditionalForwardersRequest's fields from required parameter
 
 ``` purescript
 newtype DescribeConditionalForwardersResult
-  = DescribeConditionalForwardersResult { "ConditionalForwarders" :: NullOrUndefined (ConditionalForwarders) }
+  = DescribeConditionalForwardersResult { "ConditionalForwarders" :: Maybe (ConditionalForwarders) }
 ```
 
 <p>The result of a DescribeConditionalForwarder request.</p>
@@ -1523,7 +1523,7 @@ Constructs DescribeConditionalForwardersResult from required parameters
 #### `newDescribeConditionalForwardersResult'`
 
 ``` purescript
-newDescribeConditionalForwardersResult' :: ({ "ConditionalForwarders" :: NullOrUndefined (ConditionalForwarders) } -> { "ConditionalForwarders" :: NullOrUndefined (ConditionalForwarders) }) -> DescribeConditionalForwardersResult
+newDescribeConditionalForwardersResult' :: ({ "ConditionalForwarders" :: Maybe (ConditionalForwarders) } -> { "ConditionalForwarders" :: Maybe (ConditionalForwarders) }) -> DescribeConditionalForwardersResult
 ```
 
 Constructs DescribeConditionalForwardersResult's fields from required parameters
@@ -1532,7 +1532,7 @@ Constructs DescribeConditionalForwardersResult's fields from required parameters
 
 ``` purescript
 newtype DescribeDirectoriesRequest
-  = DescribeDirectoriesRequest { "DirectoryIds" :: NullOrUndefined (DirectoryIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = DescribeDirectoriesRequest { "DirectoryIds" :: Maybe (DirectoryIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 <p>Contains the inputs for the <a>DescribeDirectories</a> operation.</p>
@@ -1557,7 +1557,7 @@ Constructs DescribeDirectoriesRequest from required parameters
 #### `newDescribeDirectoriesRequest'`
 
 ``` purescript
-newDescribeDirectoriesRequest' :: ({ "DirectoryIds" :: NullOrUndefined (DirectoryIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "DirectoryIds" :: NullOrUndefined (DirectoryIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> DescribeDirectoriesRequest
+newDescribeDirectoriesRequest' :: ({ "DirectoryIds" :: Maybe (DirectoryIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "DirectoryIds" :: Maybe (DirectoryIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> DescribeDirectoriesRequest
 ```
 
 Constructs DescribeDirectoriesRequest's fields from required parameters
@@ -1566,7 +1566,7 @@ Constructs DescribeDirectoriesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDirectoriesResult
-  = DescribeDirectoriesResult { "DirectoryDescriptions" :: NullOrUndefined (DirectoryDescriptions), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeDirectoriesResult { "DirectoryDescriptions" :: Maybe (DirectoryDescriptions), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Contains the results of the <a>DescribeDirectories</a> operation.</p>
@@ -1591,7 +1591,7 @@ Constructs DescribeDirectoriesResult from required parameters
 #### `newDescribeDirectoriesResult'`
 
 ``` purescript
-newDescribeDirectoriesResult' :: ({ "DirectoryDescriptions" :: NullOrUndefined (DirectoryDescriptions), "NextToken" :: NullOrUndefined (NextToken) } -> { "DirectoryDescriptions" :: NullOrUndefined (DirectoryDescriptions), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeDirectoriesResult
+newDescribeDirectoriesResult' :: ({ "DirectoryDescriptions" :: Maybe (DirectoryDescriptions), "NextToken" :: Maybe (NextToken) } -> { "DirectoryDescriptions" :: Maybe (DirectoryDescriptions), "NextToken" :: Maybe (NextToken) }) -> DescribeDirectoriesResult
 ```
 
 Constructs DescribeDirectoriesResult's fields from required parameters
@@ -1600,7 +1600,7 @@ Constructs DescribeDirectoriesResult's fields from required parameters
 
 ``` purescript
 newtype DescribeDomainControllersRequest
-  = DescribeDomainControllersRequest { "DirectoryId" :: DirectoryId, "DomainControllerIds" :: NullOrUndefined (DomainControllerIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = DescribeDomainControllersRequest { "DirectoryId" :: DirectoryId, "DomainControllerIds" :: Maybe (DomainControllerIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 ##### Instances
@@ -1623,7 +1623,7 @@ Constructs DescribeDomainControllersRequest from required parameters
 #### `newDescribeDomainControllersRequest'`
 
 ``` purescript
-newDescribeDomainControllersRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "DomainControllerIds" :: NullOrUndefined (DomainControllerIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "DirectoryId" :: DirectoryId, "DomainControllerIds" :: NullOrUndefined (DomainControllerIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> DescribeDomainControllersRequest
+newDescribeDomainControllersRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "DomainControllerIds" :: Maybe (DomainControllerIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "DirectoryId" :: DirectoryId, "DomainControllerIds" :: Maybe (DomainControllerIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> DescribeDomainControllersRequest
 ```
 
 Constructs DescribeDomainControllersRequest's fields from required parameters
@@ -1632,7 +1632,7 @@ Constructs DescribeDomainControllersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDomainControllersResult
-  = DescribeDomainControllersResult { "DomainControllers" :: NullOrUndefined (DomainControllers), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeDomainControllersResult { "DomainControllers" :: Maybe (DomainControllers), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1655,7 +1655,7 @@ Constructs DescribeDomainControllersResult from required parameters
 #### `newDescribeDomainControllersResult'`
 
 ``` purescript
-newDescribeDomainControllersResult' :: ({ "DomainControllers" :: NullOrUndefined (DomainControllers), "NextToken" :: NullOrUndefined (NextToken) } -> { "DomainControllers" :: NullOrUndefined (DomainControllers), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeDomainControllersResult
+newDescribeDomainControllersResult' :: ({ "DomainControllers" :: Maybe (DomainControllers), "NextToken" :: Maybe (NextToken) } -> { "DomainControllers" :: Maybe (DomainControllers), "NextToken" :: Maybe (NextToken) }) -> DescribeDomainControllersResult
 ```
 
 Constructs DescribeDomainControllersResult's fields from required parameters
@@ -1664,7 +1664,7 @@ Constructs DescribeDomainControllersResult's fields from required parameters
 
 ``` purescript
 newtype DescribeEventTopicsRequest
-  = DescribeEventTopicsRequest { "DirectoryId" :: NullOrUndefined (DirectoryId), "TopicNames" :: NullOrUndefined (TopicNames) }
+  = DescribeEventTopicsRequest { "DirectoryId" :: Maybe (DirectoryId), "TopicNames" :: Maybe (TopicNames) }
 ```
 
 <p>Describes event topics.</p>
@@ -1689,7 +1689,7 @@ Constructs DescribeEventTopicsRequest from required parameters
 #### `newDescribeEventTopicsRequest'`
 
 ``` purescript
-newDescribeEventTopicsRequest' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "TopicNames" :: NullOrUndefined (TopicNames) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "TopicNames" :: NullOrUndefined (TopicNames) }) -> DescribeEventTopicsRequest
+newDescribeEventTopicsRequest' :: ({ "DirectoryId" :: Maybe (DirectoryId), "TopicNames" :: Maybe (TopicNames) } -> { "DirectoryId" :: Maybe (DirectoryId), "TopicNames" :: Maybe (TopicNames) }) -> DescribeEventTopicsRequest
 ```
 
 Constructs DescribeEventTopicsRequest's fields from required parameters
@@ -1698,7 +1698,7 @@ Constructs DescribeEventTopicsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeEventTopicsResult
-  = DescribeEventTopicsResult { "EventTopics" :: NullOrUndefined (EventTopics) }
+  = DescribeEventTopicsResult { "EventTopics" :: Maybe (EventTopics) }
 ```
 
 <p>The result of a DescribeEventTopic request.</p>
@@ -1723,7 +1723,7 @@ Constructs DescribeEventTopicsResult from required parameters
 #### `newDescribeEventTopicsResult'`
 
 ``` purescript
-newDescribeEventTopicsResult' :: ({ "EventTopics" :: NullOrUndefined (EventTopics) } -> { "EventTopics" :: NullOrUndefined (EventTopics) }) -> DescribeEventTopicsResult
+newDescribeEventTopicsResult' :: ({ "EventTopics" :: Maybe (EventTopics) } -> { "EventTopics" :: Maybe (EventTopics) }) -> DescribeEventTopicsResult
 ```
 
 Constructs DescribeEventTopicsResult's fields from required parameters
@@ -1732,7 +1732,7 @@ Constructs DescribeEventTopicsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeSnapshotsRequest
-  = DescribeSnapshotsRequest { "DirectoryId" :: NullOrUndefined (DirectoryId), "SnapshotIds" :: NullOrUndefined (SnapshotIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = DescribeSnapshotsRequest { "DirectoryId" :: Maybe (DirectoryId), "SnapshotIds" :: Maybe (SnapshotIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 <p>Contains the inputs for the <a>DescribeSnapshots</a> operation.</p>
@@ -1757,7 +1757,7 @@ Constructs DescribeSnapshotsRequest from required parameters
 #### `newDescribeSnapshotsRequest'`
 
 ``` purescript
-newDescribeSnapshotsRequest' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "SnapshotIds" :: NullOrUndefined (SnapshotIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "SnapshotIds" :: NullOrUndefined (SnapshotIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> DescribeSnapshotsRequest
+newDescribeSnapshotsRequest' :: ({ "DirectoryId" :: Maybe (DirectoryId), "SnapshotIds" :: Maybe (SnapshotIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "DirectoryId" :: Maybe (DirectoryId), "SnapshotIds" :: Maybe (SnapshotIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> DescribeSnapshotsRequest
 ```
 
 Constructs DescribeSnapshotsRequest's fields from required parameters
@@ -1766,7 +1766,7 @@ Constructs DescribeSnapshotsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeSnapshotsResult
-  = DescribeSnapshotsResult { "Snapshots" :: NullOrUndefined (Snapshots), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeSnapshotsResult { "Snapshots" :: Maybe (Snapshots), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Contains the results of the <a>DescribeSnapshots</a> operation.</p>
@@ -1791,7 +1791,7 @@ Constructs DescribeSnapshotsResult from required parameters
 #### `newDescribeSnapshotsResult'`
 
 ``` purescript
-newDescribeSnapshotsResult' :: ({ "Snapshots" :: NullOrUndefined (Snapshots), "NextToken" :: NullOrUndefined (NextToken) } -> { "Snapshots" :: NullOrUndefined (Snapshots), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeSnapshotsResult
+newDescribeSnapshotsResult' :: ({ "Snapshots" :: Maybe (Snapshots), "NextToken" :: Maybe (NextToken) } -> { "Snapshots" :: Maybe (Snapshots), "NextToken" :: Maybe (NextToken) }) -> DescribeSnapshotsResult
 ```
 
 Constructs DescribeSnapshotsResult's fields from required parameters
@@ -1800,7 +1800,7 @@ Constructs DescribeSnapshotsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeTrustsRequest
-  = DescribeTrustsRequest { "DirectoryId" :: NullOrUndefined (DirectoryId), "TrustIds" :: NullOrUndefined (TrustIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = DescribeTrustsRequest { "DirectoryId" :: Maybe (DirectoryId), "TrustIds" :: Maybe (TrustIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 <p>Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>
@@ -1825,7 +1825,7 @@ Constructs DescribeTrustsRequest from required parameters
 #### `newDescribeTrustsRequest'`
 
 ``` purescript
-newDescribeTrustsRequest' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "TrustIds" :: NullOrUndefined (TrustIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "TrustIds" :: NullOrUndefined (TrustIds), "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> DescribeTrustsRequest
+newDescribeTrustsRequest' :: ({ "DirectoryId" :: Maybe (DirectoryId), "TrustIds" :: Maybe (TrustIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "DirectoryId" :: Maybe (DirectoryId), "TrustIds" :: Maybe (TrustIds), "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> DescribeTrustsRequest
 ```
 
 Constructs DescribeTrustsRequest's fields from required parameters
@@ -1834,7 +1834,7 @@ Constructs DescribeTrustsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeTrustsResult
-  = DescribeTrustsResult { "Trusts" :: NullOrUndefined (Trusts), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeTrustsResult { "Trusts" :: Maybe (Trusts), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>The result of a DescribeTrust request.</p>
@@ -1859,7 +1859,7 @@ Constructs DescribeTrustsResult from required parameters
 #### `newDescribeTrustsResult'`
 
 ``` purescript
-newDescribeTrustsResult' :: ({ "Trusts" :: NullOrUndefined (Trusts), "NextToken" :: NullOrUndefined (NextToken) } -> { "Trusts" :: NullOrUndefined (Trusts), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeTrustsResult
+newDescribeTrustsResult' :: ({ "Trusts" :: Maybe (Trusts), "NextToken" :: Maybe (NextToken) } -> { "Trusts" :: Maybe (Trusts), "NextToken" :: Maybe (NextToken) }) -> DescribeTrustsResult
 ```
 
 Constructs DescribeTrustsResult's fields from required parameters
@@ -1934,7 +1934,7 @@ Constructs DirectoryConnectSettings's fields from required parameters
 
 ``` purescript
 newtype DirectoryConnectSettingsDescription
-  = DirectoryConnectSettingsDescription { "VpcId" :: NullOrUndefined (VpcId), "SubnetIds" :: NullOrUndefined (SubnetIds), "CustomerUserName" :: NullOrUndefined (UserName), "SecurityGroupId" :: NullOrUndefined (SecurityGroupId), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones), "ConnectIps" :: NullOrUndefined (IpAddrs) }
+  = DirectoryConnectSettingsDescription { "VpcId" :: Maybe (VpcId), "SubnetIds" :: Maybe (SubnetIds), "CustomerUserName" :: Maybe (UserName), "SecurityGroupId" :: Maybe (SecurityGroupId), "AvailabilityZones" :: Maybe (AvailabilityZones), "ConnectIps" :: Maybe (IpAddrs) }
 ```
 
 <p>Contains information about an AD Connector directory.</p>
@@ -1959,7 +1959,7 @@ Constructs DirectoryConnectSettingsDescription from required parameters
 #### `newDirectoryConnectSettingsDescription'`
 
 ``` purescript
-newDirectoryConnectSettingsDescription' :: ({ "VpcId" :: NullOrUndefined (VpcId), "SubnetIds" :: NullOrUndefined (SubnetIds), "CustomerUserName" :: NullOrUndefined (UserName), "SecurityGroupId" :: NullOrUndefined (SecurityGroupId), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones), "ConnectIps" :: NullOrUndefined (IpAddrs) } -> { "VpcId" :: NullOrUndefined (VpcId), "SubnetIds" :: NullOrUndefined (SubnetIds), "CustomerUserName" :: NullOrUndefined (UserName), "SecurityGroupId" :: NullOrUndefined (SecurityGroupId), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones), "ConnectIps" :: NullOrUndefined (IpAddrs) }) -> DirectoryConnectSettingsDescription
+newDirectoryConnectSettingsDescription' :: ({ "VpcId" :: Maybe (VpcId), "SubnetIds" :: Maybe (SubnetIds), "CustomerUserName" :: Maybe (UserName), "SecurityGroupId" :: Maybe (SecurityGroupId), "AvailabilityZones" :: Maybe (AvailabilityZones), "ConnectIps" :: Maybe (IpAddrs) } -> { "VpcId" :: Maybe (VpcId), "SubnetIds" :: Maybe (SubnetIds), "CustomerUserName" :: Maybe (UserName), "SecurityGroupId" :: Maybe (SecurityGroupId), "AvailabilityZones" :: Maybe (AvailabilityZones), "ConnectIps" :: Maybe (IpAddrs) }) -> DirectoryConnectSettingsDescription
 ```
 
 Constructs DirectoryConnectSettingsDescription's fields from required parameters
@@ -1968,7 +1968,7 @@ Constructs DirectoryConnectSettingsDescription's fields from required parameters
 
 ``` purescript
 newtype DirectoryDescription
-  = DirectoryDescription { "DirectoryId" :: NullOrUndefined (DirectoryId), "Name" :: NullOrUndefined (DirectoryName), "ShortName" :: NullOrUndefined (DirectoryShortName), "Size" :: NullOrUndefined (DirectorySize), "Edition" :: NullOrUndefined (DirectoryEdition), "Alias" :: NullOrUndefined (AliasName), "AccessUrl" :: NullOrUndefined (AccessUrl), "Description" :: NullOrUndefined (Description), "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs), "Stage" :: NullOrUndefined (DirectoryStage), "LaunchTime" :: NullOrUndefined (LaunchTime), "StageLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime), "Type" :: NullOrUndefined (DirectoryType), "VpcSettings" :: NullOrUndefined (DirectoryVpcSettingsDescription), "ConnectSettings" :: NullOrUndefined (DirectoryConnectSettingsDescription), "RadiusSettings" :: NullOrUndefined (RadiusSettings), "RadiusStatus" :: NullOrUndefined (RadiusStatus), "StageReason" :: NullOrUndefined (StageReason), "SsoEnabled" :: NullOrUndefined (SsoEnabled), "DesiredNumberOfDomainControllers" :: NullOrUndefined (DesiredNumberOfDomainControllers) }
+  = DirectoryDescription { "DirectoryId" :: Maybe (DirectoryId), "Name" :: Maybe (DirectoryName), "ShortName" :: Maybe (DirectoryShortName), "Size" :: Maybe (DirectorySize), "Edition" :: Maybe (DirectoryEdition), "Alias" :: Maybe (AliasName), "AccessUrl" :: Maybe (AccessUrl), "Description" :: Maybe (Description), "DnsIpAddrs" :: Maybe (DnsIpAddrs), "Stage" :: Maybe (DirectoryStage), "LaunchTime" :: Maybe (LaunchTime), "StageLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime), "Type" :: Maybe (DirectoryType), "VpcSettings" :: Maybe (DirectoryVpcSettingsDescription), "ConnectSettings" :: Maybe (DirectoryConnectSettingsDescription), "RadiusSettings" :: Maybe (RadiusSettings), "RadiusStatus" :: Maybe (RadiusStatus), "StageReason" :: Maybe (StageReason), "SsoEnabled" :: Maybe (SsoEnabled), "DesiredNumberOfDomainControllers" :: Maybe (DesiredNumberOfDomainControllers) }
 ```
 
 <p>Contains information about an AWS Directory Service directory.</p>
@@ -1993,7 +1993,7 @@ Constructs DirectoryDescription from required parameters
 #### `newDirectoryDescription'`
 
 ``` purescript
-newDirectoryDescription' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "Name" :: NullOrUndefined (DirectoryName), "ShortName" :: NullOrUndefined (DirectoryShortName), "Size" :: NullOrUndefined (DirectorySize), "Edition" :: NullOrUndefined (DirectoryEdition), "Alias" :: NullOrUndefined (AliasName), "AccessUrl" :: NullOrUndefined (AccessUrl), "Description" :: NullOrUndefined (Description), "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs), "Stage" :: NullOrUndefined (DirectoryStage), "LaunchTime" :: NullOrUndefined (LaunchTime), "StageLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime), "Type" :: NullOrUndefined (DirectoryType), "VpcSettings" :: NullOrUndefined (DirectoryVpcSettingsDescription), "ConnectSettings" :: NullOrUndefined (DirectoryConnectSettingsDescription), "RadiusSettings" :: NullOrUndefined (RadiusSettings), "RadiusStatus" :: NullOrUndefined (RadiusStatus), "StageReason" :: NullOrUndefined (StageReason), "SsoEnabled" :: NullOrUndefined (SsoEnabled), "DesiredNumberOfDomainControllers" :: NullOrUndefined (DesiredNumberOfDomainControllers) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "Name" :: NullOrUndefined (DirectoryName), "ShortName" :: NullOrUndefined (DirectoryShortName), "Size" :: NullOrUndefined (DirectorySize), "Edition" :: NullOrUndefined (DirectoryEdition), "Alias" :: NullOrUndefined (AliasName), "AccessUrl" :: NullOrUndefined (AccessUrl), "Description" :: NullOrUndefined (Description), "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs), "Stage" :: NullOrUndefined (DirectoryStage), "LaunchTime" :: NullOrUndefined (LaunchTime), "StageLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime), "Type" :: NullOrUndefined (DirectoryType), "VpcSettings" :: NullOrUndefined (DirectoryVpcSettingsDescription), "ConnectSettings" :: NullOrUndefined (DirectoryConnectSettingsDescription), "RadiusSettings" :: NullOrUndefined (RadiusSettings), "RadiusStatus" :: NullOrUndefined (RadiusStatus), "StageReason" :: NullOrUndefined (StageReason), "SsoEnabled" :: NullOrUndefined (SsoEnabled), "DesiredNumberOfDomainControllers" :: NullOrUndefined (DesiredNumberOfDomainControllers) }) -> DirectoryDescription
+newDirectoryDescription' :: ({ "DirectoryId" :: Maybe (DirectoryId), "Name" :: Maybe (DirectoryName), "ShortName" :: Maybe (DirectoryShortName), "Size" :: Maybe (DirectorySize), "Edition" :: Maybe (DirectoryEdition), "Alias" :: Maybe (AliasName), "AccessUrl" :: Maybe (AccessUrl), "Description" :: Maybe (Description), "DnsIpAddrs" :: Maybe (DnsIpAddrs), "Stage" :: Maybe (DirectoryStage), "LaunchTime" :: Maybe (LaunchTime), "StageLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime), "Type" :: Maybe (DirectoryType), "VpcSettings" :: Maybe (DirectoryVpcSettingsDescription), "ConnectSettings" :: Maybe (DirectoryConnectSettingsDescription), "RadiusSettings" :: Maybe (RadiusSettings), "RadiusStatus" :: Maybe (RadiusStatus), "StageReason" :: Maybe (StageReason), "SsoEnabled" :: Maybe (SsoEnabled), "DesiredNumberOfDomainControllers" :: Maybe (DesiredNumberOfDomainControllers) } -> { "DirectoryId" :: Maybe (DirectoryId), "Name" :: Maybe (DirectoryName), "ShortName" :: Maybe (DirectoryShortName), "Size" :: Maybe (DirectorySize), "Edition" :: Maybe (DirectoryEdition), "Alias" :: Maybe (AliasName), "AccessUrl" :: Maybe (AccessUrl), "Description" :: Maybe (Description), "DnsIpAddrs" :: Maybe (DnsIpAddrs), "Stage" :: Maybe (DirectoryStage), "LaunchTime" :: Maybe (LaunchTime), "StageLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime), "Type" :: Maybe (DirectoryType), "VpcSettings" :: Maybe (DirectoryVpcSettingsDescription), "ConnectSettings" :: Maybe (DirectoryConnectSettingsDescription), "RadiusSettings" :: Maybe (RadiusSettings), "RadiusStatus" :: Maybe (RadiusStatus), "StageReason" :: Maybe (StageReason), "SsoEnabled" :: Maybe (SsoEnabled), "DesiredNumberOfDomainControllers" :: Maybe (DesiredNumberOfDomainControllers) }) -> DirectoryDescription
 ```
 
 Constructs DirectoryDescription's fields from required parameters
@@ -2070,7 +2070,7 @@ Encode DirectoryIds
 
 ``` purescript
 newtype DirectoryLimitExceededException
-  = DirectoryLimitExceededException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = DirectoryLimitExceededException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.</p>
@@ -2095,7 +2095,7 @@ Constructs DirectoryLimitExceededException from required parameters
 #### `newDirectoryLimitExceededException'`
 
 ``` purescript
-newDirectoryLimitExceededException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> DirectoryLimitExceededException
+newDirectoryLimitExceededException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> DirectoryLimitExceededException
 ```
 
 Constructs DirectoryLimitExceededException's fields from required parameters
@@ -2104,7 +2104,7 @@ Constructs DirectoryLimitExceededException's fields from required parameters
 
 ``` purescript
 newtype DirectoryLimits
-  = DirectoryLimits { "CloudOnlyDirectoriesLimit" :: NullOrUndefined (Limit), "CloudOnlyDirectoriesCurrentCount" :: NullOrUndefined (Limit), "CloudOnlyDirectoriesLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached), "CloudOnlyMicrosoftADLimit" :: NullOrUndefined (Limit), "CloudOnlyMicrosoftADCurrentCount" :: NullOrUndefined (Limit), "CloudOnlyMicrosoftADLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached), "ConnectedDirectoriesLimit" :: NullOrUndefined (Limit), "ConnectedDirectoriesCurrentCount" :: NullOrUndefined (Limit), "ConnectedDirectoriesLimitReached" :: NullOrUndefined (ConnectedDirectoriesLimitReached) }
+  = DirectoryLimits { "CloudOnlyDirectoriesLimit" :: Maybe (Limit), "CloudOnlyDirectoriesCurrentCount" :: Maybe (Limit), "CloudOnlyDirectoriesLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached), "CloudOnlyMicrosoftADLimit" :: Maybe (Limit), "CloudOnlyMicrosoftADCurrentCount" :: Maybe (Limit), "CloudOnlyMicrosoftADLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached), "ConnectedDirectoriesLimit" :: Maybe (Limit), "ConnectedDirectoriesCurrentCount" :: Maybe (Limit), "ConnectedDirectoriesLimitReached" :: Maybe (ConnectedDirectoriesLimitReached) }
 ```
 
 <p>Contains directory limit information for a region.</p>
@@ -2129,7 +2129,7 @@ Constructs DirectoryLimits from required parameters
 #### `newDirectoryLimits'`
 
 ``` purescript
-newDirectoryLimits' :: ({ "CloudOnlyDirectoriesLimit" :: NullOrUndefined (Limit), "CloudOnlyDirectoriesCurrentCount" :: NullOrUndefined (Limit), "CloudOnlyDirectoriesLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached), "CloudOnlyMicrosoftADLimit" :: NullOrUndefined (Limit), "CloudOnlyMicrosoftADCurrentCount" :: NullOrUndefined (Limit), "CloudOnlyMicrosoftADLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached), "ConnectedDirectoriesLimit" :: NullOrUndefined (Limit), "ConnectedDirectoriesCurrentCount" :: NullOrUndefined (Limit), "ConnectedDirectoriesLimitReached" :: NullOrUndefined (ConnectedDirectoriesLimitReached) } -> { "CloudOnlyDirectoriesLimit" :: NullOrUndefined (Limit), "CloudOnlyDirectoriesCurrentCount" :: NullOrUndefined (Limit), "CloudOnlyDirectoriesLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached), "CloudOnlyMicrosoftADLimit" :: NullOrUndefined (Limit), "CloudOnlyMicrosoftADCurrentCount" :: NullOrUndefined (Limit), "CloudOnlyMicrosoftADLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached), "ConnectedDirectoriesLimit" :: NullOrUndefined (Limit), "ConnectedDirectoriesCurrentCount" :: NullOrUndefined (Limit), "ConnectedDirectoriesLimitReached" :: NullOrUndefined (ConnectedDirectoriesLimitReached) }) -> DirectoryLimits
+newDirectoryLimits' :: ({ "CloudOnlyDirectoriesLimit" :: Maybe (Limit), "CloudOnlyDirectoriesCurrentCount" :: Maybe (Limit), "CloudOnlyDirectoriesLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached), "CloudOnlyMicrosoftADLimit" :: Maybe (Limit), "CloudOnlyMicrosoftADCurrentCount" :: Maybe (Limit), "CloudOnlyMicrosoftADLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached), "ConnectedDirectoriesLimit" :: Maybe (Limit), "ConnectedDirectoriesCurrentCount" :: Maybe (Limit), "ConnectedDirectoriesLimitReached" :: Maybe (ConnectedDirectoriesLimitReached) } -> { "CloudOnlyDirectoriesLimit" :: Maybe (Limit), "CloudOnlyDirectoriesCurrentCount" :: Maybe (Limit), "CloudOnlyDirectoriesLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached), "CloudOnlyMicrosoftADLimit" :: Maybe (Limit), "CloudOnlyMicrosoftADCurrentCount" :: Maybe (Limit), "CloudOnlyMicrosoftADLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached), "ConnectedDirectoriesLimit" :: Maybe (Limit), "ConnectedDirectoriesCurrentCount" :: Maybe (Limit), "ConnectedDirectoriesLimitReached" :: Maybe (ConnectedDirectoriesLimitReached) }) -> DirectoryLimits
 ```
 
 Constructs DirectoryLimits's fields from required parameters
@@ -2218,7 +2218,7 @@ Encode DirectoryType
 
 ``` purescript
 newtype DirectoryUnavailableException
-  = DirectoryUnavailableException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = DirectoryUnavailableException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The specified directory is unavailable or could not be found.</p>
@@ -2243,7 +2243,7 @@ Constructs DirectoryUnavailableException from required parameters
 #### `newDirectoryUnavailableException'`
 
 ``` purescript
-newDirectoryUnavailableException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> DirectoryUnavailableException
+newDirectoryUnavailableException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> DirectoryUnavailableException
 ```
 
 Constructs DirectoryUnavailableException's fields from required parameters
@@ -2286,7 +2286,7 @@ Constructs DirectoryVpcSettings's fields from required parameters
 
 ``` purescript
 newtype DirectoryVpcSettingsDescription
-  = DirectoryVpcSettingsDescription { "VpcId" :: NullOrUndefined (VpcId), "SubnetIds" :: NullOrUndefined (SubnetIds), "SecurityGroupId" :: NullOrUndefined (SecurityGroupId), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) }
+  = DirectoryVpcSettingsDescription { "VpcId" :: Maybe (VpcId), "SubnetIds" :: Maybe (SubnetIds), "SecurityGroupId" :: Maybe (SecurityGroupId), "AvailabilityZones" :: Maybe (AvailabilityZones) }
 ```
 
 <p>Contains information about the directory.</p>
@@ -2311,7 +2311,7 @@ Constructs DirectoryVpcSettingsDescription from required parameters
 #### `newDirectoryVpcSettingsDescription'`
 
 ``` purescript
-newDirectoryVpcSettingsDescription' :: ({ "VpcId" :: NullOrUndefined (VpcId), "SubnetIds" :: NullOrUndefined (SubnetIds), "SecurityGroupId" :: NullOrUndefined (SecurityGroupId), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) } -> { "VpcId" :: NullOrUndefined (VpcId), "SubnetIds" :: NullOrUndefined (SubnetIds), "SecurityGroupId" :: NullOrUndefined (SecurityGroupId), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) }) -> DirectoryVpcSettingsDescription
+newDirectoryVpcSettingsDescription' :: ({ "VpcId" :: Maybe (VpcId), "SubnetIds" :: Maybe (SubnetIds), "SecurityGroupId" :: Maybe (SecurityGroupId), "AvailabilityZones" :: Maybe (AvailabilityZones) } -> { "VpcId" :: Maybe (VpcId), "SubnetIds" :: Maybe (SubnetIds), "SecurityGroupId" :: Maybe (SecurityGroupId), "AvailabilityZones" :: Maybe (AvailabilityZones) }) -> DirectoryVpcSettingsDescription
 ```
 
 Constructs DirectoryVpcSettingsDescription's fields from required parameters
@@ -2372,7 +2372,7 @@ Encode DisableRadiusResult
 
 ``` purescript
 newtype DisableSsoRequest
-  = DisableSsoRequest { "DirectoryId" :: DirectoryId, "UserName" :: NullOrUndefined (UserName), "Password" :: NullOrUndefined (ConnectPassword) }
+  = DisableSsoRequest { "DirectoryId" :: DirectoryId, "UserName" :: Maybe (UserName), "Password" :: Maybe (ConnectPassword) }
 ```
 
 <p>Contains the inputs for the <a>DisableSso</a> operation.</p>
@@ -2397,7 +2397,7 @@ Constructs DisableSsoRequest from required parameters
 #### `newDisableSsoRequest'`
 
 ``` purescript
-newDisableSsoRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "UserName" :: NullOrUndefined (UserName), "Password" :: NullOrUndefined (ConnectPassword) } -> { "DirectoryId" :: DirectoryId, "UserName" :: NullOrUndefined (UserName), "Password" :: NullOrUndefined (ConnectPassword) }) -> DisableSsoRequest
+newDisableSsoRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "UserName" :: Maybe (UserName), "Password" :: Maybe (ConnectPassword) } -> { "DirectoryId" :: DirectoryId, "UserName" :: Maybe (UserName), "Password" :: Maybe (ConnectPassword) }) -> DisableSsoRequest
 ```
 
 Constructs DisableSsoRequest's fields from required parameters
@@ -2440,7 +2440,7 @@ Encode DnsIpAddrs
 
 ``` purescript
 newtype DomainController
-  = DomainController { "DirectoryId" :: NullOrUndefined (DirectoryId), "DomainControllerId" :: NullOrUndefined (DomainControllerId), "DnsIpAddr" :: NullOrUndefined (IpAddr), "VpcId" :: NullOrUndefined (VpcId), "SubnetId" :: NullOrUndefined (SubnetId), "AvailabilityZone" :: NullOrUndefined (AvailabilityZone), "Status" :: NullOrUndefined (DomainControllerStatus), "StatusReason" :: NullOrUndefined (DomainControllerStatusReason), "LaunchTime" :: NullOrUndefined (LaunchTime), "StatusLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) }
+  = DomainController { "DirectoryId" :: Maybe (DirectoryId), "DomainControllerId" :: Maybe (DomainControllerId), "DnsIpAddr" :: Maybe (IpAddr), "VpcId" :: Maybe (VpcId), "SubnetId" :: Maybe (SubnetId), "AvailabilityZone" :: Maybe (AvailabilityZone), "Status" :: Maybe (DomainControllerStatus), "StatusReason" :: Maybe (DomainControllerStatusReason), "LaunchTime" :: Maybe (LaunchTime), "StatusLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) }
 ```
 
 <p>Contains information about the domain controllers for a specified directory.</p>
@@ -2465,7 +2465,7 @@ Constructs DomainController from required parameters
 #### `newDomainController'`
 
 ``` purescript
-newDomainController' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "DomainControllerId" :: NullOrUndefined (DomainControllerId), "DnsIpAddr" :: NullOrUndefined (IpAddr), "VpcId" :: NullOrUndefined (VpcId), "SubnetId" :: NullOrUndefined (SubnetId), "AvailabilityZone" :: NullOrUndefined (AvailabilityZone), "Status" :: NullOrUndefined (DomainControllerStatus), "StatusReason" :: NullOrUndefined (DomainControllerStatusReason), "LaunchTime" :: NullOrUndefined (LaunchTime), "StatusLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "DomainControllerId" :: NullOrUndefined (DomainControllerId), "DnsIpAddr" :: NullOrUndefined (IpAddr), "VpcId" :: NullOrUndefined (VpcId), "SubnetId" :: NullOrUndefined (SubnetId), "AvailabilityZone" :: NullOrUndefined (AvailabilityZone), "Status" :: NullOrUndefined (DomainControllerStatus), "StatusReason" :: NullOrUndefined (DomainControllerStatusReason), "LaunchTime" :: NullOrUndefined (LaunchTime), "StatusLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) }) -> DomainController
+newDomainController' :: ({ "DirectoryId" :: Maybe (DirectoryId), "DomainControllerId" :: Maybe (DomainControllerId), "DnsIpAddr" :: Maybe (IpAddr), "VpcId" :: Maybe (VpcId), "SubnetId" :: Maybe (SubnetId), "AvailabilityZone" :: Maybe (AvailabilityZone), "Status" :: Maybe (DomainControllerStatus), "StatusReason" :: Maybe (DomainControllerStatusReason), "LaunchTime" :: Maybe (LaunchTime), "StatusLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) } -> { "DirectoryId" :: Maybe (DirectoryId), "DomainControllerId" :: Maybe (DomainControllerId), "DnsIpAddr" :: Maybe (IpAddr), "VpcId" :: Maybe (VpcId), "SubnetId" :: Maybe (SubnetId), "AvailabilityZone" :: Maybe (AvailabilityZone), "Status" :: Maybe (DomainControllerStatus), "StatusReason" :: Maybe (DomainControllerStatusReason), "LaunchTime" :: Maybe (LaunchTime), "StatusLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) }) -> DomainController
 ```
 
 Constructs DomainController's fields from required parameters
@@ -2506,7 +2506,7 @@ Encode DomainControllerIds
 
 ``` purescript
 newtype DomainControllerLimitExceededException
-  = DomainControllerLimitExceededException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = DomainControllerLimitExceededException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
@@ -2531,7 +2531,7 @@ Constructs DomainControllerLimitExceededException from required parameters
 #### `newDomainControllerLimitExceededException'`
 
 ``` purescript
-newDomainControllerLimitExceededException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> DomainControllerLimitExceededException
+newDomainControllerLimitExceededException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> DomainControllerLimitExceededException
 ```
 
 Constructs DomainControllerLimitExceededException's fields from required parameters
@@ -2640,7 +2640,7 @@ Encode EnableRadiusResult
 
 ``` purescript
 newtype EnableSsoRequest
-  = EnableSsoRequest { "DirectoryId" :: DirectoryId, "UserName" :: NullOrUndefined (UserName), "Password" :: NullOrUndefined (ConnectPassword) }
+  = EnableSsoRequest { "DirectoryId" :: DirectoryId, "UserName" :: Maybe (UserName), "Password" :: Maybe (ConnectPassword) }
 ```
 
 <p>Contains the inputs for the <a>EnableSso</a> operation.</p>
@@ -2665,7 +2665,7 @@ Constructs EnableSsoRequest from required parameters
 #### `newEnableSsoRequest'`
 
 ``` purescript
-newEnableSsoRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "UserName" :: NullOrUndefined (UserName), "Password" :: NullOrUndefined (ConnectPassword) } -> { "DirectoryId" :: DirectoryId, "UserName" :: NullOrUndefined (UserName), "Password" :: NullOrUndefined (ConnectPassword) }) -> EnableSsoRequest
+newEnableSsoRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "UserName" :: Maybe (UserName), "Password" :: Maybe (ConnectPassword) } -> { "DirectoryId" :: DirectoryId, "UserName" :: Maybe (UserName), "Password" :: Maybe (ConnectPassword) }) -> EnableSsoRequest
 ```
 
 Constructs EnableSsoRequest's fields from required parameters
@@ -2708,7 +2708,7 @@ Encode EndDateTime
 
 ``` purescript
 newtype EntityAlreadyExistsException
-  = EntityAlreadyExistsException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = EntityAlreadyExistsException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The specified entity already exists.</p>
@@ -2733,7 +2733,7 @@ Constructs EntityAlreadyExistsException from required parameters
 #### `newEntityAlreadyExistsException'`
 
 ``` purescript
-newEntityAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> EntityAlreadyExistsException
+newEntityAlreadyExistsException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> EntityAlreadyExistsException
 ```
 
 Constructs EntityAlreadyExistsException's fields from required parameters
@@ -2742,7 +2742,7 @@ Constructs EntityAlreadyExistsException's fields from required parameters
 
 ``` purescript
 newtype EntityDoesNotExistException
-  = EntityDoesNotExistException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = EntityDoesNotExistException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The specified entity could not be found.</p>
@@ -2767,7 +2767,7 @@ Constructs EntityDoesNotExistException from required parameters
 #### `newEntityDoesNotExistException'`
 
 ``` purescript
-newEntityDoesNotExistException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> EntityDoesNotExistException
+newEntityDoesNotExistException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> EntityDoesNotExistException
 ```
 
 Constructs EntityDoesNotExistException's fields from required parameters
@@ -2776,7 +2776,7 @@ Constructs EntityDoesNotExistException's fields from required parameters
 
 ``` purescript
 newtype EventTopic
-  = EventTopic { "DirectoryId" :: NullOrUndefined (DirectoryId), "TopicName" :: NullOrUndefined (TopicName), "TopicArn" :: NullOrUndefined (TopicArn), "CreatedDateTime" :: NullOrUndefined (CreatedDateTime), "Status" :: NullOrUndefined (TopicStatus) }
+  = EventTopic { "DirectoryId" :: Maybe (DirectoryId), "TopicName" :: Maybe (TopicName), "TopicArn" :: Maybe (TopicArn), "CreatedDateTime" :: Maybe (CreatedDateTime), "Status" :: Maybe (TopicStatus) }
 ```
 
 <p>Information about SNS topic and AWS Directory Service directory associations.</p>
@@ -2801,7 +2801,7 @@ Constructs EventTopic from required parameters
 #### `newEventTopic'`
 
 ``` purescript
-newEventTopic' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "TopicName" :: NullOrUndefined (TopicName), "TopicArn" :: NullOrUndefined (TopicArn), "CreatedDateTime" :: NullOrUndefined (CreatedDateTime), "Status" :: NullOrUndefined (TopicStatus) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "TopicName" :: NullOrUndefined (TopicName), "TopicArn" :: NullOrUndefined (TopicArn), "CreatedDateTime" :: NullOrUndefined (CreatedDateTime), "Status" :: NullOrUndefined (TopicStatus) }) -> EventTopic
+newEventTopic' :: ({ "DirectoryId" :: Maybe (DirectoryId), "TopicName" :: Maybe (TopicName), "TopicArn" :: Maybe (TopicArn), "CreatedDateTime" :: Maybe (CreatedDateTime), "Status" :: Maybe (TopicStatus) } -> { "DirectoryId" :: Maybe (DirectoryId), "TopicName" :: Maybe (TopicName), "TopicArn" :: Maybe (TopicArn), "CreatedDateTime" :: Maybe (CreatedDateTime), "Status" :: Maybe (TopicStatus) }) -> EventTopic
 ```
 
 Constructs EventTopic's fields from required parameters
@@ -2862,7 +2862,7 @@ Encode GetDirectoryLimitsRequest
 
 ``` purescript
 newtype GetDirectoryLimitsResult
-  = GetDirectoryLimitsResult { "DirectoryLimits" :: NullOrUndefined (DirectoryLimits) }
+  = GetDirectoryLimitsResult { "DirectoryLimits" :: Maybe (DirectoryLimits) }
 ```
 
 <p>Contains the results of the <a>GetDirectoryLimits</a> operation.</p>
@@ -2887,7 +2887,7 @@ Constructs GetDirectoryLimitsResult from required parameters
 #### `newGetDirectoryLimitsResult'`
 
 ``` purescript
-newGetDirectoryLimitsResult' :: ({ "DirectoryLimits" :: NullOrUndefined (DirectoryLimits) } -> { "DirectoryLimits" :: NullOrUndefined (DirectoryLimits) }) -> GetDirectoryLimitsResult
+newGetDirectoryLimitsResult' :: ({ "DirectoryLimits" :: Maybe (DirectoryLimits) } -> { "DirectoryLimits" :: Maybe (DirectoryLimits) }) -> GetDirectoryLimitsResult
 ```
 
 Constructs GetDirectoryLimitsResult's fields from required parameters
@@ -2930,7 +2930,7 @@ Constructs GetSnapshotLimitsRequest's fields from required parameters
 
 ``` purescript
 newtype GetSnapshotLimitsResult
-  = GetSnapshotLimitsResult { "SnapshotLimits" :: NullOrUndefined (SnapshotLimits) }
+  = GetSnapshotLimitsResult { "SnapshotLimits" :: Maybe (SnapshotLimits) }
 ```
 
 <p>Contains the results of the <a>GetSnapshotLimits</a> operation.</p>
@@ -2955,7 +2955,7 @@ Constructs GetSnapshotLimitsResult from required parameters
 #### `newGetSnapshotLimitsResult'`
 
 ``` purescript
-newGetSnapshotLimitsResult' :: ({ "SnapshotLimits" :: NullOrUndefined (SnapshotLimits) } -> { "SnapshotLimits" :: NullOrUndefined (SnapshotLimits) }) -> GetSnapshotLimitsResult
+newGetSnapshotLimitsResult' :: ({ "SnapshotLimits" :: Maybe (SnapshotLimits) } -> { "SnapshotLimits" :: Maybe (SnapshotLimits) }) -> GetSnapshotLimitsResult
 ```
 
 Constructs GetSnapshotLimitsResult's fields from required parameters
@@ -2964,7 +2964,7 @@ Constructs GetSnapshotLimitsResult's fields from required parameters
 
 ``` purescript
 newtype InsufficientPermissionsException
-  = InsufficientPermissionsException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = InsufficientPermissionsException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The account does not have sufficient permission to perform the operation.</p>
@@ -2989,7 +2989,7 @@ Constructs InsufficientPermissionsException from required parameters
 #### `newInsufficientPermissionsException'`
 
 ``` purescript
-newInsufficientPermissionsException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> InsufficientPermissionsException
+newInsufficientPermissionsException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> InsufficientPermissionsException
 ```
 
 Constructs InsufficientPermissionsException's fields from required parameters
@@ -2998,7 +2998,7 @@ Constructs InsufficientPermissionsException's fields from required parameters
 
 ``` purescript
 newtype InvalidNextTokenException
-  = InvalidNextTokenException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = InvalidNextTokenException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The <i>NextToken</i> value is not valid.</p>
@@ -3023,7 +3023,7 @@ Constructs InvalidNextTokenException from required parameters
 #### `newInvalidNextTokenException'`
 
 ``` purescript
-newInvalidNextTokenException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> InvalidNextTokenException
+newInvalidNextTokenException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> InvalidNextTokenException
 ```
 
 Constructs InvalidNextTokenException's fields from required parameters
@@ -3032,7 +3032,7 @@ Constructs InvalidNextTokenException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterException
-  = InvalidParameterException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = InvalidParameterException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>One or more parameters are not valid.</p>
@@ -3057,7 +3057,7 @@ Constructs InvalidParameterException from required parameters
 #### `newInvalidParameterException'`
 
 ``` purescript
-newInvalidParameterException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> InvalidParameterException
+newInvalidParameterException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> InvalidParameterException
 ```
 
 Constructs InvalidParameterException's fields from required parameters
@@ -3098,7 +3098,7 @@ Encode IpAddrs
 
 ``` purescript
 newtype IpRoute
-  = IpRoute { "CidrIp" :: NullOrUndefined (CidrIp), "Description" :: NullOrUndefined (Description) }
+  = IpRoute { "CidrIp" :: Maybe (CidrIp), "Description" :: Maybe (Description) }
 ```
 
 <p>IP address block. This is often the address block of the DNS server used for your on-premises domain. </p>
@@ -3123,7 +3123,7 @@ Constructs IpRoute from required parameters
 #### `newIpRoute'`
 
 ``` purescript
-newIpRoute' :: ({ "CidrIp" :: NullOrUndefined (CidrIp), "Description" :: NullOrUndefined (Description) } -> { "CidrIp" :: NullOrUndefined (CidrIp), "Description" :: NullOrUndefined (Description) }) -> IpRoute
+newIpRoute' :: ({ "CidrIp" :: Maybe (CidrIp), "Description" :: Maybe (Description) } -> { "CidrIp" :: Maybe (CidrIp), "Description" :: Maybe (Description) }) -> IpRoute
 ```
 
 Constructs IpRoute's fields from required parameters
@@ -3132,7 +3132,7 @@ Constructs IpRoute's fields from required parameters
 
 ``` purescript
 newtype IpRouteInfo
-  = IpRouteInfo { "DirectoryId" :: NullOrUndefined (DirectoryId), "CidrIp" :: NullOrUndefined (CidrIp), "IpRouteStatusMsg" :: NullOrUndefined (IpRouteStatusMsg), "AddedDateTime" :: NullOrUndefined (AddedDateTime), "IpRouteStatusReason" :: NullOrUndefined (IpRouteStatusReason), "Description" :: NullOrUndefined (Description) }
+  = IpRouteInfo { "DirectoryId" :: Maybe (DirectoryId), "CidrIp" :: Maybe (CidrIp), "IpRouteStatusMsg" :: Maybe (IpRouteStatusMsg), "AddedDateTime" :: Maybe (AddedDateTime), "IpRouteStatusReason" :: Maybe (IpRouteStatusReason), "Description" :: Maybe (Description) }
 ```
 
 <p>Information about one or more IP address blocks.</p>
@@ -3157,7 +3157,7 @@ Constructs IpRouteInfo from required parameters
 #### `newIpRouteInfo'`
 
 ``` purescript
-newIpRouteInfo' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "CidrIp" :: NullOrUndefined (CidrIp), "IpRouteStatusMsg" :: NullOrUndefined (IpRouteStatusMsg), "AddedDateTime" :: NullOrUndefined (AddedDateTime), "IpRouteStatusReason" :: NullOrUndefined (IpRouteStatusReason), "Description" :: NullOrUndefined (Description) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "CidrIp" :: NullOrUndefined (CidrIp), "IpRouteStatusMsg" :: NullOrUndefined (IpRouteStatusMsg), "AddedDateTime" :: NullOrUndefined (AddedDateTime), "IpRouteStatusReason" :: NullOrUndefined (IpRouteStatusReason), "Description" :: NullOrUndefined (Description) }) -> IpRouteInfo
+newIpRouteInfo' :: ({ "DirectoryId" :: Maybe (DirectoryId), "CidrIp" :: Maybe (CidrIp), "IpRouteStatusMsg" :: Maybe (IpRouteStatusMsg), "AddedDateTime" :: Maybe (AddedDateTime), "IpRouteStatusReason" :: Maybe (IpRouteStatusReason), "Description" :: Maybe (Description) } -> { "DirectoryId" :: Maybe (DirectoryId), "CidrIp" :: Maybe (CidrIp), "IpRouteStatusMsg" :: Maybe (IpRouteStatusMsg), "AddedDateTime" :: Maybe (AddedDateTime), "IpRouteStatusReason" :: Maybe (IpRouteStatusReason), "Description" :: Maybe (Description) }) -> IpRouteInfo
 ```
 
 Constructs IpRouteInfo's fields from required parameters
@@ -3166,7 +3166,7 @@ Constructs IpRouteInfo's fields from required parameters
 
 ``` purescript
 newtype IpRouteLimitExceededException
-  = IpRouteLimitExceededException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = IpRouteLimitExceededException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
@@ -3191,7 +3191,7 @@ Constructs IpRouteLimitExceededException from required parameters
 #### `newIpRouteLimitExceededException'`
 
 ``` purescript
-newIpRouteLimitExceededException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> IpRouteLimitExceededException
+newIpRouteLimitExceededException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> IpRouteLimitExceededException
 ```
 
 Constructs IpRouteLimitExceededException's fields from required parameters
@@ -3328,7 +3328,7 @@ Encode Limit
 
 ``` purescript
 newtype ListIpRoutesRequest
-  = ListIpRoutesRequest { "DirectoryId" :: DirectoryId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = ListIpRoutesRequest { "DirectoryId" :: DirectoryId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 ##### Instances
@@ -3351,7 +3351,7 @@ Constructs ListIpRoutesRequest from required parameters
 #### `newListIpRoutesRequest'`
 
 ``` purescript
-newListIpRoutesRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "DirectoryId" :: DirectoryId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> ListIpRoutesRequest
+newListIpRoutesRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "DirectoryId" :: DirectoryId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> ListIpRoutesRequest
 ```
 
 Constructs ListIpRoutesRequest's fields from required parameters
@@ -3360,7 +3360,7 @@ Constructs ListIpRoutesRequest's fields from required parameters
 
 ``` purescript
 newtype ListIpRoutesResult
-  = ListIpRoutesResult { "IpRoutesInfo" :: NullOrUndefined (IpRoutesInfo), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListIpRoutesResult { "IpRoutesInfo" :: Maybe (IpRoutesInfo), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3383,7 +3383,7 @@ Constructs ListIpRoutesResult from required parameters
 #### `newListIpRoutesResult'`
 
 ``` purescript
-newListIpRoutesResult' :: ({ "IpRoutesInfo" :: NullOrUndefined (IpRoutesInfo), "NextToken" :: NullOrUndefined (NextToken) } -> { "IpRoutesInfo" :: NullOrUndefined (IpRoutesInfo), "NextToken" :: NullOrUndefined (NextToken) }) -> ListIpRoutesResult
+newListIpRoutesResult' :: ({ "IpRoutesInfo" :: Maybe (IpRoutesInfo), "NextToken" :: Maybe (NextToken) } -> { "IpRoutesInfo" :: Maybe (IpRoutesInfo), "NextToken" :: Maybe (NextToken) }) -> ListIpRoutesResult
 ```
 
 Constructs ListIpRoutesResult's fields from required parameters
@@ -3392,7 +3392,7 @@ Constructs ListIpRoutesResult's fields from required parameters
 
 ``` purescript
 newtype ListSchemaExtensionsRequest
-  = ListSchemaExtensionsRequest { "DirectoryId" :: DirectoryId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = ListSchemaExtensionsRequest { "DirectoryId" :: DirectoryId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 ##### Instances
@@ -3415,7 +3415,7 @@ Constructs ListSchemaExtensionsRequest from required parameters
 #### `newListSchemaExtensionsRequest'`
 
 ``` purescript
-newListSchemaExtensionsRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "DirectoryId" :: DirectoryId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> ListSchemaExtensionsRequest
+newListSchemaExtensionsRequest' :: DirectoryId -> ({ "DirectoryId" :: DirectoryId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "DirectoryId" :: DirectoryId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> ListSchemaExtensionsRequest
 ```
 
 Constructs ListSchemaExtensionsRequest's fields from required parameters
@@ -3424,7 +3424,7 @@ Constructs ListSchemaExtensionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListSchemaExtensionsResult
-  = ListSchemaExtensionsResult { "SchemaExtensionsInfo" :: NullOrUndefined (SchemaExtensionsInfo), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListSchemaExtensionsResult { "SchemaExtensionsInfo" :: Maybe (SchemaExtensionsInfo), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3447,7 +3447,7 @@ Constructs ListSchemaExtensionsResult from required parameters
 #### `newListSchemaExtensionsResult'`
 
 ``` purescript
-newListSchemaExtensionsResult' :: ({ "SchemaExtensionsInfo" :: NullOrUndefined (SchemaExtensionsInfo), "NextToken" :: NullOrUndefined (NextToken) } -> { "SchemaExtensionsInfo" :: NullOrUndefined (SchemaExtensionsInfo), "NextToken" :: NullOrUndefined (NextToken) }) -> ListSchemaExtensionsResult
+newListSchemaExtensionsResult' :: ({ "SchemaExtensionsInfo" :: Maybe (SchemaExtensionsInfo), "NextToken" :: Maybe (NextToken) } -> { "SchemaExtensionsInfo" :: Maybe (SchemaExtensionsInfo), "NextToken" :: Maybe (NextToken) }) -> ListSchemaExtensionsResult
 ```
 
 Constructs ListSchemaExtensionsResult's fields from required parameters
@@ -3456,7 +3456,7 @@ Constructs ListSchemaExtensionsResult's fields from required parameters
 
 ``` purescript
 newtype ListTagsForResourceRequest
-  = ListTagsForResourceRequest { "ResourceId" :: ResourceId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }
+  = ListTagsForResourceRequest { "ResourceId" :: ResourceId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }
 ```
 
 ##### Instances
@@ -3479,7 +3479,7 @@ Constructs ListTagsForResourceRequest from required parameters
 #### `newListTagsForResourceRequest'`
 
 ``` purescript
-newListTagsForResourceRequest' :: ResourceId -> ({ "ResourceId" :: ResourceId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) } -> { "ResourceId" :: ResourceId, "NextToken" :: NullOrUndefined (NextToken), "Limit" :: NullOrUndefined (Limit) }) -> ListTagsForResourceRequest
+newListTagsForResourceRequest' :: ResourceId -> ({ "ResourceId" :: ResourceId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) } -> { "ResourceId" :: ResourceId, "NextToken" :: Maybe (NextToken), "Limit" :: Maybe (Limit) }) -> ListTagsForResourceRequest
 ```
 
 Constructs ListTagsForResourceRequest's fields from required parameters
@@ -3488,7 +3488,7 @@ Constructs ListTagsForResourceRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsForResourceResult
-  = ListTagsForResourceResult { "Tags" :: NullOrUndefined (Tags), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListTagsForResourceResult { "Tags" :: Maybe (Tags), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3511,7 +3511,7 @@ Constructs ListTagsForResourceResult from required parameters
 #### `newListTagsForResourceResult'`
 
 ``` purescript
-newListTagsForResourceResult' :: ({ "Tags" :: NullOrUndefined (Tags), "NextToken" :: NullOrUndefined (NextToken) } -> { "Tags" :: NullOrUndefined (Tags), "NextToken" :: NullOrUndefined (NextToken) }) -> ListTagsForResourceResult
+newListTagsForResourceResult' :: ({ "Tags" :: Maybe (Tags), "NextToken" :: Maybe (NextToken) } -> { "Tags" :: Maybe (Tags), "NextToken" :: Maybe (NextToken) }) -> ListTagsForResourceResult
 ```
 
 Constructs ListTagsForResourceResult's fields from required parameters
@@ -3648,7 +3648,7 @@ Encode RadiusRetries
 
 ``` purescript
 newtype RadiusSettings
-  = RadiusSettings { "RadiusServers" :: NullOrUndefined (Servers), "RadiusPort" :: NullOrUndefined (PortNumber), "RadiusTimeout" :: NullOrUndefined (RadiusTimeout), "RadiusRetries" :: NullOrUndefined (RadiusRetries), "SharedSecret" :: NullOrUndefined (RadiusSharedSecret), "AuthenticationProtocol" :: NullOrUndefined (RadiusAuthenticationProtocol), "DisplayLabel" :: NullOrUndefined (RadiusDisplayLabel), "UseSameUsername" :: NullOrUndefined (UseSameUsername) }
+  = RadiusSettings { "RadiusServers" :: Maybe (Servers), "RadiusPort" :: Maybe (PortNumber), "RadiusTimeout" :: Maybe (RadiusTimeout), "RadiusRetries" :: Maybe (RadiusRetries), "SharedSecret" :: Maybe (RadiusSharedSecret), "AuthenticationProtocol" :: Maybe (RadiusAuthenticationProtocol), "DisplayLabel" :: Maybe (RadiusDisplayLabel), "UseSameUsername" :: Maybe (UseSameUsername) }
 ```
 
 <p>Contains information about a Remote Authentication Dial In User Service (RADIUS) server.</p>
@@ -3673,7 +3673,7 @@ Constructs RadiusSettings from required parameters
 #### `newRadiusSettings'`
 
 ``` purescript
-newRadiusSettings' :: ({ "RadiusServers" :: NullOrUndefined (Servers), "RadiusPort" :: NullOrUndefined (PortNumber), "RadiusTimeout" :: NullOrUndefined (RadiusTimeout), "RadiusRetries" :: NullOrUndefined (RadiusRetries), "SharedSecret" :: NullOrUndefined (RadiusSharedSecret), "AuthenticationProtocol" :: NullOrUndefined (RadiusAuthenticationProtocol), "DisplayLabel" :: NullOrUndefined (RadiusDisplayLabel), "UseSameUsername" :: NullOrUndefined (UseSameUsername) } -> { "RadiusServers" :: NullOrUndefined (Servers), "RadiusPort" :: NullOrUndefined (PortNumber), "RadiusTimeout" :: NullOrUndefined (RadiusTimeout), "RadiusRetries" :: NullOrUndefined (RadiusRetries), "SharedSecret" :: NullOrUndefined (RadiusSharedSecret), "AuthenticationProtocol" :: NullOrUndefined (RadiusAuthenticationProtocol), "DisplayLabel" :: NullOrUndefined (RadiusDisplayLabel), "UseSameUsername" :: NullOrUndefined (UseSameUsername) }) -> RadiusSettings
+newRadiusSettings' :: ({ "RadiusServers" :: Maybe (Servers), "RadiusPort" :: Maybe (PortNumber), "RadiusTimeout" :: Maybe (RadiusTimeout), "RadiusRetries" :: Maybe (RadiusRetries), "SharedSecret" :: Maybe (RadiusSharedSecret), "AuthenticationProtocol" :: Maybe (RadiusAuthenticationProtocol), "DisplayLabel" :: Maybe (RadiusDisplayLabel), "UseSameUsername" :: Maybe (UseSameUsername) } -> { "RadiusServers" :: Maybe (Servers), "RadiusPort" :: Maybe (PortNumber), "RadiusTimeout" :: Maybe (RadiusTimeout), "RadiusRetries" :: Maybe (RadiusRetries), "SharedSecret" :: Maybe (RadiusSharedSecret), "AuthenticationProtocol" :: Maybe (RadiusAuthenticationProtocol), "DisplayLabel" :: Maybe (RadiusDisplayLabel), "UseSameUsername" :: Maybe (UseSameUsername) }) -> RadiusSettings
 ```
 
 Constructs RadiusSettings's fields from required parameters
@@ -4044,7 +4044,7 @@ Encode SchemaExtensionId
 
 ``` purescript
 newtype SchemaExtensionInfo
-  = SchemaExtensionInfo { "DirectoryId" :: NullOrUndefined (DirectoryId), "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId), "Description" :: NullOrUndefined (Description), "SchemaExtensionStatus" :: NullOrUndefined (SchemaExtensionStatus), "SchemaExtensionStatusReason" :: NullOrUndefined (SchemaExtensionStatusReason), "StartDateTime" :: NullOrUndefined (StartDateTime), "EndDateTime" :: NullOrUndefined (EndDateTime) }
+  = SchemaExtensionInfo { "DirectoryId" :: Maybe (DirectoryId), "SchemaExtensionId" :: Maybe (SchemaExtensionId), "Description" :: Maybe (Description), "SchemaExtensionStatus" :: Maybe (SchemaExtensionStatus), "SchemaExtensionStatusReason" :: Maybe (SchemaExtensionStatusReason), "StartDateTime" :: Maybe (StartDateTime), "EndDateTime" :: Maybe (EndDateTime) }
 ```
 
 <p>Information about a schema extension.</p>
@@ -4069,7 +4069,7 @@ Constructs SchemaExtensionInfo from required parameters
 #### `newSchemaExtensionInfo'`
 
 ``` purescript
-newSchemaExtensionInfo' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId), "Description" :: NullOrUndefined (Description), "SchemaExtensionStatus" :: NullOrUndefined (SchemaExtensionStatus), "SchemaExtensionStatusReason" :: NullOrUndefined (SchemaExtensionStatusReason), "StartDateTime" :: NullOrUndefined (StartDateTime), "EndDateTime" :: NullOrUndefined (EndDateTime) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId), "Description" :: NullOrUndefined (Description), "SchemaExtensionStatus" :: NullOrUndefined (SchemaExtensionStatus), "SchemaExtensionStatusReason" :: NullOrUndefined (SchemaExtensionStatusReason), "StartDateTime" :: NullOrUndefined (StartDateTime), "EndDateTime" :: NullOrUndefined (EndDateTime) }) -> SchemaExtensionInfo
+newSchemaExtensionInfo' :: ({ "DirectoryId" :: Maybe (DirectoryId), "SchemaExtensionId" :: Maybe (SchemaExtensionId), "Description" :: Maybe (Description), "SchemaExtensionStatus" :: Maybe (SchemaExtensionStatus), "SchemaExtensionStatusReason" :: Maybe (SchemaExtensionStatusReason), "StartDateTime" :: Maybe (StartDateTime), "EndDateTime" :: Maybe (EndDateTime) } -> { "DirectoryId" :: Maybe (DirectoryId), "SchemaExtensionId" :: Maybe (SchemaExtensionId), "Description" :: Maybe (Description), "SchemaExtensionStatus" :: Maybe (SchemaExtensionStatus), "SchemaExtensionStatusReason" :: Maybe (SchemaExtensionStatusReason), "StartDateTime" :: Maybe (StartDateTime), "EndDateTime" :: Maybe (EndDateTime) }) -> SchemaExtensionInfo
 ```
 
 Constructs SchemaExtensionInfo's fields from required parameters
@@ -4174,7 +4174,7 @@ Encode Servers
 
 ``` purescript
 newtype ServiceException
-  = ServiceException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = ServiceException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>An exception has occurred in AWS Directory Service.</p>
@@ -4199,7 +4199,7 @@ Constructs ServiceException from required parameters
 #### `newServiceException'`
 
 ``` purescript
-newServiceException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> ServiceException
+newServiceException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> ServiceException
 ```
 
 Constructs ServiceException's fields from required parameters
@@ -4208,7 +4208,7 @@ Constructs ServiceException's fields from required parameters
 
 ``` purescript
 newtype Snapshot
-  = Snapshot { "DirectoryId" :: NullOrUndefined (DirectoryId), "SnapshotId" :: NullOrUndefined (SnapshotId), "Type" :: NullOrUndefined (SnapshotType), "Name" :: NullOrUndefined (SnapshotName), "Status" :: NullOrUndefined (SnapshotStatus), "StartTime" :: NullOrUndefined (StartTime) }
+  = Snapshot { "DirectoryId" :: Maybe (DirectoryId), "SnapshotId" :: Maybe (SnapshotId), "Type" :: Maybe (SnapshotType), "Name" :: Maybe (SnapshotName), "Status" :: Maybe (SnapshotStatus), "StartTime" :: Maybe (StartTime) }
 ```
 
 <p>Describes a directory snapshot.</p>
@@ -4233,7 +4233,7 @@ Constructs Snapshot from required parameters
 #### `newSnapshot'`
 
 ``` purescript
-newSnapshot' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "SnapshotId" :: NullOrUndefined (SnapshotId), "Type" :: NullOrUndefined (SnapshotType), "Name" :: NullOrUndefined (SnapshotName), "Status" :: NullOrUndefined (SnapshotStatus), "StartTime" :: NullOrUndefined (StartTime) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "SnapshotId" :: NullOrUndefined (SnapshotId), "Type" :: NullOrUndefined (SnapshotType), "Name" :: NullOrUndefined (SnapshotName), "Status" :: NullOrUndefined (SnapshotStatus), "StartTime" :: NullOrUndefined (StartTime) }) -> Snapshot
+newSnapshot' :: ({ "DirectoryId" :: Maybe (DirectoryId), "SnapshotId" :: Maybe (SnapshotId), "Type" :: Maybe (SnapshotType), "Name" :: Maybe (SnapshotName), "Status" :: Maybe (SnapshotStatus), "StartTime" :: Maybe (StartTime) } -> { "DirectoryId" :: Maybe (DirectoryId), "SnapshotId" :: Maybe (SnapshotId), "Type" :: Maybe (SnapshotType), "Name" :: Maybe (SnapshotName), "Status" :: Maybe (SnapshotStatus), "StartTime" :: Maybe (StartTime) }) -> Snapshot
 ```
 
 Constructs Snapshot's fields from required parameters
@@ -4276,7 +4276,7 @@ Encode SnapshotIds
 
 ``` purescript
 newtype SnapshotLimitExceededException
-  = SnapshotLimitExceededException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = SnapshotLimitExceededException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The maximum number of manual snapshots for the directory has been reached. You can use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>
@@ -4301,7 +4301,7 @@ Constructs SnapshotLimitExceededException from required parameters
 #### `newSnapshotLimitExceededException'`
 
 ``` purescript
-newSnapshotLimitExceededException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> SnapshotLimitExceededException
+newSnapshotLimitExceededException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> SnapshotLimitExceededException
 ```
 
 Constructs SnapshotLimitExceededException's fields from required parameters
@@ -4310,7 +4310,7 @@ Constructs SnapshotLimitExceededException's fields from required parameters
 
 ``` purescript
 newtype SnapshotLimits
-  = SnapshotLimits { "ManualSnapshotsLimit" :: NullOrUndefined (Limit), "ManualSnapshotsCurrentCount" :: NullOrUndefined (Limit), "ManualSnapshotsLimitReached" :: NullOrUndefined (ManualSnapshotsLimitReached) }
+  = SnapshotLimits { "ManualSnapshotsLimit" :: Maybe (Limit), "ManualSnapshotsCurrentCount" :: Maybe (Limit), "ManualSnapshotsLimitReached" :: Maybe (ManualSnapshotsLimitReached) }
 ```
 
 <p>Contains manual snapshot limit information for a directory.</p>
@@ -4335,7 +4335,7 @@ Constructs SnapshotLimits from required parameters
 #### `newSnapshotLimits'`
 
 ``` purescript
-newSnapshotLimits' :: ({ "ManualSnapshotsLimit" :: NullOrUndefined (Limit), "ManualSnapshotsCurrentCount" :: NullOrUndefined (Limit), "ManualSnapshotsLimitReached" :: NullOrUndefined (ManualSnapshotsLimitReached) } -> { "ManualSnapshotsLimit" :: NullOrUndefined (Limit), "ManualSnapshotsCurrentCount" :: NullOrUndefined (Limit), "ManualSnapshotsLimitReached" :: NullOrUndefined (ManualSnapshotsLimitReached) }) -> SnapshotLimits
+newSnapshotLimits' :: ({ "ManualSnapshotsLimit" :: Maybe (Limit), "ManualSnapshotsCurrentCount" :: Maybe (Limit), "ManualSnapshotsLimitReached" :: Maybe (ManualSnapshotsLimitReached) } -> { "ManualSnapshotsLimit" :: Maybe (Limit), "ManualSnapshotsCurrentCount" :: Maybe (Limit), "ManualSnapshotsLimitReached" :: Maybe (ManualSnapshotsLimitReached) }) -> SnapshotLimits
 ```
 
 Constructs SnapshotLimits's fields from required parameters
@@ -4490,7 +4490,7 @@ Constructs StartSchemaExtensionRequest's fields from required parameters
 
 ``` purescript
 newtype StartSchemaExtensionResult
-  = StartSchemaExtensionResult { "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) }
+  = StartSchemaExtensionResult { "SchemaExtensionId" :: Maybe (SchemaExtensionId) }
 ```
 
 ##### Instances
@@ -4513,7 +4513,7 @@ Constructs StartSchemaExtensionResult from required parameters
 #### `newStartSchemaExtensionResult'`
 
 ``` purescript
-newStartSchemaExtensionResult' :: ({ "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) } -> { "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) }) -> StartSchemaExtensionResult
+newStartSchemaExtensionResult' :: ({ "SchemaExtensionId" :: Maybe (SchemaExtensionId) } -> { "SchemaExtensionId" :: Maybe (SchemaExtensionId) }) -> StartSchemaExtensionResult
 ```
 
 Constructs StartSchemaExtensionResult's fields from required parameters
@@ -4652,7 +4652,7 @@ Encode TagKeys
 
 ``` purescript
 newtype TagLimitExceededException
-  = TagLimitExceededException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = TagLimitExceededException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The maximum allowed number of tags was exceeded.</p>
@@ -4677,7 +4677,7 @@ Constructs TagLimitExceededException from required parameters
 #### `newTagLimitExceededException'`
 
 ``` purescript
-newTagLimitExceededException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> TagLimitExceededException
+newTagLimitExceededException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> TagLimitExceededException
 ```
 
 Constructs TagLimitExceededException's fields from required parameters
@@ -4782,7 +4782,7 @@ Encode TopicStatus
 
 ``` purescript
 newtype Trust
-  = Trust { "DirectoryId" :: NullOrUndefined (DirectoryId), "TrustId" :: NullOrUndefined (TrustId), "RemoteDomainName" :: NullOrUndefined (RemoteDomainName), "TrustType" :: NullOrUndefined (TrustType), "TrustDirection" :: NullOrUndefined (TrustDirection), "TrustState" :: NullOrUndefined (TrustState), "CreatedDateTime" :: NullOrUndefined (CreatedDateTime), "LastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime), "StateLastUpdatedDateTime" :: NullOrUndefined (StateLastUpdatedDateTime), "TrustStateReason" :: NullOrUndefined (TrustStateReason) }
+  = Trust { "DirectoryId" :: Maybe (DirectoryId), "TrustId" :: Maybe (TrustId), "RemoteDomainName" :: Maybe (RemoteDomainName), "TrustType" :: Maybe (TrustType), "TrustDirection" :: Maybe (TrustDirection), "TrustState" :: Maybe (TrustState), "CreatedDateTime" :: Maybe (CreatedDateTime), "LastUpdatedDateTime" :: Maybe (LastUpdatedDateTime), "StateLastUpdatedDateTime" :: Maybe (StateLastUpdatedDateTime), "TrustStateReason" :: Maybe (TrustStateReason) }
 ```
 
 <p>Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain.</p>
@@ -4807,7 +4807,7 @@ Constructs Trust from required parameters
 #### `newTrust'`
 
 ``` purescript
-newTrust' :: ({ "DirectoryId" :: NullOrUndefined (DirectoryId), "TrustId" :: NullOrUndefined (TrustId), "RemoteDomainName" :: NullOrUndefined (RemoteDomainName), "TrustType" :: NullOrUndefined (TrustType), "TrustDirection" :: NullOrUndefined (TrustDirection), "TrustState" :: NullOrUndefined (TrustState), "CreatedDateTime" :: NullOrUndefined (CreatedDateTime), "LastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime), "StateLastUpdatedDateTime" :: NullOrUndefined (StateLastUpdatedDateTime), "TrustStateReason" :: NullOrUndefined (TrustStateReason) } -> { "DirectoryId" :: NullOrUndefined (DirectoryId), "TrustId" :: NullOrUndefined (TrustId), "RemoteDomainName" :: NullOrUndefined (RemoteDomainName), "TrustType" :: NullOrUndefined (TrustType), "TrustDirection" :: NullOrUndefined (TrustDirection), "TrustState" :: NullOrUndefined (TrustState), "CreatedDateTime" :: NullOrUndefined (CreatedDateTime), "LastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime), "StateLastUpdatedDateTime" :: NullOrUndefined (StateLastUpdatedDateTime), "TrustStateReason" :: NullOrUndefined (TrustStateReason) }) -> Trust
+newTrust' :: ({ "DirectoryId" :: Maybe (DirectoryId), "TrustId" :: Maybe (TrustId), "RemoteDomainName" :: Maybe (RemoteDomainName), "TrustType" :: Maybe (TrustType), "TrustDirection" :: Maybe (TrustDirection), "TrustState" :: Maybe (TrustState), "CreatedDateTime" :: Maybe (CreatedDateTime), "LastUpdatedDateTime" :: Maybe (LastUpdatedDateTime), "StateLastUpdatedDateTime" :: Maybe (StateLastUpdatedDateTime), "TrustStateReason" :: Maybe (TrustStateReason) } -> { "DirectoryId" :: Maybe (DirectoryId), "TrustId" :: Maybe (TrustId), "RemoteDomainName" :: Maybe (RemoteDomainName), "TrustType" :: Maybe (TrustType), "TrustDirection" :: Maybe (TrustDirection), "TrustState" :: Maybe (TrustState), "CreatedDateTime" :: Maybe (CreatedDateTime), "LastUpdatedDateTime" :: Maybe (LastUpdatedDateTime), "StateLastUpdatedDateTime" :: Maybe (StateLastUpdatedDateTime), "TrustStateReason" :: Maybe (TrustStateReason) }) -> Trust
 ```
 
 Constructs Trust's fields from required parameters
@@ -4944,7 +4944,7 @@ Encode Trusts
 
 ``` purescript
 newtype UnsupportedOperationException
-  = UnsupportedOperationException { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }
+  = UnsupportedOperationException { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }
 ```
 
 <p>The operation is not supported.</p>
@@ -4969,7 +4969,7 @@ Constructs UnsupportedOperationException from required parameters
 #### `newUnsupportedOperationException'`
 
 ``` purescript
-newUnsupportedOperationException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) } -> { "Message" :: NullOrUndefined (ExceptionMessage), "RequestId" :: NullOrUndefined (RequestId) }) -> UnsupportedOperationException
+newUnsupportedOperationException' :: ({ "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) } -> { "Message" :: Maybe (ExceptionMessage), "RequestId" :: Maybe (RequestId) }) -> UnsupportedOperationException
 ```
 
 Constructs UnsupportedOperationException's fields from required parameters
@@ -5212,7 +5212,7 @@ Constructs VerifyTrustRequest's fields from required parameters
 
 ``` purescript
 newtype VerifyTrustResult
-  = VerifyTrustResult { "TrustId" :: NullOrUndefined (TrustId) }
+  = VerifyTrustResult { "TrustId" :: Maybe (TrustId) }
 ```
 
 <p>Result of a VerifyTrust request.</p>
@@ -5237,7 +5237,7 @@ Constructs VerifyTrustResult from required parameters
 #### `newVerifyTrustResult'`
 
 ``` purescript
-newVerifyTrustResult' :: ({ "TrustId" :: NullOrUndefined (TrustId) } -> { "TrustId" :: NullOrUndefined (TrustId) }) -> VerifyTrustResult
+newVerifyTrustResult' :: ({ "TrustId" :: Maybe (TrustId) } -> { "TrustId" :: Maybe (TrustId) }) -> VerifyTrustResult
 ```
 
 Constructs VerifyTrustResult's fields from required parameters

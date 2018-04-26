@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -30,7 +29,7 @@ instance encodeAccessUrl :: Encode AccessUrl where encode = genericEncode option
 newtype AddIpRoutesRequest = AddIpRoutesRequest 
   { "DirectoryId" :: (DirectoryId)
   , "IpRoutes" :: (IpRoutes)
-  , "UpdateSecurityGroupForDirectoryControllers" :: NullOrUndefined (UpdateSecurityGroupForDirectoryControllers)
+  , "UpdateSecurityGroupForDirectoryControllers" :: Maybe (UpdateSecurityGroupForDirectoryControllers)
   }
 derive instance newtypeAddIpRoutesRequest :: Newtype AddIpRoutesRequest _
 derive instance repGenericAddIpRoutesRequest :: Generic AddIpRoutesRequest _
@@ -40,12 +39,12 @@ instance encodeAddIpRoutesRequest :: Encode AddIpRoutesRequest where encode = ge
 
 -- | Constructs AddIpRoutesRequest from required parameters
 newAddIpRoutesRequest :: DirectoryId -> IpRoutes -> AddIpRoutesRequest
-newAddIpRoutesRequest _DirectoryId _IpRoutes = AddIpRoutesRequest { "DirectoryId": _DirectoryId, "IpRoutes": _IpRoutes, "UpdateSecurityGroupForDirectoryControllers": (NullOrUndefined Nothing) }
+newAddIpRoutesRequest _DirectoryId _IpRoutes = AddIpRoutesRequest { "DirectoryId": _DirectoryId, "IpRoutes": _IpRoutes, "UpdateSecurityGroupForDirectoryControllers": Nothing }
 
 -- | Constructs AddIpRoutesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddIpRoutesRequest' :: DirectoryId -> IpRoutes -> ( { "DirectoryId" :: (DirectoryId) , "IpRoutes" :: (IpRoutes) , "UpdateSecurityGroupForDirectoryControllers" :: NullOrUndefined (UpdateSecurityGroupForDirectoryControllers) } -> {"DirectoryId" :: (DirectoryId) , "IpRoutes" :: (IpRoutes) , "UpdateSecurityGroupForDirectoryControllers" :: NullOrUndefined (UpdateSecurityGroupForDirectoryControllers) } ) -> AddIpRoutesRequest
-newAddIpRoutesRequest' _DirectoryId _IpRoutes customize = (AddIpRoutesRequest <<< customize) { "DirectoryId": _DirectoryId, "IpRoutes": _IpRoutes, "UpdateSecurityGroupForDirectoryControllers": (NullOrUndefined Nothing) }
+newAddIpRoutesRequest' :: DirectoryId -> IpRoutes -> ( { "DirectoryId" :: (DirectoryId) , "IpRoutes" :: (IpRoutes) , "UpdateSecurityGroupForDirectoryControllers" :: Maybe (UpdateSecurityGroupForDirectoryControllers) } -> {"DirectoryId" :: (DirectoryId) , "IpRoutes" :: (IpRoutes) , "UpdateSecurityGroupForDirectoryControllers" :: Maybe (UpdateSecurityGroupForDirectoryControllers) } ) -> AddIpRoutesRequest
+newAddIpRoutesRequest' _DirectoryId _IpRoutes customize = (AddIpRoutesRequest <<< customize) { "DirectoryId": _DirectoryId, "IpRoutes": _IpRoutes, "UpdateSecurityGroupForDirectoryControllers": Nothing }
 
 
 
@@ -108,8 +107,8 @@ instance encodeAliasName :: Encode AliasName where encode = genericEncode option
 
 -- | <p>Represents a named directory attribute.</p>
 newtype Attribute = Attribute 
-  { "Name" :: NullOrUndefined (AttributeName)
-  , "Value" :: NullOrUndefined (AttributeValue)
+  { "Name" :: Maybe (AttributeName)
+  , "Value" :: Maybe (AttributeValue)
   }
 derive instance newtypeAttribute :: Newtype Attribute _
 derive instance repGenericAttribute :: Generic Attribute _
@@ -119,12 +118,12 @@ instance encodeAttribute :: Encode Attribute where encode = genericEncode option
 
 -- | Constructs Attribute from required parameters
 newAttribute :: Attribute
-newAttribute  = Attribute { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newAttribute  = Attribute { "Name": Nothing, "Value": Nothing }
 
 -- | Constructs Attribute's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttribute' :: ( { "Name" :: NullOrUndefined (AttributeName) , "Value" :: NullOrUndefined (AttributeValue) } -> {"Name" :: NullOrUndefined (AttributeName) , "Value" :: NullOrUndefined (AttributeValue) } ) -> Attribute
-newAttribute'  customize = (Attribute <<< customize) { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newAttribute' :: ( { "Name" :: Maybe (AttributeName) , "Value" :: Maybe (AttributeValue) } -> {"Name" :: Maybe (AttributeName) , "Value" :: Maybe (AttributeValue) } ) -> Attribute
+newAttribute'  customize = (Attribute <<< customize) { "Name": Nothing, "Value": Nothing }
 
 
 
@@ -157,8 +156,8 @@ instance encodeAttributes :: Encode Attributes where encode = genericEncode opti
 
 -- | <p>An authentication error occurred.</p>
 newtype AuthenticationFailedException = AuthenticationFailedException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeAuthenticationFailedException :: Newtype AuthenticationFailedException _
 derive instance repGenericAuthenticationFailedException :: Generic AuthenticationFailedException _
@@ -168,12 +167,12 @@ instance encodeAuthenticationFailedException :: Encode AuthenticationFailedExcep
 
 -- | Constructs AuthenticationFailedException from required parameters
 newAuthenticationFailedException :: AuthenticationFailedException
-newAuthenticationFailedException  = AuthenticationFailedException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newAuthenticationFailedException  = AuthenticationFailedException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs AuthenticationFailedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthenticationFailedException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> AuthenticationFailedException
-newAuthenticationFailedException'  customize = (AuthenticationFailedException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newAuthenticationFailedException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> AuthenticationFailedException
+newAuthenticationFailedException'  customize = (AuthenticationFailedException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -245,8 +244,8 @@ instance encodeCidrIps :: Encode CidrIps where encode = genericEncode options
 
 -- | <p>A client exception has occurred.</p>
 newtype ClientException = ClientException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeClientException :: Newtype ClientException _
 derive instance repGenericClientException :: Generic ClientException _
@@ -256,12 +255,12 @@ instance encodeClientException :: Encode ClientException where encode = genericE
 
 -- | Constructs ClientException from required parameters
 newClientException :: ClientException
-newClientException  = ClientException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newClientException  = ClientException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs ClientException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClientException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> ClientException
-newClientException'  customize = (ClientException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newClientException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> ClientException
+newClientException'  customize = (ClientException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -276,9 +275,9 @@ instance encodeCloudOnlyDirectoriesLimitReached :: Encode CloudOnlyDirectoriesLi
 
 -- | <p>Contains information about a computer account in a directory.</p>
 newtype Computer = Computer 
-  { "ComputerId" :: NullOrUndefined (SID)
-  , "ComputerName" :: NullOrUndefined (ComputerName)
-  , "ComputerAttributes" :: NullOrUndefined (Attributes)
+  { "ComputerId" :: Maybe (SID)
+  , "ComputerName" :: Maybe (ComputerName)
+  , "ComputerAttributes" :: Maybe (Attributes)
   }
 derive instance newtypeComputer :: Newtype Computer _
 derive instance repGenericComputer :: Generic Computer _
@@ -288,12 +287,12 @@ instance encodeComputer :: Encode Computer where encode = genericEncode options
 
 -- | Constructs Computer from required parameters
 newComputer :: Computer
-newComputer  = Computer { "ComputerAttributes": (NullOrUndefined Nothing), "ComputerId": (NullOrUndefined Nothing), "ComputerName": (NullOrUndefined Nothing) }
+newComputer  = Computer { "ComputerAttributes": Nothing, "ComputerId": Nothing, "ComputerName": Nothing }
 
 -- | Constructs Computer's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComputer' :: ( { "ComputerId" :: NullOrUndefined (SID) , "ComputerName" :: NullOrUndefined (ComputerName) , "ComputerAttributes" :: NullOrUndefined (Attributes) } -> {"ComputerId" :: NullOrUndefined (SID) , "ComputerName" :: NullOrUndefined (ComputerName) , "ComputerAttributes" :: NullOrUndefined (Attributes) } ) -> Computer
-newComputer'  customize = (Computer <<< customize) { "ComputerAttributes": (NullOrUndefined Nothing), "ComputerId": (NullOrUndefined Nothing), "ComputerName": (NullOrUndefined Nothing) }
+newComputer' :: ( { "ComputerId" :: Maybe (SID) , "ComputerName" :: Maybe (ComputerName) , "ComputerAttributes" :: Maybe (Attributes) } -> {"ComputerId" :: Maybe (SID) , "ComputerName" :: Maybe (ComputerName) , "ComputerAttributes" :: Maybe (Attributes) } ) -> Computer
+newComputer'  customize = (Computer <<< customize) { "ComputerAttributes": Nothing, "ComputerId": Nothing, "ComputerName": Nothing }
 
 
 
@@ -317,9 +316,9 @@ instance encodeComputerPassword :: Encode ComputerPassword where encode = generi
 
 -- | <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 newtype ConditionalForwarder = ConditionalForwarder 
-  { "RemoteDomainName" :: NullOrUndefined (RemoteDomainName)
-  , "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs)
-  , "ReplicationScope" :: NullOrUndefined (ReplicationScope)
+  { "RemoteDomainName" :: Maybe (RemoteDomainName)
+  , "DnsIpAddrs" :: Maybe (DnsIpAddrs)
+  , "ReplicationScope" :: Maybe (ReplicationScope)
   }
 derive instance newtypeConditionalForwarder :: Newtype ConditionalForwarder _
 derive instance repGenericConditionalForwarder :: Generic ConditionalForwarder _
@@ -329,12 +328,12 @@ instance encodeConditionalForwarder :: Encode ConditionalForwarder where encode 
 
 -- | Constructs ConditionalForwarder from required parameters
 newConditionalForwarder :: ConditionalForwarder
-newConditionalForwarder  = ConditionalForwarder { "DnsIpAddrs": (NullOrUndefined Nothing), "RemoteDomainName": (NullOrUndefined Nothing), "ReplicationScope": (NullOrUndefined Nothing) }
+newConditionalForwarder  = ConditionalForwarder { "DnsIpAddrs": Nothing, "RemoteDomainName": Nothing, "ReplicationScope": Nothing }
 
 -- | Constructs ConditionalForwarder's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConditionalForwarder' :: ( { "RemoteDomainName" :: NullOrUndefined (RemoteDomainName) , "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs) , "ReplicationScope" :: NullOrUndefined (ReplicationScope) } -> {"RemoteDomainName" :: NullOrUndefined (RemoteDomainName) , "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs) , "ReplicationScope" :: NullOrUndefined (ReplicationScope) } ) -> ConditionalForwarder
-newConditionalForwarder'  customize = (ConditionalForwarder <<< customize) { "DnsIpAddrs": (NullOrUndefined Nothing), "RemoteDomainName": (NullOrUndefined Nothing), "ReplicationScope": (NullOrUndefined Nothing) }
+newConditionalForwarder' :: ( { "RemoteDomainName" :: Maybe (RemoteDomainName) , "DnsIpAddrs" :: Maybe (DnsIpAddrs) , "ReplicationScope" :: Maybe (ReplicationScope) } -> {"RemoteDomainName" :: Maybe (RemoteDomainName) , "DnsIpAddrs" :: Maybe (DnsIpAddrs) , "ReplicationScope" :: Maybe (ReplicationScope) } ) -> ConditionalForwarder
+newConditionalForwarder'  customize = (ConditionalForwarder <<< customize) { "DnsIpAddrs": Nothing, "RemoteDomainName": Nothing, "ReplicationScope": Nothing }
 
 
 
@@ -350,9 +349,9 @@ instance encodeConditionalForwarders :: Encode ConditionalForwarders where encod
 -- | <p>Contains the inputs for the <a>ConnectDirectory</a> operation.</p>
 newtype ConnectDirectoryRequest = ConnectDirectoryRequest 
   { "Name" :: (DirectoryName)
-  , "ShortName" :: NullOrUndefined (DirectoryShortName)
+  , "ShortName" :: Maybe (DirectoryShortName)
   , "Password" :: (ConnectPassword)
-  , "Description" :: NullOrUndefined (Description)
+  , "Description" :: Maybe (Description)
   , "Size" :: (DirectorySize)
   , "ConnectSettings" :: (DirectoryConnectSettings)
   }
@@ -364,18 +363,18 @@ instance encodeConnectDirectoryRequest :: Encode ConnectDirectoryRequest where e
 
 -- | Constructs ConnectDirectoryRequest from required parameters
 newConnectDirectoryRequest :: DirectoryConnectSettings -> DirectoryName -> ConnectPassword -> DirectorySize -> ConnectDirectoryRequest
-newConnectDirectoryRequest _ConnectSettings _Name _Password _Size = ConnectDirectoryRequest { "ConnectSettings": _ConnectSettings, "Name": _Name, "Password": _Password, "Size": _Size, "Description": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing) }
+newConnectDirectoryRequest _ConnectSettings _Name _Password _Size = ConnectDirectoryRequest { "ConnectSettings": _ConnectSettings, "Name": _Name, "Password": _Password, "Size": _Size, "Description": Nothing, "ShortName": Nothing }
 
 -- | Constructs ConnectDirectoryRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnectDirectoryRequest' :: DirectoryConnectSettings -> DirectoryName -> ConnectPassword -> DirectorySize -> ( { "Name" :: (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Password" :: (ConnectPassword) , "Description" :: NullOrUndefined (Description) , "Size" :: (DirectorySize) , "ConnectSettings" :: (DirectoryConnectSettings) } -> {"Name" :: (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Password" :: (ConnectPassword) , "Description" :: NullOrUndefined (Description) , "Size" :: (DirectorySize) , "ConnectSettings" :: (DirectoryConnectSettings) } ) -> ConnectDirectoryRequest
-newConnectDirectoryRequest' _ConnectSettings _Name _Password _Size customize = (ConnectDirectoryRequest <<< customize) { "ConnectSettings": _ConnectSettings, "Name": _Name, "Password": _Password, "Size": _Size, "Description": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing) }
+newConnectDirectoryRequest' :: DirectoryConnectSettings -> DirectoryName -> ConnectPassword -> DirectorySize -> ( { "Name" :: (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Password" :: (ConnectPassword) , "Description" :: Maybe (Description) , "Size" :: (DirectorySize) , "ConnectSettings" :: (DirectoryConnectSettings) } -> {"Name" :: (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Password" :: (ConnectPassword) , "Description" :: Maybe (Description) , "Size" :: (DirectorySize) , "ConnectSettings" :: (DirectoryConnectSettings) } ) -> ConnectDirectoryRequest
+newConnectDirectoryRequest' _ConnectSettings _Name _Password _Size customize = (ConnectDirectoryRequest <<< customize) { "ConnectSettings": _ConnectSettings, "Name": _Name, "Password": _Password, "Size": _Size, "Description": Nothing, "ShortName": Nothing }
 
 
 
 -- | <p>Contains the results of the <a>ConnectDirectory</a> operation.</p>
 newtype ConnectDirectoryResult = ConnectDirectoryResult 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
+  { "DirectoryId" :: Maybe (DirectoryId)
   }
 derive instance newtypeConnectDirectoryResult :: Newtype ConnectDirectoryResult _
 derive instance repGenericConnectDirectoryResult :: Generic ConnectDirectoryResult _
@@ -385,12 +384,12 @@ instance encodeConnectDirectoryResult :: Encode ConnectDirectoryResult where enc
 
 -- | Constructs ConnectDirectoryResult from required parameters
 newConnectDirectoryResult :: ConnectDirectoryResult
-newConnectDirectoryResult  = ConnectDirectoryResult { "DirectoryId": (NullOrUndefined Nothing) }
+newConnectDirectoryResult  = ConnectDirectoryResult { "DirectoryId": Nothing }
 
 -- | Constructs ConnectDirectoryResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnectDirectoryResult' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) } ) -> ConnectDirectoryResult
-newConnectDirectoryResult'  customize = (ConnectDirectoryResult <<< customize) { "DirectoryId": (NullOrUndefined Nothing) }
+newConnectDirectoryResult' :: ( { "DirectoryId" :: Maybe (DirectoryId) } -> {"DirectoryId" :: Maybe (DirectoryId) } ) -> ConnectDirectoryResult
+newConnectDirectoryResult'  customize = (ConnectDirectoryResult <<< customize) { "DirectoryId": Nothing }
 
 
 
@@ -436,8 +435,8 @@ newCreateAliasRequest' _Alias _DirectoryId customize = (CreateAliasRequest <<< c
 
 -- | <p>Contains the results of the <a>CreateAlias</a> operation.</p>
 newtype CreateAliasResult = CreateAliasResult 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "Alias" :: NullOrUndefined (AliasName)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "Alias" :: Maybe (AliasName)
   }
 derive instance newtypeCreateAliasResult :: Newtype CreateAliasResult _
 derive instance repGenericCreateAliasResult :: Generic CreateAliasResult _
@@ -447,12 +446,12 @@ instance encodeCreateAliasResult :: Encode CreateAliasResult where encode = gene
 
 -- | Constructs CreateAliasResult from required parameters
 newCreateAliasResult :: CreateAliasResult
-newCreateAliasResult  = CreateAliasResult { "Alias": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing) }
+newCreateAliasResult  = CreateAliasResult { "Alias": Nothing, "DirectoryId": Nothing }
 
 -- | Constructs CreateAliasResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAliasResult' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "Alias" :: NullOrUndefined (AliasName) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "Alias" :: NullOrUndefined (AliasName) } ) -> CreateAliasResult
-newCreateAliasResult'  customize = (CreateAliasResult <<< customize) { "Alias": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing) }
+newCreateAliasResult' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "Alias" :: Maybe (AliasName) } -> {"DirectoryId" :: Maybe (DirectoryId) , "Alias" :: Maybe (AliasName) } ) -> CreateAliasResult
+newCreateAliasResult'  customize = (CreateAliasResult <<< customize) { "Alias": Nothing, "DirectoryId": Nothing }
 
 
 
@@ -461,8 +460,8 @@ newtype CreateComputerRequest = CreateComputerRequest
   { "DirectoryId" :: (DirectoryId)
   , "ComputerName" :: (ComputerName)
   , "Password" :: (ComputerPassword)
-  , "OrganizationalUnitDistinguishedName" :: NullOrUndefined (OrganizationalUnitDN)
-  , "ComputerAttributes" :: NullOrUndefined (Attributes)
+  , "OrganizationalUnitDistinguishedName" :: Maybe (OrganizationalUnitDN)
+  , "ComputerAttributes" :: Maybe (Attributes)
   }
 derive instance newtypeCreateComputerRequest :: Newtype CreateComputerRequest _
 derive instance repGenericCreateComputerRequest :: Generic CreateComputerRequest _
@@ -472,18 +471,18 @@ instance encodeCreateComputerRequest :: Encode CreateComputerRequest where encod
 
 -- | Constructs CreateComputerRequest from required parameters
 newCreateComputerRequest :: ComputerName -> DirectoryId -> ComputerPassword -> CreateComputerRequest
-newCreateComputerRequest _ComputerName _DirectoryId _Password = CreateComputerRequest { "ComputerName": _ComputerName, "DirectoryId": _DirectoryId, "Password": _Password, "ComputerAttributes": (NullOrUndefined Nothing), "OrganizationalUnitDistinguishedName": (NullOrUndefined Nothing) }
+newCreateComputerRequest _ComputerName _DirectoryId _Password = CreateComputerRequest { "ComputerName": _ComputerName, "DirectoryId": _DirectoryId, "Password": _Password, "ComputerAttributes": Nothing, "OrganizationalUnitDistinguishedName": Nothing }
 
 -- | Constructs CreateComputerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateComputerRequest' :: ComputerName -> DirectoryId -> ComputerPassword -> ( { "DirectoryId" :: (DirectoryId) , "ComputerName" :: (ComputerName) , "Password" :: (ComputerPassword) , "OrganizationalUnitDistinguishedName" :: NullOrUndefined (OrganizationalUnitDN) , "ComputerAttributes" :: NullOrUndefined (Attributes) } -> {"DirectoryId" :: (DirectoryId) , "ComputerName" :: (ComputerName) , "Password" :: (ComputerPassword) , "OrganizationalUnitDistinguishedName" :: NullOrUndefined (OrganizationalUnitDN) , "ComputerAttributes" :: NullOrUndefined (Attributes) } ) -> CreateComputerRequest
-newCreateComputerRequest' _ComputerName _DirectoryId _Password customize = (CreateComputerRequest <<< customize) { "ComputerName": _ComputerName, "DirectoryId": _DirectoryId, "Password": _Password, "ComputerAttributes": (NullOrUndefined Nothing), "OrganizationalUnitDistinguishedName": (NullOrUndefined Nothing) }
+newCreateComputerRequest' :: ComputerName -> DirectoryId -> ComputerPassword -> ( { "DirectoryId" :: (DirectoryId) , "ComputerName" :: (ComputerName) , "Password" :: (ComputerPassword) , "OrganizationalUnitDistinguishedName" :: Maybe (OrganizationalUnitDN) , "ComputerAttributes" :: Maybe (Attributes) } -> {"DirectoryId" :: (DirectoryId) , "ComputerName" :: (ComputerName) , "Password" :: (ComputerPassword) , "OrganizationalUnitDistinguishedName" :: Maybe (OrganizationalUnitDN) , "ComputerAttributes" :: Maybe (Attributes) } ) -> CreateComputerRequest
+newCreateComputerRequest' _ComputerName _DirectoryId _Password customize = (CreateComputerRequest <<< customize) { "ComputerName": _ComputerName, "DirectoryId": _DirectoryId, "Password": _Password, "ComputerAttributes": Nothing, "OrganizationalUnitDistinguishedName": Nothing }
 
 
 
 -- | <p>Contains the results for the <a>CreateComputer</a> operation.</p>
 newtype CreateComputerResult = CreateComputerResult 
-  { "Computer" :: NullOrUndefined (Computer)
+  { "Computer" :: Maybe (Computer)
   }
 derive instance newtypeCreateComputerResult :: Newtype CreateComputerResult _
 derive instance repGenericCreateComputerResult :: Generic CreateComputerResult _
@@ -493,12 +492,12 @@ instance encodeCreateComputerResult :: Encode CreateComputerResult where encode 
 
 -- | Constructs CreateComputerResult from required parameters
 newCreateComputerResult :: CreateComputerResult
-newCreateComputerResult  = CreateComputerResult { "Computer": (NullOrUndefined Nothing) }
+newCreateComputerResult  = CreateComputerResult { "Computer": Nothing }
 
 -- | Constructs CreateComputerResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateComputerResult' :: ( { "Computer" :: NullOrUndefined (Computer) } -> {"Computer" :: NullOrUndefined (Computer) } ) -> CreateComputerResult
-newCreateComputerResult'  customize = (CreateComputerResult <<< customize) { "Computer": (NullOrUndefined Nothing) }
+newCreateComputerResult' :: ( { "Computer" :: Maybe (Computer) } -> {"Computer" :: Maybe (Computer) } ) -> CreateComputerResult
+newCreateComputerResult'  customize = (CreateComputerResult <<< customize) { "Computer": Nothing }
 
 
 
@@ -538,11 +537,11 @@ instance encodeCreateConditionalForwarderResult :: Encode CreateConditionalForwa
 -- | <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>
 newtype CreateDirectoryRequest = CreateDirectoryRequest 
   { "Name" :: (DirectoryName)
-  , "ShortName" :: NullOrUndefined (DirectoryShortName)
+  , "ShortName" :: Maybe (DirectoryShortName)
   , "Password" :: (Password)
-  , "Description" :: NullOrUndefined (Description)
+  , "Description" :: Maybe (Description)
   , "Size" :: (DirectorySize)
-  , "VpcSettings" :: NullOrUndefined (DirectoryVpcSettings)
+  , "VpcSettings" :: Maybe (DirectoryVpcSettings)
   }
 derive instance newtypeCreateDirectoryRequest :: Newtype CreateDirectoryRequest _
 derive instance repGenericCreateDirectoryRequest :: Generic CreateDirectoryRequest _
@@ -552,18 +551,18 @@ instance encodeCreateDirectoryRequest :: Encode CreateDirectoryRequest where enc
 
 -- | Constructs CreateDirectoryRequest from required parameters
 newCreateDirectoryRequest :: DirectoryName -> Password -> DirectorySize -> CreateDirectoryRequest
-newCreateDirectoryRequest _Name _Password _Size = CreateDirectoryRequest { "Name": _Name, "Password": _Password, "Size": _Size, "Description": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing), "VpcSettings": (NullOrUndefined Nothing) }
+newCreateDirectoryRequest _Name _Password _Size = CreateDirectoryRequest { "Name": _Name, "Password": _Password, "Size": _Size, "Description": Nothing, "ShortName": Nothing, "VpcSettings": Nothing }
 
 -- | Constructs CreateDirectoryRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDirectoryRequest' :: DirectoryName -> Password -> DirectorySize -> ( { "Name" :: (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Password" :: (Password) , "Description" :: NullOrUndefined (Description) , "Size" :: (DirectorySize) , "VpcSettings" :: NullOrUndefined (DirectoryVpcSettings) } -> {"Name" :: (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Password" :: (Password) , "Description" :: NullOrUndefined (Description) , "Size" :: (DirectorySize) , "VpcSettings" :: NullOrUndefined (DirectoryVpcSettings) } ) -> CreateDirectoryRequest
-newCreateDirectoryRequest' _Name _Password _Size customize = (CreateDirectoryRequest <<< customize) { "Name": _Name, "Password": _Password, "Size": _Size, "Description": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing), "VpcSettings": (NullOrUndefined Nothing) }
+newCreateDirectoryRequest' :: DirectoryName -> Password -> DirectorySize -> ( { "Name" :: (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Password" :: (Password) , "Description" :: Maybe (Description) , "Size" :: (DirectorySize) , "VpcSettings" :: Maybe (DirectoryVpcSettings) } -> {"Name" :: (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Password" :: (Password) , "Description" :: Maybe (Description) , "Size" :: (DirectorySize) , "VpcSettings" :: Maybe (DirectoryVpcSettings) } ) -> CreateDirectoryRequest
+newCreateDirectoryRequest' _Name _Password _Size customize = (CreateDirectoryRequest <<< customize) { "Name": _Name, "Password": _Password, "Size": _Size, "Description": Nothing, "ShortName": Nothing, "VpcSettings": Nothing }
 
 
 
 -- | <p>Contains the results of the <a>CreateDirectory</a> operation.</p>
 newtype CreateDirectoryResult = CreateDirectoryResult 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
+  { "DirectoryId" :: Maybe (DirectoryId)
   }
 derive instance newtypeCreateDirectoryResult :: Newtype CreateDirectoryResult _
 derive instance repGenericCreateDirectoryResult :: Generic CreateDirectoryResult _
@@ -573,23 +572,23 @@ instance encodeCreateDirectoryResult :: Encode CreateDirectoryResult where encod
 
 -- | Constructs CreateDirectoryResult from required parameters
 newCreateDirectoryResult :: CreateDirectoryResult
-newCreateDirectoryResult  = CreateDirectoryResult { "DirectoryId": (NullOrUndefined Nothing) }
+newCreateDirectoryResult  = CreateDirectoryResult { "DirectoryId": Nothing }
 
 -- | Constructs CreateDirectoryResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDirectoryResult' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) } ) -> CreateDirectoryResult
-newCreateDirectoryResult'  customize = (CreateDirectoryResult <<< customize) { "DirectoryId": (NullOrUndefined Nothing) }
+newCreateDirectoryResult' :: ( { "DirectoryId" :: Maybe (DirectoryId) } -> {"DirectoryId" :: Maybe (DirectoryId) } ) -> CreateDirectoryResult
+newCreateDirectoryResult'  customize = (CreateDirectoryResult <<< customize) { "DirectoryId": Nothing }
 
 
 
 -- | <p>Creates a Microsoft AD in the AWS cloud.</p>
 newtype CreateMicrosoftADRequest = CreateMicrosoftADRequest 
   { "Name" :: (DirectoryName)
-  , "ShortName" :: NullOrUndefined (DirectoryShortName)
+  , "ShortName" :: Maybe (DirectoryShortName)
   , "Password" :: (Password)
-  , "Description" :: NullOrUndefined (Description)
+  , "Description" :: Maybe (Description)
   , "VpcSettings" :: (DirectoryVpcSettings)
-  , "Edition" :: NullOrUndefined (DirectoryEdition)
+  , "Edition" :: Maybe (DirectoryEdition)
   }
 derive instance newtypeCreateMicrosoftADRequest :: Newtype CreateMicrosoftADRequest _
 derive instance repGenericCreateMicrosoftADRequest :: Generic CreateMicrosoftADRequest _
@@ -599,18 +598,18 @@ instance encodeCreateMicrosoftADRequest :: Encode CreateMicrosoftADRequest where
 
 -- | Constructs CreateMicrosoftADRequest from required parameters
 newCreateMicrosoftADRequest :: DirectoryName -> Password -> DirectoryVpcSettings -> CreateMicrosoftADRequest
-newCreateMicrosoftADRequest _Name _Password _VpcSettings = CreateMicrosoftADRequest { "Name": _Name, "Password": _Password, "VpcSettings": _VpcSettings, "Description": (NullOrUndefined Nothing), "Edition": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing) }
+newCreateMicrosoftADRequest _Name _Password _VpcSettings = CreateMicrosoftADRequest { "Name": _Name, "Password": _Password, "VpcSettings": _VpcSettings, "Description": Nothing, "Edition": Nothing, "ShortName": Nothing }
 
 -- | Constructs CreateMicrosoftADRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateMicrosoftADRequest' :: DirectoryName -> Password -> DirectoryVpcSettings -> ( { "Name" :: (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Password" :: (Password) , "Description" :: NullOrUndefined (Description) , "VpcSettings" :: (DirectoryVpcSettings) , "Edition" :: NullOrUndefined (DirectoryEdition) } -> {"Name" :: (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Password" :: (Password) , "Description" :: NullOrUndefined (Description) , "VpcSettings" :: (DirectoryVpcSettings) , "Edition" :: NullOrUndefined (DirectoryEdition) } ) -> CreateMicrosoftADRequest
-newCreateMicrosoftADRequest' _Name _Password _VpcSettings customize = (CreateMicrosoftADRequest <<< customize) { "Name": _Name, "Password": _Password, "VpcSettings": _VpcSettings, "Description": (NullOrUndefined Nothing), "Edition": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing) }
+newCreateMicrosoftADRequest' :: DirectoryName -> Password -> DirectoryVpcSettings -> ( { "Name" :: (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Password" :: (Password) , "Description" :: Maybe (Description) , "VpcSettings" :: (DirectoryVpcSettings) , "Edition" :: Maybe (DirectoryEdition) } -> {"Name" :: (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Password" :: (Password) , "Description" :: Maybe (Description) , "VpcSettings" :: (DirectoryVpcSettings) , "Edition" :: Maybe (DirectoryEdition) } ) -> CreateMicrosoftADRequest
+newCreateMicrosoftADRequest' _Name _Password _VpcSettings customize = (CreateMicrosoftADRequest <<< customize) { "Name": _Name, "Password": _Password, "VpcSettings": _VpcSettings, "Description": Nothing, "Edition": Nothing, "ShortName": Nothing }
 
 
 
 -- | <p>Result of a CreateMicrosoftAD request.</p>
 newtype CreateMicrosoftADResult = CreateMicrosoftADResult 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
+  { "DirectoryId" :: Maybe (DirectoryId)
   }
 derive instance newtypeCreateMicrosoftADResult :: Newtype CreateMicrosoftADResult _
 derive instance repGenericCreateMicrosoftADResult :: Generic CreateMicrosoftADResult _
@@ -620,12 +619,12 @@ instance encodeCreateMicrosoftADResult :: Encode CreateMicrosoftADResult where e
 
 -- | Constructs CreateMicrosoftADResult from required parameters
 newCreateMicrosoftADResult :: CreateMicrosoftADResult
-newCreateMicrosoftADResult  = CreateMicrosoftADResult { "DirectoryId": (NullOrUndefined Nothing) }
+newCreateMicrosoftADResult  = CreateMicrosoftADResult { "DirectoryId": Nothing }
 
 -- | Constructs CreateMicrosoftADResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateMicrosoftADResult' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) } ) -> CreateMicrosoftADResult
-newCreateMicrosoftADResult'  customize = (CreateMicrosoftADResult <<< customize) { "DirectoryId": (NullOrUndefined Nothing) }
+newCreateMicrosoftADResult' :: ( { "DirectoryId" :: Maybe (DirectoryId) } -> {"DirectoryId" :: Maybe (DirectoryId) } ) -> CreateMicrosoftADResult
+newCreateMicrosoftADResult'  customize = (CreateMicrosoftADResult <<< customize) { "DirectoryId": Nothing }
 
 
 
@@ -641,7 +640,7 @@ instance encodeCreateSnapshotBeforeSchemaExtension :: Encode CreateSnapshotBefor
 -- | <p>Contains the inputs for the <a>CreateSnapshot</a> operation.</p>
 newtype CreateSnapshotRequest = CreateSnapshotRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "Name" :: NullOrUndefined (SnapshotName)
+  , "Name" :: Maybe (SnapshotName)
   }
 derive instance newtypeCreateSnapshotRequest :: Newtype CreateSnapshotRequest _
 derive instance repGenericCreateSnapshotRequest :: Generic CreateSnapshotRequest _
@@ -651,18 +650,18 @@ instance encodeCreateSnapshotRequest :: Encode CreateSnapshotRequest where encod
 
 -- | Constructs CreateSnapshotRequest from required parameters
 newCreateSnapshotRequest :: DirectoryId -> CreateSnapshotRequest
-newCreateSnapshotRequest _DirectoryId = CreateSnapshotRequest { "DirectoryId": _DirectoryId, "Name": (NullOrUndefined Nothing) }
+newCreateSnapshotRequest _DirectoryId = CreateSnapshotRequest { "DirectoryId": _DirectoryId, "Name": Nothing }
 
 -- | Constructs CreateSnapshotRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSnapshotRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "Name" :: NullOrUndefined (SnapshotName) } -> {"DirectoryId" :: (DirectoryId) , "Name" :: NullOrUndefined (SnapshotName) } ) -> CreateSnapshotRequest
-newCreateSnapshotRequest' _DirectoryId customize = (CreateSnapshotRequest <<< customize) { "DirectoryId": _DirectoryId, "Name": (NullOrUndefined Nothing) }
+newCreateSnapshotRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "Name" :: Maybe (SnapshotName) } -> {"DirectoryId" :: (DirectoryId) , "Name" :: Maybe (SnapshotName) } ) -> CreateSnapshotRequest
+newCreateSnapshotRequest' _DirectoryId customize = (CreateSnapshotRequest <<< customize) { "DirectoryId": _DirectoryId, "Name": Nothing }
 
 
 
 -- | <p>Contains the results of the <a>CreateSnapshot</a> operation.</p>
 newtype CreateSnapshotResult = CreateSnapshotResult 
-  { "SnapshotId" :: NullOrUndefined (SnapshotId)
+  { "SnapshotId" :: Maybe (SnapshotId)
   }
 derive instance newtypeCreateSnapshotResult :: Newtype CreateSnapshotResult _
 derive instance repGenericCreateSnapshotResult :: Generic CreateSnapshotResult _
@@ -672,12 +671,12 @@ instance encodeCreateSnapshotResult :: Encode CreateSnapshotResult where encode 
 
 -- | Constructs CreateSnapshotResult from required parameters
 newCreateSnapshotResult :: CreateSnapshotResult
-newCreateSnapshotResult  = CreateSnapshotResult { "SnapshotId": (NullOrUndefined Nothing) }
+newCreateSnapshotResult  = CreateSnapshotResult { "SnapshotId": Nothing }
 
 -- | Constructs CreateSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSnapshotResult' :: ( { "SnapshotId" :: NullOrUndefined (SnapshotId) } -> {"SnapshotId" :: NullOrUndefined (SnapshotId) } ) -> CreateSnapshotResult
-newCreateSnapshotResult'  customize = (CreateSnapshotResult <<< customize) { "SnapshotId": (NullOrUndefined Nothing) }
+newCreateSnapshotResult' :: ( { "SnapshotId" :: Maybe (SnapshotId) } -> {"SnapshotId" :: Maybe (SnapshotId) } ) -> CreateSnapshotResult
+newCreateSnapshotResult'  customize = (CreateSnapshotResult <<< customize) { "SnapshotId": Nothing }
 
 
 
@@ -687,8 +686,8 @@ newtype CreateTrustRequest = CreateTrustRequest
   , "RemoteDomainName" :: (RemoteDomainName)
   , "TrustPassword" :: (TrustPassword)
   , "TrustDirection" :: (TrustDirection)
-  , "TrustType" :: NullOrUndefined (TrustType)
-  , "ConditionalForwarderIpAddrs" :: NullOrUndefined (DnsIpAddrs)
+  , "TrustType" :: Maybe (TrustType)
+  , "ConditionalForwarderIpAddrs" :: Maybe (DnsIpAddrs)
   }
 derive instance newtypeCreateTrustRequest :: Newtype CreateTrustRequest _
 derive instance repGenericCreateTrustRequest :: Generic CreateTrustRequest _
@@ -698,18 +697,18 @@ instance encodeCreateTrustRequest :: Encode CreateTrustRequest where encode = ge
 
 -- | Constructs CreateTrustRequest from required parameters
 newCreateTrustRequest :: DirectoryId -> RemoteDomainName -> TrustDirection -> TrustPassword -> CreateTrustRequest
-newCreateTrustRequest _DirectoryId _RemoteDomainName _TrustDirection _TrustPassword = CreateTrustRequest { "DirectoryId": _DirectoryId, "RemoteDomainName": _RemoteDomainName, "TrustDirection": _TrustDirection, "TrustPassword": _TrustPassword, "ConditionalForwarderIpAddrs": (NullOrUndefined Nothing), "TrustType": (NullOrUndefined Nothing) }
+newCreateTrustRequest _DirectoryId _RemoteDomainName _TrustDirection _TrustPassword = CreateTrustRequest { "DirectoryId": _DirectoryId, "RemoteDomainName": _RemoteDomainName, "TrustDirection": _TrustDirection, "TrustPassword": _TrustPassword, "ConditionalForwarderIpAddrs": Nothing, "TrustType": Nothing }
 
 -- | Constructs CreateTrustRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTrustRequest' :: DirectoryId -> RemoteDomainName -> TrustDirection -> TrustPassword -> ( { "DirectoryId" :: (DirectoryId) , "RemoteDomainName" :: (RemoteDomainName) , "TrustPassword" :: (TrustPassword) , "TrustDirection" :: (TrustDirection) , "TrustType" :: NullOrUndefined (TrustType) , "ConditionalForwarderIpAddrs" :: NullOrUndefined (DnsIpAddrs) } -> {"DirectoryId" :: (DirectoryId) , "RemoteDomainName" :: (RemoteDomainName) , "TrustPassword" :: (TrustPassword) , "TrustDirection" :: (TrustDirection) , "TrustType" :: NullOrUndefined (TrustType) , "ConditionalForwarderIpAddrs" :: NullOrUndefined (DnsIpAddrs) } ) -> CreateTrustRequest
-newCreateTrustRequest' _DirectoryId _RemoteDomainName _TrustDirection _TrustPassword customize = (CreateTrustRequest <<< customize) { "DirectoryId": _DirectoryId, "RemoteDomainName": _RemoteDomainName, "TrustDirection": _TrustDirection, "TrustPassword": _TrustPassword, "ConditionalForwarderIpAddrs": (NullOrUndefined Nothing), "TrustType": (NullOrUndefined Nothing) }
+newCreateTrustRequest' :: DirectoryId -> RemoteDomainName -> TrustDirection -> TrustPassword -> ( { "DirectoryId" :: (DirectoryId) , "RemoteDomainName" :: (RemoteDomainName) , "TrustPassword" :: (TrustPassword) , "TrustDirection" :: (TrustDirection) , "TrustType" :: Maybe (TrustType) , "ConditionalForwarderIpAddrs" :: Maybe (DnsIpAddrs) } -> {"DirectoryId" :: (DirectoryId) , "RemoteDomainName" :: (RemoteDomainName) , "TrustPassword" :: (TrustPassword) , "TrustDirection" :: (TrustDirection) , "TrustType" :: Maybe (TrustType) , "ConditionalForwarderIpAddrs" :: Maybe (DnsIpAddrs) } ) -> CreateTrustRequest
+newCreateTrustRequest' _DirectoryId _RemoteDomainName _TrustDirection _TrustPassword customize = (CreateTrustRequest <<< customize) { "DirectoryId": _DirectoryId, "RemoteDomainName": _RemoteDomainName, "TrustDirection": _TrustDirection, "TrustPassword": _TrustPassword, "ConditionalForwarderIpAddrs": Nothing, "TrustType": Nothing }
 
 
 
 -- | <p>The result of a CreateTrust request.</p>
 newtype CreateTrustResult = CreateTrustResult 
-  { "TrustId" :: NullOrUndefined (TrustId)
+  { "TrustId" :: Maybe (TrustId)
   }
 derive instance newtypeCreateTrustResult :: Newtype CreateTrustResult _
 derive instance repGenericCreateTrustResult :: Generic CreateTrustResult _
@@ -719,12 +718,12 @@ instance encodeCreateTrustResult :: Encode CreateTrustResult where encode = gene
 
 -- | Constructs CreateTrustResult from required parameters
 newCreateTrustResult :: CreateTrustResult
-newCreateTrustResult  = CreateTrustResult { "TrustId": (NullOrUndefined Nothing) }
+newCreateTrustResult  = CreateTrustResult { "TrustId": Nothing }
 
 -- | Constructs CreateTrustResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTrustResult' :: ( { "TrustId" :: NullOrUndefined (TrustId) } -> {"TrustId" :: NullOrUndefined (TrustId) } ) -> CreateTrustResult
-newCreateTrustResult'  customize = (CreateTrustResult <<< customize) { "TrustId": (NullOrUndefined Nothing) }
+newCreateTrustResult' :: ( { "TrustId" :: Maybe (TrustId) } -> {"TrustId" :: Maybe (TrustId) } ) -> CreateTrustResult
+newCreateTrustResult'  customize = (CreateTrustResult <<< customize) { "TrustId": Nothing }
 
 
 
@@ -801,7 +800,7 @@ newDeleteDirectoryRequest' _DirectoryId customize = (DeleteDirectoryRequest <<< 
 
 -- | <p>Contains the results of the <a>DeleteDirectory</a> operation.</p>
 newtype DeleteDirectoryResult = DeleteDirectoryResult 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
+  { "DirectoryId" :: Maybe (DirectoryId)
   }
 derive instance newtypeDeleteDirectoryResult :: Newtype DeleteDirectoryResult _
 derive instance repGenericDeleteDirectoryResult :: Generic DeleteDirectoryResult _
@@ -811,12 +810,12 @@ instance encodeDeleteDirectoryResult :: Encode DeleteDirectoryResult where encod
 
 -- | Constructs DeleteDirectoryResult from required parameters
 newDeleteDirectoryResult :: DeleteDirectoryResult
-newDeleteDirectoryResult  = DeleteDirectoryResult { "DirectoryId": (NullOrUndefined Nothing) }
+newDeleteDirectoryResult  = DeleteDirectoryResult { "DirectoryId": Nothing }
 
 -- | Constructs DeleteDirectoryResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteDirectoryResult' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) } ) -> DeleteDirectoryResult
-newDeleteDirectoryResult'  customize = (DeleteDirectoryResult <<< customize) { "DirectoryId": (NullOrUndefined Nothing) }
+newDeleteDirectoryResult' :: ( { "DirectoryId" :: Maybe (DirectoryId) } -> {"DirectoryId" :: Maybe (DirectoryId) } ) -> DeleteDirectoryResult
+newDeleteDirectoryResult'  customize = (DeleteDirectoryResult <<< customize) { "DirectoryId": Nothing }
 
 
 
@@ -843,7 +842,7 @@ newDeleteSnapshotRequest' _SnapshotId customize = (DeleteSnapshotRequest <<< cus
 
 -- | <p>Contains the results of the <a>DeleteSnapshot</a> operation.</p>
 newtype DeleteSnapshotResult = DeleteSnapshotResult 
-  { "SnapshotId" :: NullOrUndefined (SnapshotId)
+  { "SnapshotId" :: Maybe (SnapshotId)
   }
 derive instance newtypeDeleteSnapshotResult :: Newtype DeleteSnapshotResult _
 derive instance repGenericDeleteSnapshotResult :: Generic DeleteSnapshotResult _
@@ -853,19 +852,19 @@ instance encodeDeleteSnapshotResult :: Encode DeleteSnapshotResult where encode 
 
 -- | Constructs DeleteSnapshotResult from required parameters
 newDeleteSnapshotResult :: DeleteSnapshotResult
-newDeleteSnapshotResult  = DeleteSnapshotResult { "SnapshotId": (NullOrUndefined Nothing) }
+newDeleteSnapshotResult  = DeleteSnapshotResult { "SnapshotId": Nothing }
 
 -- | Constructs DeleteSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteSnapshotResult' :: ( { "SnapshotId" :: NullOrUndefined (SnapshotId) } -> {"SnapshotId" :: NullOrUndefined (SnapshotId) } ) -> DeleteSnapshotResult
-newDeleteSnapshotResult'  customize = (DeleteSnapshotResult <<< customize) { "SnapshotId": (NullOrUndefined Nothing) }
+newDeleteSnapshotResult' :: ( { "SnapshotId" :: Maybe (SnapshotId) } -> {"SnapshotId" :: Maybe (SnapshotId) } ) -> DeleteSnapshotResult
+newDeleteSnapshotResult'  customize = (DeleteSnapshotResult <<< customize) { "SnapshotId": Nothing }
 
 
 
 -- | <p>Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the external domain.</p>
 newtype DeleteTrustRequest = DeleteTrustRequest 
   { "TrustId" :: (TrustId)
-  , "DeleteAssociatedConditionalForwarder" :: NullOrUndefined (DeleteAssociatedConditionalForwarder)
+  , "DeleteAssociatedConditionalForwarder" :: Maybe (DeleteAssociatedConditionalForwarder)
   }
 derive instance newtypeDeleteTrustRequest :: Newtype DeleteTrustRequest _
 derive instance repGenericDeleteTrustRequest :: Generic DeleteTrustRequest _
@@ -875,18 +874,18 @@ instance encodeDeleteTrustRequest :: Encode DeleteTrustRequest where encode = ge
 
 -- | Constructs DeleteTrustRequest from required parameters
 newDeleteTrustRequest :: TrustId -> DeleteTrustRequest
-newDeleteTrustRequest _TrustId = DeleteTrustRequest { "TrustId": _TrustId, "DeleteAssociatedConditionalForwarder": (NullOrUndefined Nothing) }
+newDeleteTrustRequest _TrustId = DeleteTrustRequest { "TrustId": _TrustId, "DeleteAssociatedConditionalForwarder": Nothing }
 
 -- | Constructs DeleteTrustRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteTrustRequest' :: TrustId -> ( { "TrustId" :: (TrustId) , "DeleteAssociatedConditionalForwarder" :: NullOrUndefined (DeleteAssociatedConditionalForwarder) } -> {"TrustId" :: (TrustId) , "DeleteAssociatedConditionalForwarder" :: NullOrUndefined (DeleteAssociatedConditionalForwarder) } ) -> DeleteTrustRequest
-newDeleteTrustRequest' _TrustId customize = (DeleteTrustRequest <<< customize) { "TrustId": _TrustId, "DeleteAssociatedConditionalForwarder": (NullOrUndefined Nothing) }
+newDeleteTrustRequest' :: TrustId -> ( { "TrustId" :: (TrustId) , "DeleteAssociatedConditionalForwarder" :: Maybe (DeleteAssociatedConditionalForwarder) } -> {"TrustId" :: (TrustId) , "DeleteAssociatedConditionalForwarder" :: Maybe (DeleteAssociatedConditionalForwarder) } ) -> DeleteTrustRequest
+newDeleteTrustRequest' _TrustId customize = (DeleteTrustRequest <<< customize) { "TrustId": _TrustId, "DeleteAssociatedConditionalForwarder": Nothing }
 
 
 
 -- | <p>The result of a DeleteTrust request.</p>
 newtype DeleteTrustResult = DeleteTrustResult 
-  { "TrustId" :: NullOrUndefined (TrustId)
+  { "TrustId" :: Maybe (TrustId)
   }
 derive instance newtypeDeleteTrustResult :: Newtype DeleteTrustResult _
 derive instance repGenericDeleteTrustResult :: Generic DeleteTrustResult _
@@ -896,12 +895,12 @@ instance encodeDeleteTrustResult :: Encode DeleteTrustResult where encode = gene
 
 -- | Constructs DeleteTrustResult from required parameters
 newDeleteTrustResult :: DeleteTrustResult
-newDeleteTrustResult  = DeleteTrustResult { "TrustId": (NullOrUndefined Nothing) }
+newDeleteTrustResult  = DeleteTrustResult { "TrustId": Nothing }
 
 -- | Constructs DeleteTrustResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteTrustResult' :: ( { "TrustId" :: NullOrUndefined (TrustId) } -> {"TrustId" :: NullOrUndefined (TrustId) } ) -> DeleteTrustResult
-newDeleteTrustResult'  customize = (DeleteTrustResult <<< customize) { "TrustId": (NullOrUndefined Nothing) }
+newDeleteTrustResult' :: ( { "TrustId" :: Maybe (TrustId) } -> {"TrustId" :: Maybe (TrustId) } ) -> DeleteTrustResult
+newDeleteTrustResult'  customize = (DeleteTrustResult <<< customize) { "TrustId": Nothing }
 
 
 
@@ -940,7 +939,7 @@ instance encodeDeregisterEventTopicResult :: Encode DeregisterEventTopicResult w
 -- | <p>Describes a conditional forwarder.</p>
 newtype DescribeConditionalForwardersRequest = DescribeConditionalForwardersRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "RemoteDomainNames" :: NullOrUndefined (RemoteDomainNames)
+  , "RemoteDomainNames" :: Maybe (RemoteDomainNames)
   }
 derive instance newtypeDescribeConditionalForwardersRequest :: Newtype DescribeConditionalForwardersRequest _
 derive instance repGenericDescribeConditionalForwardersRequest :: Generic DescribeConditionalForwardersRequest _
@@ -950,18 +949,18 @@ instance encodeDescribeConditionalForwardersRequest :: Encode DescribeConditiona
 
 -- | Constructs DescribeConditionalForwardersRequest from required parameters
 newDescribeConditionalForwardersRequest :: DirectoryId -> DescribeConditionalForwardersRequest
-newDescribeConditionalForwardersRequest _DirectoryId = DescribeConditionalForwardersRequest { "DirectoryId": _DirectoryId, "RemoteDomainNames": (NullOrUndefined Nothing) }
+newDescribeConditionalForwardersRequest _DirectoryId = DescribeConditionalForwardersRequest { "DirectoryId": _DirectoryId, "RemoteDomainNames": Nothing }
 
 -- | Constructs DescribeConditionalForwardersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConditionalForwardersRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "RemoteDomainNames" :: NullOrUndefined (RemoteDomainNames) } -> {"DirectoryId" :: (DirectoryId) , "RemoteDomainNames" :: NullOrUndefined (RemoteDomainNames) } ) -> DescribeConditionalForwardersRequest
-newDescribeConditionalForwardersRequest' _DirectoryId customize = (DescribeConditionalForwardersRequest <<< customize) { "DirectoryId": _DirectoryId, "RemoteDomainNames": (NullOrUndefined Nothing) }
+newDescribeConditionalForwardersRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "RemoteDomainNames" :: Maybe (RemoteDomainNames) } -> {"DirectoryId" :: (DirectoryId) , "RemoteDomainNames" :: Maybe (RemoteDomainNames) } ) -> DescribeConditionalForwardersRequest
+newDescribeConditionalForwardersRequest' _DirectoryId customize = (DescribeConditionalForwardersRequest <<< customize) { "DirectoryId": _DirectoryId, "RemoteDomainNames": Nothing }
 
 
 
 -- | <p>The result of a DescribeConditionalForwarder request.</p>
 newtype DescribeConditionalForwardersResult = DescribeConditionalForwardersResult 
-  { "ConditionalForwarders" :: NullOrUndefined (ConditionalForwarders)
+  { "ConditionalForwarders" :: Maybe (ConditionalForwarders)
   }
 derive instance newtypeDescribeConditionalForwardersResult :: Newtype DescribeConditionalForwardersResult _
 derive instance repGenericDescribeConditionalForwardersResult :: Generic DescribeConditionalForwardersResult _
@@ -971,20 +970,20 @@ instance encodeDescribeConditionalForwardersResult :: Encode DescribeConditional
 
 -- | Constructs DescribeConditionalForwardersResult from required parameters
 newDescribeConditionalForwardersResult :: DescribeConditionalForwardersResult
-newDescribeConditionalForwardersResult  = DescribeConditionalForwardersResult { "ConditionalForwarders": (NullOrUndefined Nothing) }
+newDescribeConditionalForwardersResult  = DescribeConditionalForwardersResult { "ConditionalForwarders": Nothing }
 
 -- | Constructs DescribeConditionalForwardersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConditionalForwardersResult' :: ( { "ConditionalForwarders" :: NullOrUndefined (ConditionalForwarders) } -> {"ConditionalForwarders" :: NullOrUndefined (ConditionalForwarders) } ) -> DescribeConditionalForwardersResult
-newDescribeConditionalForwardersResult'  customize = (DescribeConditionalForwardersResult <<< customize) { "ConditionalForwarders": (NullOrUndefined Nothing) }
+newDescribeConditionalForwardersResult' :: ( { "ConditionalForwarders" :: Maybe (ConditionalForwarders) } -> {"ConditionalForwarders" :: Maybe (ConditionalForwarders) } ) -> DescribeConditionalForwardersResult
+newDescribeConditionalForwardersResult'  customize = (DescribeConditionalForwardersResult <<< customize) { "ConditionalForwarders": Nothing }
 
 
 
 -- | <p>Contains the inputs for the <a>DescribeDirectories</a> operation.</p>
 newtype DescribeDirectoriesRequest = DescribeDirectoriesRequest 
-  { "DirectoryIds" :: NullOrUndefined (DirectoryIds)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  { "DirectoryIds" :: Maybe (DirectoryIds)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeDescribeDirectoriesRequest :: Newtype DescribeDirectoriesRequest _
 derive instance repGenericDescribeDirectoriesRequest :: Generic DescribeDirectoriesRequest _
@@ -994,19 +993,19 @@ instance encodeDescribeDirectoriesRequest :: Encode DescribeDirectoriesRequest w
 
 -- | Constructs DescribeDirectoriesRequest from required parameters
 newDescribeDirectoriesRequest :: DescribeDirectoriesRequest
-newDescribeDirectoriesRequest  = DescribeDirectoriesRequest { "DirectoryIds": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDirectoriesRequest  = DescribeDirectoriesRequest { "DirectoryIds": Nothing, "Limit": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeDirectoriesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDirectoriesRequest' :: ( { "DirectoryIds" :: NullOrUndefined (DirectoryIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"DirectoryIds" :: NullOrUndefined (DirectoryIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> DescribeDirectoriesRequest
-newDescribeDirectoriesRequest'  customize = (DescribeDirectoriesRequest <<< customize) { "DirectoryIds": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDirectoriesRequest' :: ( { "DirectoryIds" :: Maybe (DirectoryIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"DirectoryIds" :: Maybe (DirectoryIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> DescribeDirectoriesRequest
+newDescribeDirectoriesRequest'  customize = (DescribeDirectoriesRequest <<< customize) { "DirectoryIds": Nothing, "Limit": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Contains the results of the <a>DescribeDirectories</a> operation.</p>
 newtype DescribeDirectoriesResult = DescribeDirectoriesResult 
-  { "DirectoryDescriptions" :: NullOrUndefined (DirectoryDescriptions)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DirectoryDescriptions" :: Maybe (DirectoryDescriptions)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeDirectoriesResult :: Newtype DescribeDirectoriesResult _
 derive instance repGenericDescribeDirectoriesResult :: Generic DescribeDirectoriesResult _
@@ -1016,20 +1015,20 @@ instance encodeDescribeDirectoriesResult :: Encode DescribeDirectoriesResult whe
 
 -- | Constructs DescribeDirectoriesResult from required parameters
 newDescribeDirectoriesResult :: DescribeDirectoriesResult
-newDescribeDirectoriesResult  = DescribeDirectoriesResult { "DirectoryDescriptions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDirectoriesResult  = DescribeDirectoriesResult { "DirectoryDescriptions": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeDirectoriesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDirectoriesResult' :: ( { "DirectoryDescriptions" :: NullOrUndefined (DirectoryDescriptions) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DirectoryDescriptions" :: NullOrUndefined (DirectoryDescriptions) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeDirectoriesResult
-newDescribeDirectoriesResult'  customize = (DescribeDirectoriesResult <<< customize) { "DirectoryDescriptions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDirectoriesResult' :: ( { "DirectoryDescriptions" :: Maybe (DirectoryDescriptions) , "NextToken" :: Maybe (NextToken) } -> {"DirectoryDescriptions" :: Maybe (DirectoryDescriptions) , "NextToken" :: Maybe (NextToken) } ) -> DescribeDirectoriesResult
+newDescribeDirectoriesResult'  customize = (DescribeDirectoriesResult <<< customize) { "DirectoryDescriptions": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeDomainControllersRequest = DescribeDomainControllersRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "DomainControllerIds" :: NullOrUndefined (DomainControllerIds)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  , "DomainControllerIds" :: Maybe (DomainControllerIds)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeDescribeDomainControllersRequest :: Newtype DescribeDomainControllersRequest _
 derive instance repGenericDescribeDomainControllersRequest :: Generic DescribeDomainControllersRequest _
@@ -1039,18 +1038,18 @@ instance encodeDescribeDomainControllersRequest :: Encode DescribeDomainControll
 
 -- | Constructs DescribeDomainControllersRequest from required parameters
 newDescribeDomainControllersRequest :: DirectoryId -> DescribeDomainControllersRequest
-newDescribeDomainControllersRequest _DirectoryId = DescribeDomainControllersRequest { "DirectoryId": _DirectoryId, "DomainControllerIds": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDomainControllersRequest _DirectoryId = DescribeDomainControllersRequest { "DirectoryId": _DirectoryId, "DomainControllerIds": Nothing, "Limit": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeDomainControllersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDomainControllersRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "DomainControllerIds" :: NullOrUndefined (DomainControllerIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"DirectoryId" :: (DirectoryId) , "DomainControllerIds" :: NullOrUndefined (DomainControllerIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> DescribeDomainControllersRequest
-newDescribeDomainControllersRequest' _DirectoryId customize = (DescribeDomainControllersRequest <<< customize) { "DirectoryId": _DirectoryId, "DomainControllerIds": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDomainControllersRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "DomainControllerIds" :: Maybe (DomainControllerIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"DirectoryId" :: (DirectoryId) , "DomainControllerIds" :: Maybe (DomainControllerIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> DescribeDomainControllersRequest
+newDescribeDomainControllersRequest' _DirectoryId customize = (DescribeDomainControllersRequest <<< customize) { "DirectoryId": _DirectoryId, "DomainControllerIds": Nothing, "Limit": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeDomainControllersResult = DescribeDomainControllersResult 
-  { "DomainControllers" :: NullOrUndefined (DomainControllers)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DomainControllers" :: Maybe (DomainControllers)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeDomainControllersResult :: Newtype DescribeDomainControllersResult _
 derive instance repGenericDescribeDomainControllersResult :: Generic DescribeDomainControllersResult _
@@ -1060,19 +1059,19 @@ instance encodeDescribeDomainControllersResult :: Encode DescribeDomainControlle
 
 -- | Constructs DescribeDomainControllersResult from required parameters
 newDescribeDomainControllersResult :: DescribeDomainControllersResult
-newDescribeDomainControllersResult  = DescribeDomainControllersResult { "DomainControllers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDomainControllersResult  = DescribeDomainControllersResult { "DomainControllers": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeDomainControllersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDomainControllersResult' :: ( { "DomainControllers" :: NullOrUndefined (DomainControllers) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DomainControllers" :: NullOrUndefined (DomainControllers) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeDomainControllersResult
-newDescribeDomainControllersResult'  customize = (DescribeDomainControllersResult <<< customize) { "DomainControllers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDomainControllersResult' :: ( { "DomainControllers" :: Maybe (DomainControllers) , "NextToken" :: Maybe (NextToken) } -> {"DomainControllers" :: Maybe (DomainControllers) , "NextToken" :: Maybe (NextToken) } ) -> DescribeDomainControllersResult
+newDescribeDomainControllersResult'  customize = (DescribeDomainControllersResult <<< customize) { "DomainControllers": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Describes event topics.</p>
 newtype DescribeEventTopicsRequest = DescribeEventTopicsRequest 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "TopicNames" :: NullOrUndefined (TopicNames)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "TopicNames" :: Maybe (TopicNames)
   }
 derive instance newtypeDescribeEventTopicsRequest :: Newtype DescribeEventTopicsRequest _
 derive instance repGenericDescribeEventTopicsRequest :: Generic DescribeEventTopicsRequest _
@@ -1082,18 +1081,18 @@ instance encodeDescribeEventTopicsRequest :: Encode DescribeEventTopicsRequest w
 
 -- | Constructs DescribeEventTopicsRequest from required parameters
 newDescribeEventTopicsRequest :: DescribeEventTopicsRequest
-newDescribeEventTopicsRequest  = DescribeEventTopicsRequest { "DirectoryId": (NullOrUndefined Nothing), "TopicNames": (NullOrUndefined Nothing) }
+newDescribeEventTopicsRequest  = DescribeEventTopicsRequest { "DirectoryId": Nothing, "TopicNames": Nothing }
 
 -- | Constructs DescribeEventTopicsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventTopicsRequest' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "TopicNames" :: NullOrUndefined (TopicNames) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "TopicNames" :: NullOrUndefined (TopicNames) } ) -> DescribeEventTopicsRequest
-newDescribeEventTopicsRequest'  customize = (DescribeEventTopicsRequest <<< customize) { "DirectoryId": (NullOrUndefined Nothing), "TopicNames": (NullOrUndefined Nothing) }
+newDescribeEventTopicsRequest' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "TopicNames" :: Maybe (TopicNames) } -> {"DirectoryId" :: Maybe (DirectoryId) , "TopicNames" :: Maybe (TopicNames) } ) -> DescribeEventTopicsRequest
+newDescribeEventTopicsRequest'  customize = (DescribeEventTopicsRequest <<< customize) { "DirectoryId": Nothing, "TopicNames": Nothing }
 
 
 
 -- | <p>The result of a DescribeEventTopic request.</p>
 newtype DescribeEventTopicsResult = DescribeEventTopicsResult 
-  { "EventTopics" :: NullOrUndefined (EventTopics)
+  { "EventTopics" :: Maybe (EventTopics)
   }
 derive instance newtypeDescribeEventTopicsResult :: Newtype DescribeEventTopicsResult _
 derive instance repGenericDescribeEventTopicsResult :: Generic DescribeEventTopicsResult _
@@ -1103,21 +1102,21 @@ instance encodeDescribeEventTopicsResult :: Encode DescribeEventTopicsResult whe
 
 -- | Constructs DescribeEventTopicsResult from required parameters
 newDescribeEventTopicsResult :: DescribeEventTopicsResult
-newDescribeEventTopicsResult  = DescribeEventTopicsResult { "EventTopics": (NullOrUndefined Nothing) }
+newDescribeEventTopicsResult  = DescribeEventTopicsResult { "EventTopics": Nothing }
 
 -- | Constructs DescribeEventTopicsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventTopicsResult' :: ( { "EventTopics" :: NullOrUndefined (EventTopics) } -> {"EventTopics" :: NullOrUndefined (EventTopics) } ) -> DescribeEventTopicsResult
-newDescribeEventTopicsResult'  customize = (DescribeEventTopicsResult <<< customize) { "EventTopics": (NullOrUndefined Nothing) }
+newDescribeEventTopicsResult' :: ( { "EventTopics" :: Maybe (EventTopics) } -> {"EventTopics" :: Maybe (EventTopics) } ) -> DescribeEventTopicsResult
+newDescribeEventTopicsResult'  customize = (DescribeEventTopicsResult <<< customize) { "EventTopics": Nothing }
 
 
 
 -- | <p>Contains the inputs for the <a>DescribeSnapshots</a> operation.</p>
 newtype DescribeSnapshotsRequest = DescribeSnapshotsRequest 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "SnapshotIds" :: NullOrUndefined (SnapshotIds)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "SnapshotIds" :: Maybe (SnapshotIds)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeDescribeSnapshotsRequest :: Newtype DescribeSnapshotsRequest _
 derive instance repGenericDescribeSnapshotsRequest :: Generic DescribeSnapshotsRequest _
@@ -1127,19 +1126,19 @@ instance encodeDescribeSnapshotsRequest :: Encode DescribeSnapshotsRequest where
 
 -- | Constructs DescribeSnapshotsRequest from required parameters
 newDescribeSnapshotsRequest :: DescribeSnapshotsRequest
-newDescribeSnapshotsRequest  = DescribeSnapshotsRequest { "DirectoryId": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SnapshotIds": (NullOrUndefined Nothing) }
+newDescribeSnapshotsRequest  = DescribeSnapshotsRequest { "DirectoryId": Nothing, "Limit": Nothing, "NextToken": Nothing, "SnapshotIds": Nothing }
 
 -- | Constructs DescribeSnapshotsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSnapshotsRequest' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "SnapshotIds" :: NullOrUndefined (SnapshotIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "SnapshotIds" :: NullOrUndefined (SnapshotIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> DescribeSnapshotsRequest
-newDescribeSnapshotsRequest'  customize = (DescribeSnapshotsRequest <<< customize) { "DirectoryId": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SnapshotIds": (NullOrUndefined Nothing) }
+newDescribeSnapshotsRequest' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "SnapshotIds" :: Maybe (SnapshotIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"DirectoryId" :: Maybe (DirectoryId) , "SnapshotIds" :: Maybe (SnapshotIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> DescribeSnapshotsRequest
+newDescribeSnapshotsRequest'  customize = (DescribeSnapshotsRequest <<< customize) { "DirectoryId": Nothing, "Limit": Nothing, "NextToken": Nothing, "SnapshotIds": Nothing }
 
 
 
 -- | <p>Contains the results of the <a>DescribeSnapshots</a> operation.</p>
 newtype DescribeSnapshotsResult = DescribeSnapshotsResult 
-  { "Snapshots" :: NullOrUndefined (Snapshots)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Snapshots" :: Maybe (Snapshots)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeSnapshotsResult :: Newtype DescribeSnapshotsResult _
 derive instance repGenericDescribeSnapshotsResult :: Generic DescribeSnapshotsResult _
@@ -1149,21 +1148,21 @@ instance encodeDescribeSnapshotsResult :: Encode DescribeSnapshotsResult where e
 
 -- | Constructs DescribeSnapshotsResult from required parameters
 newDescribeSnapshotsResult :: DescribeSnapshotsResult
-newDescribeSnapshotsResult  = DescribeSnapshotsResult { "NextToken": (NullOrUndefined Nothing), "Snapshots": (NullOrUndefined Nothing) }
+newDescribeSnapshotsResult  = DescribeSnapshotsResult { "NextToken": Nothing, "Snapshots": Nothing }
 
 -- | Constructs DescribeSnapshotsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSnapshotsResult' :: ( { "Snapshots" :: NullOrUndefined (Snapshots) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Snapshots" :: NullOrUndefined (Snapshots) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeSnapshotsResult
-newDescribeSnapshotsResult'  customize = (DescribeSnapshotsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Snapshots": (NullOrUndefined Nothing) }
+newDescribeSnapshotsResult' :: ( { "Snapshots" :: Maybe (Snapshots) , "NextToken" :: Maybe (NextToken) } -> {"Snapshots" :: Maybe (Snapshots) , "NextToken" :: Maybe (NextToken) } ) -> DescribeSnapshotsResult
+newDescribeSnapshotsResult'  customize = (DescribeSnapshotsResult <<< customize) { "NextToken": Nothing, "Snapshots": Nothing }
 
 
 
 -- | <p>Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>
 newtype DescribeTrustsRequest = DescribeTrustsRequest 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "TrustIds" :: NullOrUndefined (TrustIds)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "TrustIds" :: Maybe (TrustIds)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeDescribeTrustsRequest :: Newtype DescribeTrustsRequest _
 derive instance repGenericDescribeTrustsRequest :: Generic DescribeTrustsRequest _
@@ -1173,19 +1172,19 @@ instance encodeDescribeTrustsRequest :: Encode DescribeTrustsRequest where encod
 
 -- | Constructs DescribeTrustsRequest from required parameters
 newDescribeTrustsRequest :: DescribeTrustsRequest
-newDescribeTrustsRequest  = DescribeTrustsRequest { "DirectoryId": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "TrustIds": (NullOrUndefined Nothing) }
+newDescribeTrustsRequest  = DescribeTrustsRequest { "DirectoryId": Nothing, "Limit": Nothing, "NextToken": Nothing, "TrustIds": Nothing }
 
 -- | Constructs DescribeTrustsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTrustsRequest' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "TrustIds" :: NullOrUndefined (TrustIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "TrustIds" :: NullOrUndefined (TrustIds) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> DescribeTrustsRequest
-newDescribeTrustsRequest'  customize = (DescribeTrustsRequest <<< customize) { "DirectoryId": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "TrustIds": (NullOrUndefined Nothing) }
+newDescribeTrustsRequest' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "TrustIds" :: Maybe (TrustIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"DirectoryId" :: Maybe (DirectoryId) , "TrustIds" :: Maybe (TrustIds) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> DescribeTrustsRequest
+newDescribeTrustsRequest'  customize = (DescribeTrustsRequest <<< customize) { "DirectoryId": Nothing, "Limit": Nothing, "NextToken": Nothing, "TrustIds": Nothing }
 
 
 
 -- | <p>The result of a DescribeTrust request.</p>
 newtype DescribeTrustsResult = DescribeTrustsResult 
-  { "Trusts" :: NullOrUndefined (Trusts)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Trusts" :: Maybe (Trusts)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeTrustsResult :: Newtype DescribeTrustsResult _
 derive instance repGenericDescribeTrustsResult :: Generic DescribeTrustsResult _
@@ -1195,12 +1194,12 @@ instance encodeDescribeTrustsResult :: Encode DescribeTrustsResult where encode 
 
 -- | Constructs DescribeTrustsResult from required parameters
 newDescribeTrustsResult :: DescribeTrustsResult
-newDescribeTrustsResult  = DescribeTrustsResult { "NextToken": (NullOrUndefined Nothing), "Trusts": (NullOrUndefined Nothing) }
+newDescribeTrustsResult  = DescribeTrustsResult { "NextToken": Nothing, "Trusts": Nothing }
 
 -- | Constructs DescribeTrustsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTrustsResult' :: ( { "Trusts" :: NullOrUndefined (Trusts) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Trusts" :: NullOrUndefined (Trusts) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeTrustsResult
-newDescribeTrustsResult'  customize = (DescribeTrustsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Trusts": (NullOrUndefined Nothing) }
+newDescribeTrustsResult' :: ( { "Trusts" :: Maybe (Trusts) , "NextToken" :: Maybe (NextToken) } -> {"Trusts" :: Maybe (Trusts) , "NextToken" :: Maybe (NextToken) } ) -> DescribeTrustsResult
+newDescribeTrustsResult'  customize = (DescribeTrustsResult <<< customize) { "NextToken": Nothing, "Trusts": Nothing }
 
 
 
@@ -1248,12 +1247,12 @@ newDirectoryConnectSettings' _CustomerDnsIps _CustomerUserName _SubnetIds _VpcId
 
 -- | <p>Contains information about an AD Connector directory.</p>
 newtype DirectoryConnectSettingsDescription = DirectoryConnectSettingsDescription 
-  { "VpcId" :: NullOrUndefined (VpcId)
-  , "SubnetIds" :: NullOrUndefined (SubnetIds)
-  , "CustomerUserName" :: NullOrUndefined (UserName)
-  , "SecurityGroupId" :: NullOrUndefined (SecurityGroupId)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones)
-  , "ConnectIps" :: NullOrUndefined (IpAddrs)
+  { "VpcId" :: Maybe (VpcId)
+  , "SubnetIds" :: Maybe (SubnetIds)
+  , "CustomerUserName" :: Maybe (UserName)
+  , "SecurityGroupId" :: Maybe (SecurityGroupId)
+  , "AvailabilityZones" :: Maybe (AvailabilityZones)
+  , "ConnectIps" :: Maybe (IpAddrs)
   }
 derive instance newtypeDirectoryConnectSettingsDescription :: Newtype DirectoryConnectSettingsDescription _
 derive instance repGenericDirectoryConnectSettingsDescription :: Generic DirectoryConnectSettingsDescription _
@@ -1263,37 +1262,37 @@ instance encodeDirectoryConnectSettingsDescription :: Encode DirectoryConnectSet
 
 -- | Constructs DirectoryConnectSettingsDescription from required parameters
 newDirectoryConnectSettingsDescription :: DirectoryConnectSettingsDescription
-newDirectoryConnectSettingsDescription  = DirectoryConnectSettingsDescription { "AvailabilityZones": (NullOrUndefined Nothing), "ConnectIps": (NullOrUndefined Nothing), "CustomerUserName": (NullOrUndefined Nothing), "SecurityGroupId": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDirectoryConnectSettingsDescription  = DirectoryConnectSettingsDescription { "AvailabilityZones": Nothing, "ConnectIps": Nothing, "CustomerUserName": Nothing, "SecurityGroupId": Nothing, "SubnetIds": Nothing, "VpcId": Nothing }
 
 -- | Constructs DirectoryConnectSettingsDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryConnectSettingsDescription' :: ( { "VpcId" :: NullOrUndefined (VpcId) , "SubnetIds" :: NullOrUndefined (SubnetIds) , "CustomerUserName" :: NullOrUndefined (UserName) , "SecurityGroupId" :: NullOrUndefined (SecurityGroupId) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) , "ConnectIps" :: NullOrUndefined (IpAddrs) } -> {"VpcId" :: NullOrUndefined (VpcId) , "SubnetIds" :: NullOrUndefined (SubnetIds) , "CustomerUserName" :: NullOrUndefined (UserName) , "SecurityGroupId" :: NullOrUndefined (SecurityGroupId) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) , "ConnectIps" :: NullOrUndefined (IpAddrs) } ) -> DirectoryConnectSettingsDescription
-newDirectoryConnectSettingsDescription'  customize = (DirectoryConnectSettingsDescription <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing), "ConnectIps": (NullOrUndefined Nothing), "CustomerUserName": (NullOrUndefined Nothing), "SecurityGroupId": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDirectoryConnectSettingsDescription' :: ( { "VpcId" :: Maybe (VpcId) , "SubnetIds" :: Maybe (SubnetIds) , "CustomerUserName" :: Maybe (UserName) , "SecurityGroupId" :: Maybe (SecurityGroupId) , "AvailabilityZones" :: Maybe (AvailabilityZones) , "ConnectIps" :: Maybe (IpAddrs) } -> {"VpcId" :: Maybe (VpcId) , "SubnetIds" :: Maybe (SubnetIds) , "CustomerUserName" :: Maybe (UserName) , "SecurityGroupId" :: Maybe (SecurityGroupId) , "AvailabilityZones" :: Maybe (AvailabilityZones) , "ConnectIps" :: Maybe (IpAddrs) } ) -> DirectoryConnectSettingsDescription
+newDirectoryConnectSettingsDescription'  customize = (DirectoryConnectSettingsDescription <<< customize) { "AvailabilityZones": Nothing, "ConnectIps": Nothing, "CustomerUserName": Nothing, "SecurityGroupId": Nothing, "SubnetIds": Nothing, "VpcId": Nothing }
 
 
 
 -- | <p>Contains information about an AWS Directory Service directory.</p>
 newtype DirectoryDescription = DirectoryDescription 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "Name" :: NullOrUndefined (DirectoryName)
-  , "ShortName" :: NullOrUndefined (DirectoryShortName)
-  , "Size" :: NullOrUndefined (DirectorySize)
-  , "Edition" :: NullOrUndefined (DirectoryEdition)
-  , "Alias" :: NullOrUndefined (AliasName)
-  , "AccessUrl" :: NullOrUndefined (AccessUrl)
-  , "Description" :: NullOrUndefined (Description)
-  , "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs)
-  , "Stage" :: NullOrUndefined (DirectoryStage)
-  , "LaunchTime" :: NullOrUndefined (LaunchTime)
-  , "StageLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime)
-  , "Type" :: NullOrUndefined (DirectoryType)
-  , "VpcSettings" :: NullOrUndefined (DirectoryVpcSettingsDescription)
-  , "ConnectSettings" :: NullOrUndefined (DirectoryConnectSettingsDescription)
-  , "RadiusSettings" :: NullOrUndefined (RadiusSettings)
-  , "RadiusStatus" :: NullOrUndefined (RadiusStatus)
-  , "StageReason" :: NullOrUndefined (StageReason)
-  , "SsoEnabled" :: NullOrUndefined (SsoEnabled)
-  , "DesiredNumberOfDomainControllers" :: NullOrUndefined (DesiredNumberOfDomainControllers)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "Name" :: Maybe (DirectoryName)
+  , "ShortName" :: Maybe (DirectoryShortName)
+  , "Size" :: Maybe (DirectorySize)
+  , "Edition" :: Maybe (DirectoryEdition)
+  , "Alias" :: Maybe (AliasName)
+  , "AccessUrl" :: Maybe (AccessUrl)
+  , "Description" :: Maybe (Description)
+  , "DnsIpAddrs" :: Maybe (DnsIpAddrs)
+  , "Stage" :: Maybe (DirectoryStage)
+  , "LaunchTime" :: Maybe (LaunchTime)
+  , "StageLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime)
+  , "Type" :: Maybe (DirectoryType)
+  , "VpcSettings" :: Maybe (DirectoryVpcSettingsDescription)
+  , "ConnectSettings" :: Maybe (DirectoryConnectSettingsDescription)
+  , "RadiusSettings" :: Maybe (RadiusSettings)
+  , "RadiusStatus" :: Maybe (RadiusStatus)
+  , "StageReason" :: Maybe (StageReason)
+  , "SsoEnabled" :: Maybe (SsoEnabled)
+  , "DesiredNumberOfDomainControllers" :: Maybe (DesiredNumberOfDomainControllers)
   }
 derive instance newtypeDirectoryDescription :: Newtype DirectoryDescription _
 derive instance repGenericDirectoryDescription :: Generic DirectoryDescription _
@@ -1303,12 +1302,12 @@ instance encodeDirectoryDescription :: Encode DirectoryDescription where encode 
 
 -- | Constructs DirectoryDescription from required parameters
 newDirectoryDescription :: DirectoryDescription
-newDirectoryDescription  = DirectoryDescription { "AccessUrl": (NullOrUndefined Nothing), "Alias": (NullOrUndefined Nothing), "ConnectSettings": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "DesiredNumberOfDomainControllers": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "DnsIpAddrs": (NullOrUndefined Nothing), "Edition": (NullOrUndefined Nothing), "LaunchTime": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RadiusSettings": (NullOrUndefined Nothing), "RadiusStatus": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "SsoEnabled": (NullOrUndefined Nothing), "Stage": (NullOrUndefined Nothing), "StageLastUpdatedDateTime": (NullOrUndefined Nothing), "StageReason": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "VpcSettings": (NullOrUndefined Nothing) }
+newDirectoryDescription  = DirectoryDescription { "AccessUrl": Nothing, "Alias": Nothing, "ConnectSettings": Nothing, "Description": Nothing, "DesiredNumberOfDomainControllers": Nothing, "DirectoryId": Nothing, "DnsIpAddrs": Nothing, "Edition": Nothing, "LaunchTime": Nothing, "Name": Nothing, "RadiusSettings": Nothing, "RadiusStatus": Nothing, "ShortName": Nothing, "Size": Nothing, "SsoEnabled": Nothing, "Stage": Nothing, "StageLastUpdatedDateTime": Nothing, "StageReason": Nothing, "Type": Nothing, "VpcSettings": Nothing }
 
 -- | Constructs DirectoryDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryDescription' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "Name" :: NullOrUndefined (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Size" :: NullOrUndefined (DirectorySize) , "Edition" :: NullOrUndefined (DirectoryEdition) , "Alias" :: NullOrUndefined (AliasName) , "AccessUrl" :: NullOrUndefined (AccessUrl) , "Description" :: NullOrUndefined (Description) , "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs) , "Stage" :: NullOrUndefined (DirectoryStage) , "LaunchTime" :: NullOrUndefined (LaunchTime) , "StageLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) , "Type" :: NullOrUndefined (DirectoryType) , "VpcSettings" :: NullOrUndefined (DirectoryVpcSettingsDescription) , "ConnectSettings" :: NullOrUndefined (DirectoryConnectSettingsDescription) , "RadiusSettings" :: NullOrUndefined (RadiusSettings) , "RadiusStatus" :: NullOrUndefined (RadiusStatus) , "StageReason" :: NullOrUndefined (StageReason) , "SsoEnabled" :: NullOrUndefined (SsoEnabled) , "DesiredNumberOfDomainControllers" :: NullOrUndefined (DesiredNumberOfDomainControllers) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "Name" :: NullOrUndefined (DirectoryName) , "ShortName" :: NullOrUndefined (DirectoryShortName) , "Size" :: NullOrUndefined (DirectorySize) , "Edition" :: NullOrUndefined (DirectoryEdition) , "Alias" :: NullOrUndefined (AliasName) , "AccessUrl" :: NullOrUndefined (AccessUrl) , "Description" :: NullOrUndefined (Description) , "DnsIpAddrs" :: NullOrUndefined (DnsIpAddrs) , "Stage" :: NullOrUndefined (DirectoryStage) , "LaunchTime" :: NullOrUndefined (LaunchTime) , "StageLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) , "Type" :: NullOrUndefined (DirectoryType) , "VpcSettings" :: NullOrUndefined (DirectoryVpcSettingsDescription) , "ConnectSettings" :: NullOrUndefined (DirectoryConnectSettingsDescription) , "RadiusSettings" :: NullOrUndefined (RadiusSettings) , "RadiusStatus" :: NullOrUndefined (RadiusStatus) , "StageReason" :: NullOrUndefined (StageReason) , "SsoEnabled" :: NullOrUndefined (SsoEnabled) , "DesiredNumberOfDomainControllers" :: NullOrUndefined (DesiredNumberOfDomainControllers) } ) -> DirectoryDescription
-newDirectoryDescription'  customize = (DirectoryDescription <<< customize) { "AccessUrl": (NullOrUndefined Nothing), "Alias": (NullOrUndefined Nothing), "ConnectSettings": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "DesiredNumberOfDomainControllers": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "DnsIpAddrs": (NullOrUndefined Nothing), "Edition": (NullOrUndefined Nothing), "LaunchTime": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RadiusSettings": (NullOrUndefined Nothing), "RadiusStatus": (NullOrUndefined Nothing), "ShortName": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "SsoEnabled": (NullOrUndefined Nothing), "Stage": (NullOrUndefined Nothing), "StageLastUpdatedDateTime": (NullOrUndefined Nothing), "StageReason": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "VpcSettings": (NullOrUndefined Nothing) }
+newDirectoryDescription' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "Name" :: Maybe (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Size" :: Maybe (DirectorySize) , "Edition" :: Maybe (DirectoryEdition) , "Alias" :: Maybe (AliasName) , "AccessUrl" :: Maybe (AccessUrl) , "Description" :: Maybe (Description) , "DnsIpAddrs" :: Maybe (DnsIpAddrs) , "Stage" :: Maybe (DirectoryStage) , "LaunchTime" :: Maybe (LaunchTime) , "StageLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) , "Type" :: Maybe (DirectoryType) , "VpcSettings" :: Maybe (DirectoryVpcSettingsDescription) , "ConnectSettings" :: Maybe (DirectoryConnectSettingsDescription) , "RadiusSettings" :: Maybe (RadiusSettings) , "RadiusStatus" :: Maybe (RadiusStatus) , "StageReason" :: Maybe (StageReason) , "SsoEnabled" :: Maybe (SsoEnabled) , "DesiredNumberOfDomainControllers" :: Maybe (DesiredNumberOfDomainControllers) } -> {"DirectoryId" :: Maybe (DirectoryId) , "Name" :: Maybe (DirectoryName) , "ShortName" :: Maybe (DirectoryShortName) , "Size" :: Maybe (DirectorySize) , "Edition" :: Maybe (DirectoryEdition) , "Alias" :: Maybe (AliasName) , "AccessUrl" :: Maybe (AccessUrl) , "Description" :: Maybe (Description) , "DnsIpAddrs" :: Maybe (DnsIpAddrs) , "Stage" :: Maybe (DirectoryStage) , "LaunchTime" :: Maybe (LaunchTime) , "StageLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) , "Type" :: Maybe (DirectoryType) , "VpcSettings" :: Maybe (DirectoryVpcSettingsDescription) , "ConnectSettings" :: Maybe (DirectoryConnectSettingsDescription) , "RadiusSettings" :: Maybe (RadiusSettings) , "RadiusStatus" :: Maybe (RadiusStatus) , "StageReason" :: Maybe (StageReason) , "SsoEnabled" :: Maybe (SsoEnabled) , "DesiredNumberOfDomainControllers" :: Maybe (DesiredNumberOfDomainControllers) } ) -> DirectoryDescription
+newDirectoryDescription'  customize = (DirectoryDescription <<< customize) { "AccessUrl": Nothing, "Alias": Nothing, "ConnectSettings": Nothing, "Description": Nothing, "DesiredNumberOfDomainControllers": Nothing, "DirectoryId": Nothing, "DnsIpAddrs": Nothing, "Edition": Nothing, "LaunchTime": Nothing, "Name": Nothing, "RadiusSettings": Nothing, "RadiusStatus": Nothing, "ShortName": Nothing, "Size": Nothing, "SsoEnabled": Nothing, "Stage": Nothing, "StageLastUpdatedDateTime": Nothing, "StageReason": Nothing, "Type": Nothing, "VpcSettings": Nothing }
 
 
 
@@ -1352,8 +1351,8 @@ instance encodeDirectoryIds :: Encode DirectoryIds where encode = genericEncode 
 
 -- | <p>The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.</p>
 newtype DirectoryLimitExceededException = DirectoryLimitExceededException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeDirectoryLimitExceededException :: Newtype DirectoryLimitExceededException _
 derive instance repGenericDirectoryLimitExceededException :: Generic DirectoryLimitExceededException _
@@ -1363,26 +1362,26 @@ instance encodeDirectoryLimitExceededException :: Encode DirectoryLimitExceededE
 
 -- | Constructs DirectoryLimitExceededException from required parameters
 newDirectoryLimitExceededException :: DirectoryLimitExceededException
-newDirectoryLimitExceededException  = DirectoryLimitExceededException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newDirectoryLimitExceededException  = DirectoryLimitExceededException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs DirectoryLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryLimitExceededException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> DirectoryLimitExceededException
-newDirectoryLimitExceededException'  customize = (DirectoryLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newDirectoryLimitExceededException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> DirectoryLimitExceededException
+newDirectoryLimitExceededException'  customize = (DirectoryLimitExceededException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>Contains directory limit information for a region.</p>
 newtype DirectoryLimits = DirectoryLimits 
-  { "CloudOnlyDirectoriesLimit" :: NullOrUndefined (Limit)
-  , "CloudOnlyDirectoriesCurrentCount" :: NullOrUndefined (Limit)
-  , "CloudOnlyDirectoriesLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached)
-  , "CloudOnlyMicrosoftADLimit" :: NullOrUndefined (Limit)
-  , "CloudOnlyMicrosoftADCurrentCount" :: NullOrUndefined (Limit)
-  , "CloudOnlyMicrosoftADLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached)
-  , "ConnectedDirectoriesLimit" :: NullOrUndefined (Limit)
-  , "ConnectedDirectoriesCurrentCount" :: NullOrUndefined (Limit)
-  , "ConnectedDirectoriesLimitReached" :: NullOrUndefined (ConnectedDirectoriesLimitReached)
+  { "CloudOnlyDirectoriesLimit" :: Maybe (Limit)
+  , "CloudOnlyDirectoriesCurrentCount" :: Maybe (Limit)
+  , "CloudOnlyDirectoriesLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached)
+  , "CloudOnlyMicrosoftADLimit" :: Maybe (Limit)
+  , "CloudOnlyMicrosoftADCurrentCount" :: Maybe (Limit)
+  , "CloudOnlyMicrosoftADLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached)
+  , "ConnectedDirectoriesLimit" :: Maybe (Limit)
+  , "ConnectedDirectoriesCurrentCount" :: Maybe (Limit)
+  , "ConnectedDirectoriesLimitReached" :: Maybe (ConnectedDirectoriesLimitReached)
   }
 derive instance newtypeDirectoryLimits :: Newtype DirectoryLimits _
 derive instance repGenericDirectoryLimits :: Generic DirectoryLimits _
@@ -1392,12 +1391,12 @@ instance encodeDirectoryLimits :: Encode DirectoryLimits where encode = genericE
 
 -- | Constructs DirectoryLimits from required parameters
 newDirectoryLimits :: DirectoryLimits
-newDirectoryLimits  = DirectoryLimits { "CloudOnlyDirectoriesCurrentCount": (NullOrUndefined Nothing), "CloudOnlyDirectoriesLimit": (NullOrUndefined Nothing), "CloudOnlyDirectoriesLimitReached": (NullOrUndefined Nothing), "CloudOnlyMicrosoftADCurrentCount": (NullOrUndefined Nothing), "CloudOnlyMicrosoftADLimit": (NullOrUndefined Nothing), "CloudOnlyMicrosoftADLimitReached": (NullOrUndefined Nothing), "ConnectedDirectoriesCurrentCount": (NullOrUndefined Nothing), "ConnectedDirectoriesLimit": (NullOrUndefined Nothing), "ConnectedDirectoriesLimitReached": (NullOrUndefined Nothing) }
+newDirectoryLimits  = DirectoryLimits { "CloudOnlyDirectoriesCurrentCount": Nothing, "CloudOnlyDirectoriesLimit": Nothing, "CloudOnlyDirectoriesLimitReached": Nothing, "CloudOnlyMicrosoftADCurrentCount": Nothing, "CloudOnlyMicrosoftADLimit": Nothing, "CloudOnlyMicrosoftADLimitReached": Nothing, "ConnectedDirectoriesCurrentCount": Nothing, "ConnectedDirectoriesLimit": Nothing, "ConnectedDirectoriesLimitReached": Nothing }
 
 -- | Constructs DirectoryLimits's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryLimits' :: ( { "CloudOnlyDirectoriesLimit" :: NullOrUndefined (Limit) , "CloudOnlyDirectoriesCurrentCount" :: NullOrUndefined (Limit) , "CloudOnlyDirectoriesLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached) , "CloudOnlyMicrosoftADLimit" :: NullOrUndefined (Limit) , "CloudOnlyMicrosoftADCurrentCount" :: NullOrUndefined (Limit) , "CloudOnlyMicrosoftADLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached) , "ConnectedDirectoriesLimit" :: NullOrUndefined (Limit) , "ConnectedDirectoriesCurrentCount" :: NullOrUndefined (Limit) , "ConnectedDirectoriesLimitReached" :: NullOrUndefined (ConnectedDirectoriesLimitReached) } -> {"CloudOnlyDirectoriesLimit" :: NullOrUndefined (Limit) , "CloudOnlyDirectoriesCurrentCount" :: NullOrUndefined (Limit) , "CloudOnlyDirectoriesLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached) , "CloudOnlyMicrosoftADLimit" :: NullOrUndefined (Limit) , "CloudOnlyMicrosoftADCurrentCount" :: NullOrUndefined (Limit) , "CloudOnlyMicrosoftADLimitReached" :: NullOrUndefined (CloudOnlyDirectoriesLimitReached) , "ConnectedDirectoriesLimit" :: NullOrUndefined (Limit) , "ConnectedDirectoriesCurrentCount" :: NullOrUndefined (Limit) , "ConnectedDirectoriesLimitReached" :: NullOrUndefined (ConnectedDirectoriesLimitReached) } ) -> DirectoryLimits
-newDirectoryLimits'  customize = (DirectoryLimits <<< customize) { "CloudOnlyDirectoriesCurrentCount": (NullOrUndefined Nothing), "CloudOnlyDirectoriesLimit": (NullOrUndefined Nothing), "CloudOnlyDirectoriesLimitReached": (NullOrUndefined Nothing), "CloudOnlyMicrosoftADCurrentCount": (NullOrUndefined Nothing), "CloudOnlyMicrosoftADLimit": (NullOrUndefined Nothing), "CloudOnlyMicrosoftADLimitReached": (NullOrUndefined Nothing), "ConnectedDirectoriesCurrentCount": (NullOrUndefined Nothing), "ConnectedDirectoriesLimit": (NullOrUndefined Nothing), "ConnectedDirectoriesLimitReached": (NullOrUndefined Nothing) }
+newDirectoryLimits' :: ( { "CloudOnlyDirectoriesLimit" :: Maybe (Limit) , "CloudOnlyDirectoriesCurrentCount" :: Maybe (Limit) , "CloudOnlyDirectoriesLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached) , "CloudOnlyMicrosoftADLimit" :: Maybe (Limit) , "CloudOnlyMicrosoftADCurrentCount" :: Maybe (Limit) , "CloudOnlyMicrosoftADLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached) , "ConnectedDirectoriesLimit" :: Maybe (Limit) , "ConnectedDirectoriesCurrentCount" :: Maybe (Limit) , "ConnectedDirectoriesLimitReached" :: Maybe (ConnectedDirectoriesLimitReached) } -> {"CloudOnlyDirectoriesLimit" :: Maybe (Limit) , "CloudOnlyDirectoriesCurrentCount" :: Maybe (Limit) , "CloudOnlyDirectoriesLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached) , "CloudOnlyMicrosoftADLimit" :: Maybe (Limit) , "CloudOnlyMicrosoftADCurrentCount" :: Maybe (Limit) , "CloudOnlyMicrosoftADLimitReached" :: Maybe (CloudOnlyDirectoriesLimitReached) , "ConnectedDirectoriesLimit" :: Maybe (Limit) , "ConnectedDirectoriesCurrentCount" :: Maybe (Limit) , "ConnectedDirectoriesLimitReached" :: Maybe (ConnectedDirectoriesLimitReached) } ) -> DirectoryLimits
+newDirectoryLimits'  customize = (DirectoryLimits <<< customize) { "CloudOnlyDirectoriesCurrentCount": Nothing, "CloudOnlyDirectoriesLimit": Nothing, "CloudOnlyDirectoriesLimitReached": Nothing, "CloudOnlyMicrosoftADCurrentCount": Nothing, "CloudOnlyMicrosoftADLimit": Nothing, "CloudOnlyMicrosoftADLimitReached": Nothing, "ConnectedDirectoriesCurrentCount": Nothing, "ConnectedDirectoriesLimit": Nothing, "ConnectedDirectoriesLimitReached": Nothing }
 
 
 
@@ -1448,8 +1447,8 @@ instance encodeDirectoryType :: Encode DirectoryType where encode = genericEncod
 
 -- | <p>The specified directory is unavailable or could not be found.</p>
 newtype DirectoryUnavailableException = DirectoryUnavailableException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeDirectoryUnavailableException :: Newtype DirectoryUnavailableException _
 derive instance repGenericDirectoryUnavailableException :: Generic DirectoryUnavailableException _
@@ -1459,12 +1458,12 @@ instance encodeDirectoryUnavailableException :: Encode DirectoryUnavailableExcep
 
 -- | Constructs DirectoryUnavailableException from required parameters
 newDirectoryUnavailableException :: DirectoryUnavailableException
-newDirectoryUnavailableException  = DirectoryUnavailableException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newDirectoryUnavailableException  = DirectoryUnavailableException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs DirectoryUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryUnavailableException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> DirectoryUnavailableException
-newDirectoryUnavailableException'  customize = (DirectoryUnavailableException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newDirectoryUnavailableException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> DirectoryUnavailableException
+newDirectoryUnavailableException'  customize = (DirectoryUnavailableException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -1492,10 +1491,10 @@ newDirectoryVpcSettings' _SubnetIds _VpcId customize = (DirectoryVpcSettings <<<
 
 -- | <p>Contains information about the directory.</p>
 newtype DirectoryVpcSettingsDescription = DirectoryVpcSettingsDescription 
-  { "VpcId" :: NullOrUndefined (VpcId)
-  , "SubnetIds" :: NullOrUndefined (SubnetIds)
-  , "SecurityGroupId" :: NullOrUndefined (SecurityGroupId)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones)
+  { "VpcId" :: Maybe (VpcId)
+  , "SubnetIds" :: Maybe (SubnetIds)
+  , "SecurityGroupId" :: Maybe (SecurityGroupId)
+  , "AvailabilityZones" :: Maybe (AvailabilityZones)
   }
 derive instance newtypeDirectoryVpcSettingsDescription :: Newtype DirectoryVpcSettingsDescription _
 derive instance repGenericDirectoryVpcSettingsDescription :: Generic DirectoryVpcSettingsDescription _
@@ -1505,12 +1504,12 @@ instance encodeDirectoryVpcSettingsDescription :: Encode DirectoryVpcSettingsDes
 
 -- | Constructs DirectoryVpcSettingsDescription from required parameters
 newDirectoryVpcSettingsDescription :: DirectoryVpcSettingsDescription
-newDirectoryVpcSettingsDescription  = DirectoryVpcSettingsDescription { "AvailabilityZones": (NullOrUndefined Nothing), "SecurityGroupId": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDirectoryVpcSettingsDescription  = DirectoryVpcSettingsDescription { "AvailabilityZones": Nothing, "SecurityGroupId": Nothing, "SubnetIds": Nothing, "VpcId": Nothing }
 
 -- | Constructs DirectoryVpcSettingsDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryVpcSettingsDescription' :: ( { "VpcId" :: NullOrUndefined (VpcId) , "SubnetIds" :: NullOrUndefined (SubnetIds) , "SecurityGroupId" :: NullOrUndefined (SecurityGroupId) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) } -> {"VpcId" :: NullOrUndefined (VpcId) , "SubnetIds" :: NullOrUndefined (SubnetIds) , "SecurityGroupId" :: NullOrUndefined (SecurityGroupId) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) } ) -> DirectoryVpcSettingsDescription
-newDirectoryVpcSettingsDescription'  customize = (DirectoryVpcSettingsDescription <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing), "SecurityGroupId": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDirectoryVpcSettingsDescription' :: ( { "VpcId" :: Maybe (VpcId) , "SubnetIds" :: Maybe (SubnetIds) , "SecurityGroupId" :: Maybe (SecurityGroupId) , "AvailabilityZones" :: Maybe (AvailabilityZones) } -> {"VpcId" :: Maybe (VpcId) , "SubnetIds" :: Maybe (SubnetIds) , "SecurityGroupId" :: Maybe (SecurityGroupId) , "AvailabilityZones" :: Maybe (AvailabilityZones) } ) -> DirectoryVpcSettingsDescription
+newDirectoryVpcSettingsDescription'  customize = (DirectoryVpcSettingsDescription <<< customize) { "AvailabilityZones": Nothing, "SecurityGroupId": Nothing, "SubnetIds": Nothing, "VpcId": Nothing }
 
 
 
@@ -1548,8 +1547,8 @@ instance encodeDisableRadiusResult :: Encode DisableRadiusResult where encode = 
 -- | <p>Contains the inputs for the <a>DisableSso</a> operation.</p>
 newtype DisableSsoRequest = DisableSsoRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "UserName" :: NullOrUndefined (UserName)
-  , "Password" :: NullOrUndefined (ConnectPassword)
+  , "UserName" :: Maybe (UserName)
+  , "Password" :: Maybe (ConnectPassword)
   }
 derive instance newtypeDisableSsoRequest :: Newtype DisableSsoRequest _
 derive instance repGenericDisableSsoRequest :: Generic DisableSsoRequest _
@@ -1559,12 +1558,12 @@ instance encodeDisableSsoRequest :: Encode DisableSsoRequest where encode = gene
 
 -- | Constructs DisableSsoRequest from required parameters
 newDisableSsoRequest :: DirectoryId -> DisableSsoRequest
-newDisableSsoRequest _DirectoryId = DisableSsoRequest { "DirectoryId": _DirectoryId, "Password": (NullOrUndefined Nothing), "UserName": (NullOrUndefined Nothing) }
+newDisableSsoRequest _DirectoryId = DisableSsoRequest { "DirectoryId": _DirectoryId, "Password": Nothing, "UserName": Nothing }
 
 -- | Constructs DisableSsoRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDisableSsoRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "UserName" :: NullOrUndefined (UserName) , "Password" :: NullOrUndefined (ConnectPassword) } -> {"DirectoryId" :: (DirectoryId) , "UserName" :: NullOrUndefined (UserName) , "Password" :: NullOrUndefined (ConnectPassword) } ) -> DisableSsoRequest
-newDisableSsoRequest' _DirectoryId customize = (DisableSsoRequest <<< customize) { "DirectoryId": _DirectoryId, "Password": (NullOrUndefined Nothing), "UserName": (NullOrUndefined Nothing) }
+newDisableSsoRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "UserName" :: Maybe (UserName) , "Password" :: Maybe (ConnectPassword) } -> {"DirectoryId" :: (DirectoryId) , "UserName" :: Maybe (UserName) , "Password" :: Maybe (ConnectPassword) } ) -> DisableSsoRequest
+newDisableSsoRequest' _DirectoryId customize = (DisableSsoRequest <<< customize) { "DirectoryId": _DirectoryId, "Password": Nothing, "UserName": Nothing }
 
 
 
@@ -1589,16 +1588,16 @@ instance encodeDnsIpAddrs :: Encode DnsIpAddrs where encode = genericEncode opti
 
 -- | <p>Contains information about the domain controllers for a specified directory.</p>
 newtype DomainController = DomainController 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "DomainControllerId" :: NullOrUndefined (DomainControllerId)
-  , "DnsIpAddr" :: NullOrUndefined (IpAddr)
-  , "VpcId" :: NullOrUndefined (VpcId)
-  , "SubnetId" :: NullOrUndefined (SubnetId)
-  , "AvailabilityZone" :: NullOrUndefined (AvailabilityZone)
-  , "Status" :: NullOrUndefined (DomainControllerStatus)
-  , "StatusReason" :: NullOrUndefined (DomainControllerStatusReason)
-  , "LaunchTime" :: NullOrUndefined (LaunchTime)
-  , "StatusLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "DomainControllerId" :: Maybe (DomainControllerId)
+  , "DnsIpAddr" :: Maybe (IpAddr)
+  , "VpcId" :: Maybe (VpcId)
+  , "SubnetId" :: Maybe (SubnetId)
+  , "AvailabilityZone" :: Maybe (AvailabilityZone)
+  , "Status" :: Maybe (DomainControllerStatus)
+  , "StatusReason" :: Maybe (DomainControllerStatusReason)
+  , "LaunchTime" :: Maybe (LaunchTime)
+  , "StatusLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime)
   }
 derive instance newtypeDomainController :: Newtype DomainController _
 derive instance repGenericDomainController :: Generic DomainController _
@@ -1608,12 +1607,12 @@ instance encodeDomainController :: Encode DomainController where encode = generi
 
 -- | Constructs DomainController from required parameters
 newDomainController :: DomainController
-newDomainController  = DomainController { "AvailabilityZone": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "DnsIpAddr": (NullOrUndefined Nothing), "DomainControllerId": (NullOrUndefined Nothing), "LaunchTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusLastUpdatedDateTime": (NullOrUndefined Nothing), "StatusReason": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDomainController  = DomainController { "AvailabilityZone": Nothing, "DirectoryId": Nothing, "DnsIpAddr": Nothing, "DomainControllerId": Nothing, "LaunchTime": Nothing, "Status": Nothing, "StatusLastUpdatedDateTime": Nothing, "StatusReason": Nothing, "SubnetId": Nothing, "VpcId": Nothing }
 
 -- | Constructs DomainController's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDomainController' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "DomainControllerId" :: NullOrUndefined (DomainControllerId) , "DnsIpAddr" :: NullOrUndefined (IpAddr) , "VpcId" :: NullOrUndefined (VpcId) , "SubnetId" :: NullOrUndefined (SubnetId) , "AvailabilityZone" :: NullOrUndefined (AvailabilityZone) , "Status" :: NullOrUndefined (DomainControllerStatus) , "StatusReason" :: NullOrUndefined (DomainControllerStatusReason) , "LaunchTime" :: NullOrUndefined (LaunchTime) , "StatusLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "DomainControllerId" :: NullOrUndefined (DomainControllerId) , "DnsIpAddr" :: NullOrUndefined (IpAddr) , "VpcId" :: NullOrUndefined (VpcId) , "SubnetId" :: NullOrUndefined (SubnetId) , "AvailabilityZone" :: NullOrUndefined (AvailabilityZone) , "Status" :: NullOrUndefined (DomainControllerStatus) , "StatusReason" :: NullOrUndefined (DomainControllerStatusReason) , "LaunchTime" :: NullOrUndefined (LaunchTime) , "StatusLastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) } ) -> DomainController
-newDomainController'  customize = (DomainController <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "DnsIpAddr": (NullOrUndefined Nothing), "DomainControllerId": (NullOrUndefined Nothing), "LaunchTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusLastUpdatedDateTime": (NullOrUndefined Nothing), "StatusReason": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDomainController' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "DomainControllerId" :: Maybe (DomainControllerId) , "DnsIpAddr" :: Maybe (IpAddr) , "VpcId" :: Maybe (VpcId) , "SubnetId" :: Maybe (SubnetId) , "AvailabilityZone" :: Maybe (AvailabilityZone) , "Status" :: Maybe (DomainControllerStatus) , "StatusReason" :: Maybe (DomainControllerStatusReason) , "LaunchTime" :: Maybe (LaunchTime) , "StatusLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) } -> {"DirectoryId" :: Maybe (DirectoryId) , "DomainControllerId" :: Maybe (DomainControllerId) , "DnsIpAddr" :: Maybe (IpAddr) , "VpcId" :: Maybe (VpcId) , "SubnetId" :: Maybe (SubnetId) , "AvailabilityZone" :: Maybe (AvailabilityZone) , "Status" :: Maybe (DomainControllerStatus) , "StatusReason" :: Maybe (DomainControllerStatusReason) , "LaunchTime" :: Maybe (LaunchTime) , "StatusLastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) } ) -> DomainController
+newDomainController'  customize = (DomainController <<< customize) { "AvailabilityZone": Nothing, "DirectoryId": Nothing, "DnsIpAddr": Nothing, "DomainControllerId": Nothing, "LaunchTime": Nothing, "Status": Nothing, "StatusLastUpdatedDateTime": Nothing, "StatusReason": Nothing, "SubnetId": Nothing, "VpcId": Nothing }
 
 
 
@@ -1637,8 +1636,8 @@ instance encodeDomainControllerIds :: Encode DomainControllerIds where encode = 
 
 -- | <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
 newtype DomainControllerLimitExceededException = DomainControllerLimitExceededException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeDomainControllerLimitExceededException :: Newtype DomainControllerLimitExceededException _
 derive instance repGenericDomainControllerLimitExceededException :: Generic DomainControllerLimitExceededException _
@@ -1648,12 +1647,12 @@ instance encodeDomainControllerLimitExceededException :: Encode DomainController
 
 -- | Constructs DomainControllerLimitExceededException from required parameters
 newDomainControllerLimitExceededException :: DomainControllerLimitExceededException
-newDomainControllerLimitExceededException  = DomainControllerLimitExceededException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newDomainControllerLimitExceededException  = DomainControllerLimitExceededException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs DomainControllerLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDomainControllerLimitExceededException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> DomainControllerLimitExceededException
-newDomainControllerLimitExceededException'  customize = (DomainControllerLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newDomainControllerLimitExceededException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> DomainControllerLimitExceededException
+newDomainControllerLimitExceededException'  customize = (DomainControllerLimitExceededException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -1719,8 +1718,8 @@ instance encodeEnableRadiusResult :: Encode EnableRadiusResult where encode = ge
 -- | <p>Contains the inputs for the <a>EnableSso</a> operation.</p>
 newtype EnableSsoRequest = EnableSsoRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "UserName" :: NullOrUndefined (UserName)
-  , "Password" :: NullOrUndefined (ConnectPassword)
+  , "UserName" :: Maybe (UserName)
+  , "Password" :: Maybe (ConnectPassword)
   }
 derive instance newtypeEnableSsoRequest :: Newtype EnableSsoRequest _
 derive instance repGenericEnableSsoRequest :: Generic EnableSsoRequest _
@@ -1730,12 +1729,12 @@ instance encodeEnableSsoRequest :: Encode EnableSsoRequest where encode = generi
 
 -- | Constructs EnableSsoRequest from required parameters
 newEnableSsoRequest :: DirectoryId -> EnableSsoRequest
-newEnableSsoRequest _DirectoryId = EnableSsoRequest { "DirectoryId": _DirectoryId, "Password": (NullOrUndefined Nothing), "UserName": (NullOrUndefined Nothing) }
+newEnableSsoRequest _DirectoryId = EnableSsoRequest { "DirectoryId": _DirectoryId, "Password": Nothing, "UserName": Nothing }
 
 -- | Constructs EnableSsoRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnableSsoRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "UserName" :: NullOrUndefined (UserName) , "Password" :: NullOrUndefined (ConnectPassword) } -> {"DirectoryId" :: (DirectoryId) , "UserName" :: NullOrUndefined (UserName) , "Password" :: NullOrUndefined (ConnectPassword) } ) -> EnableSsoRequest
-newEnableSsoRequest' _DirectoryId customize = (EnableSsoRequest <<< customize) { "DirectoryId": _DirectoryId, "Password": (NullOrUndefined Nothing), "UserName": (NullOrUndefined Nothing) }
+newEnableSsoRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "UserName" :: Maybe (UserName) , "Password" :: Maybe (ConnectPassword) } -> {"DirectoryId" :: (DirectoryId) , "UserName" :: Maybe (UserName) , "Password" :: Maybe (ConnectPassword) } ) -> EnableSsoRequest
+newEnableSsoRequest' _DirectoryId customize = (EnableSsoRequest <<< customize) { "DirectoryId": _DirectoryId, "Password": Nothing, "UserName": Nothing }
 
 
 
@@ -1760,8 +1759,8 @@ instance encodeEndDateTime :: Encode EndDateTime where encode = genericEncode op
 
 -- | <p>The specified entity already exists.</p>
 newtype EntityAlreadyExistsException = EntityAlreadyExistsException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeEntityAlreadyExistsException :: Newtype EntityAlreadyExistsException _
 derive instance repGenericEntityAlreadyExistsException :: Generic EntityAlreadyExistsException _
@@ -1771,19 +1770,19 @@ instance encodeEntityAlreadyExistsException :: Encode EntityAlreadyExistsExcepti
 
 -- | Constructs EntityAlreadyExistsException from required parameters
 newEntityAlreadyExistsException :: EntityAlreadyExistsException
-newEntityAlreadyExistsException  = EntityAlreadyExistsException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newEntityAlreadyExistsException  = EntityAlreadyExistsException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs EntityAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> EntityAlreadyExistsException
-newEntityAlreadyExistsException'  customize = (EntityAlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newEntityAlreadyExistsException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> EntityAlreadyExistsException
+newEntityAlreadyExistsException'  customize = (EntityAlreadyExistsException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>The specified entity could not be found.</p>
 newtype EntityDoesNotExistException = EntityDoesNotExistException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeEntityDoesNotExistException :: Newtype EntityDoesNotExistException _
 derive instance repGenericEntityDoesNotExistException :: Generic EntityDoesNotExistException _
@@ -1793,22 +1792,22 @@ instance encodeEntityDoesNotExistException :: Encode EntityDoesNotExistException
 
 -- | Constructs EntityDoesNotExistException from required parameters
 newEntityDoesNotExistException :: EntityDoesNotExistException
-newEntityDoesNotExistException  = EntityDoesNotExistException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newEntityDoesNotExistException  = EntityDoesNotExistException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs EntityDoesNotExistException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityDoesNotExistException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> EntityDoesNotExistException
-newEntityDoesNotExistException'  customize = (EntityDoesNotExistException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newEntityDoesNotExistException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> EntityDoesNotExistException
+newEntityDoesNotExistException'  customize = (EntityDoesNotExistException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>Information about SNS topic and AWS Directory Service directory associations.</p>
 newtype EventTopic = EventTopic 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "TopicName" :: NullOrUndefined (TopicName)
-  , "TopicArn" :: NullOrUndefined (TopicArn)
-  , "CreatedDateTime" :: NullOrUndefined (CreatedDateTime)
-  , "Status" :: NullOrUndefined (TopicStatus)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "TopicName" :: Maybe (TopicName)
+  , "TopicArn" :: Maybe (TopicArn)
+  , "CreatedDateTime" :: Maybe (CreatedDateTime)
+  , "Status" :: Maybe (TopicStatus)
   }
 derive instance newtypeEventTopic :: Newtype EventTopic _
 derive instance repGenericEventTopic :: Generic EventTopic _
@@ -1818,12 +1817,12 @@ instance encodeEventTopic :: Encode EventTopic where encode = genericEncode opti
 
 -- | Constructs EventTopic from required parameters
 newEventTopic :: EventTopic
-newEventTopic  = EventTopic { "CreatedDateTime": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing), "TopicName": (NullOrUndefined Nothing) }
+newEventTopic  = EventTopic { "CreatedDateTime": Nothing, "DirectoryId": Nothing, "Status": Nothing, "TopicArn": Nothing, "TopicName": Nothing }
 
 -- | Constructs EventTopic's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventTopic' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "TopicName" :: NullOrUndefined (TopicName) , "TopicArn" :: NullOrUndefined (TopicArn) , "CreatedDateTime" :: NullOrUndefined (CreatedDateTime) , "Status" :: NullOrUndefined (TopicStatus) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "TopicName" :: NullOrUndefined (TopicName) , "TopicArn" :: NullOrUndefined (TopicArn) , "CreatedDateTime" :: NullOrUndefined (CreatedDateTime) , "Status" :: NullOrUndefined (TopicStatus) } ) -> EventTopic
-newEventTopic'  customize = (EventTopic <<< customize) { "CreatedDateTime": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing), "TopicName": (NullOrUndefined Nothing) }
+newEventTopic' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "TopicName" :: Maybe (TopicName) , "TopicArn" :: Maybe (TopicArn) , "CreatedDateTime" :: Maybe (CreatedDateTime) , "Status" :: Maybe (TopicStatus) } -> {"DirectoryId" :: Maybe (DirectoryId) , "TopicName" :: Maybe (TopicName) , "TopicArn" :: Maybe (TopicArn) , "CreatedDateTime" :: Maybe (CreatedDateTime) , "Status" :: Maybe (TopicStatus) } ) -> EventTopic
+newEventTopic'  customize = (EventTopic <<< customize) { "CreatedDateTime": Nothing, "DirectoryId": Nothing, "Status": Nothing, "TopicArn": Nothing, "TopicName": Nothing }
 
 
 
@@ -1858,7 +1857,7 @@ instance encodeGetDirectoryLimitsRequest :: Encode GetDirectoryLimitsRequest whe
 
 -- | <p>Contains the results of the <a>GetDirectoryLimits</a> operation.</p>
 newtype GetDirectoryLimitsResult = GetDirectoryLimitsResult 
-  { "DirectoryLimits" :: NullOrUndefined (DirectoryLimits)
+  { "DirectoryLimits" :: Maybe (DirectoryLimits)
   }
 derive instance newtypeGetDirectoryLimitsResult :: Newtype GetDirectoryLimitsResult _
 derive instance repGenericGetDirectoryLimitsResult :: Generic GetDirectoryLimitsResult _
@@ -1868,12 +1867,12 @@ instance encodeGetDirectoryLimitsResult :: Encode GetDirectoryLimitsResult where
 
 -- | Constructs GetDirectoryLimitsResult from required parameters
 newGetDirectoryLimitsResult :: GetDirectoryLimitsResult
-newGetDirectoryLimitsResult  = GetDirectoryLimitsResult { "DirectoryLimits": (NullOrUndefined Nothing) }
+newGetDirectoryLimitsResult  = GetDirectoryLimitsResult { "DirectoryLimits": Nothing }
 
 -- | Constructs GetDirectoryLimitsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDirectoryLimitsResult' :: ( { "DirectoryLimits" :: NullOrUndefined (DirectoryLimits) } -> {"DirectoryLimits" :: NullOrUndefined (DirectoryLimits) } ) -> GetDirectoryLimitsResult
-newGetDirectoryLimitsResult'  customize = (GetDirectoryLimitsResult <<< customize) { "DirectoryLimits": (NullOrUndefined Nothing) }
+newGetDirectoryLimitsResult' :: ( { "DirectoryLimits" :: Maybe (DirectoryLimits) } -> {"DirectoryLimits" :: Maybe (DirectoryLimits) } ) -> GetDirectoryLimitsResult
+newGetDirectoryLimitsResult'  customize = (GetDirectoryLimitsResult <<< customize) { "DirectoryLimits": Nothing }
 
 
 
@@ -1900,7 +1899,7 @@ newGetSnapshotLimitsRequest' _DirectoryId customize = (GetSnapshotLimitsRequest 
 
 -- | <p>Contains the results of the <a>GetSnapshotLimits</a> operation.</p>
 newtype GetSnapshotLimitsResult = GetSnapshotLimitsResult 
-  { "SnapshotLimits" :: NullOrUndefined (SnapshotLimits)
+  { "SnapshotLimits" :: Maybe (SnapshotLimits)
   }
 derive instance newtypeGetSnapshotLimitsResult :: Newtype GetSnapshotLimitsResult _
 derive instance repGenericGetSnapshotLimitsResult :: Generic GetSnapshotLimitsResult _
@@ -1910,19 +1909,19 @@ instance encodeGetSnapshotLimitsResult :: Encode GetSnapshotLimitsResult where e
 
 -- | Constructs GetSnapshotLimitsResult from required parameters
 newGetSnapshotLimitsResult :: GetSnapshotLimitsResult
-newGetSnapshotLimitsResult  = GetSnapshotLimitsResult { "SnapshotLimits": (NullOrUndefined Nothing) }
+newGetSnapshotLimitsResult  = GetSnapshotLimitsResult { "SnapshotLimits": Nothing }
 
 -- | Constructs GetSnapshotLimitsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetSnapshotLimitsResult' :: ( { "SnapshotLimits" :: NullOrUndefined (SnapshotLimits) } -> {"SnapshotLimits" :: NullOrUndefined (SnapshotLimits) } ) -> GetSnapshotLimitsResult
-newGetSnapshotLimitsResult'  customize = (GetSnapshotLimitsResult <<< customize) { "SnapshotLimits": (NullOrUndefined Nothing) }
+newGetSnapshotLimitsResult' :: ( { "SnapshotLimits" :: Maybe (SnapshotLimits) } -> {"SnapshotLimits" :: Maybe (SnapshotLimits) } ) -> GetSnapshotLimitsResult
+newGetSnapshotLimitsResult'  customize = (GetSnapshotLimitsResult <<< customize) { "SnapshotLimits": Nothing }
 
 
 
 -- | <p>The account does not have sufficient permission to perform the operation.</p>
 newtype InsufficientPermissionsException = InsufficientPermissionsException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeInsufficientPermissionsException :: Newtype InsufficientPermissionsException _
 derive instance repGenericInsufficientPermissionsException :: Generic InsufficientPermissionsException _
@@ -1932,19 +1931,19 @@ instance encodeInsufficientPermissionsException :: Encode InsufficientPermission
 
 -- | Constructs InsufficientPermissionsException from required parameters
 newInsufficientPermissionsException :: InsufficientPermissionsException
-newInsufficientPermissionsException  = InsufficientPermissionsException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newInsufficientPermissionsException  = InsufficientPermissionsException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs InsufficientPermissionsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInsufficientPermissionsException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> InsufficientPermissionsException
-newInsufficientPermissionsException'  customize = (InsufficientPermissionsException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newInsufficientPermissionsException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> InsufficientPermissionsException
+newInsufficientPermissionsException'  customize = (InsufficientPermissionsException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>The <i>NextToken</i> value is not valid.</p>
 newtype InvalidNextTokenException = InvalidNextTokenException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeInvalidNextTokenException :: Newtype InvalidNextTokenException _
 derive instance repGenericInvalidNextTokenException :: Generic InvalidNextTokenException _
@@ -1954,19 +1953,19 @@ instance encodeInvalidNextTokenException :: Encode InvalidNextTokenException whe
 
 -- | Constructs InvalidNextTokenException from required parameters
 newInvalidNextTokenException :: InvalidNextTokenException
-newInvalidNextTokenException  = InvalidNextTokenException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newInvalidNextTokenException  = InvalidNextTokenException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs InvalidNextTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNextTokenException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> InvalidNextTokenException
-newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newInvalidNextTokenException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> InvalidNextTokenException
+newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>One or more parameters are not valid.</p>
 newtype InvalidParameterException = InvalidParameterException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeInvalidParameterException :: Newtype InvalidParameterException _
 derive instance repGenericInvalidParameterException :: Generic InvalidParameterException _
@@ -1976,12 +1975,12 @@ instance encodeInvalidParameterException :: Encode InvalidParameterException whe
 
 -- | Constructs InvalidParameterException from required parameters
 newInvalidParameterException :: InvalidParameterException
-newInvalidParameterException  = InvalidParameterException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newInvalidParameterException  = InvalidParameterException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs InvalidParameterException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> InvalidParameterException
-newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newInvalidParameterException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> InvalidParameterException
+newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -2005,8 +2004,8 @@ instance encodeIpAddrs :: Encode IpAddrs where encode = genericEncode options
 
 -- | <p>IP address block. This is often the address block of the DNS server used for your on-premises domain. </p>
 newtype IpRoute = IpRoute 
-  { "CidrIp" :: NullOrUndefined (CidrIp)
-  , "Description" :: NullOrUndefined (Description)
+  { "CidrIp" :: Maybe (CidrIp)
+  , "Description" :: Maybe (Description)
   }
 derive instance newtypeIpRoute :: Newtype IpRoute _
 derive instance repGenericIpRoute :: Generic IpRoute _
@@ -2016,23 +2015,23 @@ instance encodeIpRoute :: Encode IpRoute where encode = genericEncode options
 
 -- | Constructs IpRoute from required parameters
 newIpRoute :: IpRoute
-newIpRoute  = IpRoute { "CidrIp": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newIpRoute  = IpRoute { "CidrIp": Nothing, "Description": Nothing }
 
 -- | Constructs IpRoute's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIpRoute' :: ( { "CidrIp" :: NullOrUndefined (CidrIp) , "Description" :: NullOrUndefined (Description) } -> {"CidrIp" :: NullOrUndefined (CidrIp) , "Description" :: NullOrUndefined (Description) } ) -> IpRoute
-newIpRoute'  customize = (IpRoute <<< customize) { "CidrIp": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newIpRoute' :: ( { "CidrIp" :: Maybe (CidrIp) , "Description" :: Maybe (Description) } -> {"CidrIp" :: Maybe (CidrIp) , "Description" :: Maybe (Description) } ) -> IpRoute
+newIpRoute'  customize = (IpRoute <<< customize) { "CidrIp": Nothing, "Description": Nothing }
 
 
 
 -- | <p>Information about one or more IP address blocks.</p>
 newtype IpRouteInfo = IpRouteInfo 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "CidrIp" :: NullOrUndefined (CidrIp)
-  , "IpRouteStatusMsg" :: NullOrUndefined (IpRouteStatusMsg)
-  , "AddedDateTime" :: NullOrUndefined (AddedDateTime)
-  , "IpRouteStatusReason" :: NullOrUndefined (IpRouteStatusReason)
-  , "Description" :: NullOrUndefined (Description)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "CidrIp" :: Maybe (CidrIp)
+  , "IpRouteStatusMsg" :: Maybe (IpRouteStatusMsg)
+  , "AddedDateTime" :: Maybe (AddedDateTime)
+  , "IpRouteStatusReason" :: Maybe (IpRouteStatusReason)
+  , "Description" :: Maybe (Description)
   }
 derive instance newtypeIpRouteInfo :: Newtype IpRouteInfo _
 derive instance repGenericIpRouteInfo :: Generic IpRouteInfo _
@@ -2042,19 +2041,19 @@ instance encodeIpRouteInfo :: Encode IpRouteInfo where encode = genericEncode op
 
 -- | Constructs IpRouteInfo from required parameters
 newIpRouteInfo :: IpRouteInfo
-newIpRouteInfo  = IpRouteInfo { "AddedDateTime": (NullOrUndefined Nothing), "CidrIp": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "IpRouteStatusMsg": (NullOrUndefined Nothing), "IpRouteStatusReason": (NullOrUndefined Nothing) }
+newIpRouteInfo  = IpRouteInfo { "AddedDateTime": Nothing, "CidrIp": Nothing, "Description": Nothing, "DirectoryId": Nothing, "IpRouteStatusMsg": Nothing, "IpRouteStatusReason": Nothing }
 
 -- | Constructs IpRouteInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIpRouteInfo' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "CidrIp" :: NullOrUndefined (CidrIp) , "IpRouteStatusMsg" :: NullOrUndefined (IpRouteStatusMsg) , "AddedDateTime" :: NullOrUndefined (AddedDateTime) , "IpRouteStatusReason" :: NullOrUndefined (IpRouteStatusReason) , "Description" :: NullOrUndefined (Description) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "CidrIp" :: NullOrUndefined (CidrIp) , "IpRouteStatusMsg" :: NullOrUndefined (IpRouteStatusMsg) , "AddedDateTime" :: NullOrUndefined (AddedDateTime) , "IpRouteStatusReason" :: NullOrUndefined (IpRouteStatusReason) , "Description" :: NullOrUndefined (Description) } ) -> IpRouteInfo
-newIpRouteInfo'  customize = (IpRouteInfo <<< customize) { "AddedDateTime": (NullOrUndefined Nothing), "CidrIp": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "IpRouteStatusMsg": (NullOrUndefined Nothing), "IpRouteStatusReason": (NullOrUndefined Nothing) }
+newIpRouteInfo' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "CidrIp" :: Maybe (CidrIp) , "IpRouteStatusMsg" :: Maybe (IpRouteStatusMsg) , "AddedDateTime" :: Maybe (AddedDateTime) , "IpRouteStatusReason" :: Maybe (IpRouteStatusReason) , "Description" :: Maybe (Description) } -> {"DirectoryId" :: Maybe (DirectoryId) , "CidrIp" :: Maybe (CidrIp) , "IpRouteStatusMsg" :: Maybe (IpRouteStatusMsg) , "AddedDateTime" :: Maybe (AddedDateTime) , "IpRouteStatusReason" :: Maybe (IpRouteStatusReason) , "Description" :: Maybe (Description) } ) -> IpRouteInfo
+newIpRouteInfo'  customize = (IpRouteInfo <<< customize) { "AddedDateTime": Nothing, "CidrIp": Nothing, "Description": Nothing, "DirectoryId": Nothing, "IpRouteStatusMsg": Nothing, "IpRouteStatusReason": Nothing }
 
 
 
 -- | <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
 newtype IpRouteLimitExceededException = IpRouteLimitExceededException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeIpRouteLimitExceededException :: Newtype IpRouteLimitExceededException _
 derive instance repGenericIpRouteLimitExceededException :: Generic IpRouteLimitExceededException _
@@ -2064,12 +2063,12 @@ instance encodeIpRouteLimitExceededException :: Encode IpRouteLimitExceededExcep
 
 -- | Constructs IpRouteLimitExceededException from required parameters
 newIpRouteLimitExceededException :: IpRouteLimitExceededException
-newIpRouteLimitExceededException  = IpRouteLimitExceededException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newIpRouteLimitExceededException  = IpRouteLimitExceededException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs IpRouteLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIpRouteLimitExceededException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> IpRouteLimitExceededException
-newIpRouteLimitExceededException'  customize = (IpRouteLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newIpRouteLimitExceededException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> IpRouteLimitExceededException
+newIpRouteLimitExceededException'  customize = (IpRouteLimitExceededException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -2147,8 +2146,8 @@ instance encodeLimit :: Encode Limit where encode = genericEncode options
 
 newtype ListIpRoutesRequest = ListIpRoutesRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeListIpRoutesRequest :: Newtype ListIpRoutesRequest _
 derive instance repGenericListIpRoutesRequest :: Generic ListIpRoutesRequest _
@@ -2158,18 +2157,18 @@ instance encodeListIpRoutesRequest :: Encode ListIpRoutesRequest where encode = 
 
 -- | Constructs ListIpRoutesRequest from required parameters
 newListIpRoutesRequest :: DirectoryId -> ListIpRoutesRequest
-newListIpRoutesRequest _DirectoryId = ListIpRoutesRequest { "DirectoryId": _DirectoryId, "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIpRoutesRequest _DirectoryId = ListIpRoutesRequest { "DirectoryId": _DirectoryId, "Limit": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIpRoutesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIpRoutesRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"DirectoryId" :: (DirectoryId) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> ListIpRoutesRequest
-newListIpRoutesRequest' _DirectoryId customize = (ListIpRoutesRequest <<< customize) { "DirectoryId": _DirectoryId, "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIpRoutesRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"DirectoryId" :: (DirectoryId) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> ListIpRoutesRequest
+newListIpRoutesRequest' _DirectoryId customize = (ListIpRoutesRequest <<< customize) { "DirectoryId": _DirectoryId, "Limit": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListIpRoutesResult = ListIpRoutesResult 
-  { "IpRoutesInfo" :: NullOrUndefined (IpRoutesInfo)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "IpRoutesInfo" :: Maybe (IpRoutesInfo)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListIpRoutesResult :: Newtype ListIpRoutesResult _
 derive instance repGenericListIpRoutesResult :: Generic ListIpRoutesResult _
@@ -2179,19 +2178,19 @@ instance encodeListIpRoutesResult :: Encode ListIpRoutesResult where encode = ge
 
 -- | Constructs ListIpRoutesResult from required parameters
 newListIpRoutesResult :: ListIpRoutesResult
-newListIpRoutesResult  = ListIpRoutesResult { "IpRoutesInfo": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIpRoutesResult  = ListIpRoutesResult { "IpRoutesInfo": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIpRoutesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIpRoutesResult' :: ( { "IpRoutesInfo" :: NullOrUndefined (IpRoutesInfo) , "NextToken" :: NullOrUndefined (NextToken) } -> {"IpRoutesInfo" :: NullOrUndefined (IpRoutesInfo) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListIpRoutesResult
-newListIpRoutesResult'  customize = (ListIpRoutesResult <<< customize) { "IpRoutesInfo": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIpRoutesResult' :: ( { "IpRoutesInfo" :: Maybe (IpRoutesInfo) , "NextToken" :: Maybe (NextToken) } -> {"IpRoutesInfo" :: Maybe (IpRoutesInfo) , "NextToken" :: Maybe (NextToken) } ) -> ListIpRoutesResult
+newListIpRoutesResult'  customize = (ListIpRoutesResult <<< customize) { "IpRoutesInfo": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListSchemaExtensionsRequest = ListSchemaExtensionsRequest 
   { "DirectoryId" :: (DirectoryId)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeListSchemaExtensionsRequest :: Newtype ListSchemaExtensionsRequest _
 derive instance repGenericListSchemaExtensionsRequest :: Generic ListSchemaExtensionsRequest _
@@ -2201,18 +2200,18 @@ instance encodeListSchemaExtensionsRequest :: Encode ListSchemaExtensionsRequest
 
 -- | Constructs ListSchemaExtensionsRequest from required parameters
 newListSchemaExtensionsRequest :: DirectoryId -> ListSchemaExtensionsRequest
-newListSchemaExtensionsRequest _DirectoryId = ListSchemaExtensionsRequest { "DirectoryId": _DirectoryId, "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListSchemaExtensionsRequest _DirectoryId = ListSchemaExtensionsRequest { "DirectoryId": _DirectoryId, "Limit": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListSchemaExtensionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSchemaExtensionsRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"DirectoryId" :: (DirectoryId) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> ListSchemaExtensionsRequest
-newListSchemaExtensionsRequest' _DirectoryId customize = (ListSchemaExtensionsRequest <<< customize) { "DirectoryId": _DirectoryId, "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListSchemaExtensionsRequest' :: DirectoryId -> ( { "DirectoryId" :: (DirectoryId) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"DirectoryId" :: (DirectoryId) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> ListSchemaExtensionsRequest
+newListSchemaExtensionsRequest' _DirectoryId customize = (ListSchemaExtensionsRequest <<< customize) { "DirectoryId": _DirectoryId, "Limit": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListSchemaExtensionsResult = ListSchemaExtensionsResult 
-  { "SchemaExtensionsInfo" :: NullOrUndefined (SchemaExtensionsInfo)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "SchemaExtensionsInfo" :: Maybe (SchemaExtensionsInfo)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListSchemaExtensionsResult :: Newtype ListSchemaExtensionsResult _
 derive instance repGenericListSchemaExtensionsResult :: Generic ListSchemaExtensionsResult _
@@ -2222,19 +2221,19 @@ instance encodeListSchemaExtensionsResult :: Encode ListSchemaExtensionsResult w
 
 -- | Constructs ListSchemaExtensionsResult from required parameters
 newListSchemaExtensionsResult :: ListSchemaExtensionsResult
-newListSchemaExtensionsResult  = ListSchemaExtensionsResult { "NextToken": (NullOrUndefined Nothing), "SchemaExtensionsInfo": (NullOrUndefined Nothing) }
+newListSchemaExtensionsResult  = ListSchemaExtensionsResult { "NextToken": Nothing, "SchemaExtensionsInfo": Nothing }
 
 -- | Constructs ListSchemaExtensionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSchemaExtensionsResult' :: ( { "SchemaExtensionsInfo" :: NullOrUndefined (SchemaExtensionsInfo) , "NextToken" :: NullOrUndefined (NextToken) } -> {"SchemaExtensionsInfo" :: NullOrUndefined (SchemaExtensionsInfo) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListSchemaExtensionsResult
-newListSchemaExtensionsResult'  customize = (ListSchemaExtensionsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "SchemaExtensionsInfo": (NullOrUndefined Nothing) }
+newListSchemaExtensionsResult' :: ( { "SchemaExtensionsInfo" :: Maybe (SchemaExtensionsInfo) , "NextToken" :: Maybe (NextToken) } -> {"SchemaExtensionsInfo" :: Maybe (SchemaExtensionsInfo) , "NextToken" :: Maybe (NextToken) } ) -> ListSchemaExtensionsResult
+newListSchemaExtensionsResult'  customize = (ListSchemaExtensionsResult <<< customize) { "NextToken": Nothing, "SchemaExtensionsInfo": Nothing }
 
 
 
 newtype ListTagsForResourceRequest = ListTagsForResourceRequest 
   { "ResourceId" :: (ResourceId)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Limit" :: NullOrUndefined (Limit)
+  , "NextToken" :: Maybe (NextToken)
+  , "Limit" :: Maybe (Limit)
   }
 derive instance newtypeListTagsForResourceRequest :: Newtype ListTagsForResourceRequest _
 derive instance repGenericListTagsForResourceRequest :: Generic ListTagsForResourceRequest _
@@ -2244,18 +2243,18 @@ instance encodeListTagsForResourceRequest :: Encode ListTagsForResourceRequest w
 
 -- | Constructs ListTagsForResourceRequest from required parameters
 newListTagsForResourceRequest :: ResourceId -> ListTagsForResourceRequest
-newListTagsForResourceRequest _ResourceId = ListTagsForResourceRequest { "ResourceId": _ResourceId, "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTagsForResourceRequest _ResourceId = ListTagsForResourceRequest { "ResourceId": _ResourceId, "Limit": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTagsForResourceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForResourceRequest' :: ResourceId -> ( { "ResourceId" :: (ResourceId) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } -> {"ResourceId" :: (ResourceId) , "NextToken" :: NullOrUndefined (NextToken) , "Limit" :: NullOrUndefined (Limit) } ) -> ListTagsForResourceRequest
-newListTagsForResourceRequest' _ResourceId customize = (ListTagsForResourceRequest <<< customize) { "ResourceId": _ResourceId, "Limit": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTagsForResourceRequest' :: ResourceId -> ( { "ResourceId" :: (ResourceId) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } -> {"ResourceId" :: (ResourceId) , "NextToken" :: Maybe (NextToken) , "Limit" :: Maybe (Limit) } ) -> ListTagsForResourceRequest
+newListTagsForResourceRequest' _ResourceId customize = (ListTagsForResourceRequest <<< customize) { "ResourceId": _ResourceId, "Limit": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListTagsForResourceResult = ListTagsForResourceResult 
-  { "Tags" :: NullOrUndefined (Tags)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Tags" :: Maybe (Tags)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListTagsForResourceResult :: Newtype ListTagsForResourceResult _
 derive instance repGenericListTagsForResourceResult :: Generic ListTagsForResourceResult _
@@ -2265,12 +2264,12 @@ instance encodeListTagsForResourceResult :: Encode ListTagsForResourceResult whe
 
 -- | Constructs ListTagsForResourceResult from required parameters
 newListTagsForResourceResult :: ListTagsForResourceResult
-newListTagsForResourceResult  = ListTagsForResourceResult { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsForResourceResult  = ListTagsForResourceResult { "NextToken": Nothing, "Tags": Nothing }
 
 -- | Constructs ListTagsForResourceResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForResourceResult' :: ( { "Tags" :: NullOrUndefined (Tags) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Tags" :: NullOrUndefined (Tags) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListTagsForResourceResult
-newListTagsForResourceResult'  customize = (ListTagsForResourceResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsForResourceResult' :: ( { "Tags" :: Maybe (Tags) , "NextToken" :: Maybe (NextToken) } -> {"Tags" :: Maybe (Tags) , "NextToken" :: Maybe (NextToken) } ) -> ListTagsForResourceResult
+newListTagsForResourceResult'  customize = (ListTagsForResourceResult <<< customize) { "NextToken": Nothing, "Tags": Nothing }
 
 
 
@@ -2348,14 +2347,14 @@ instance encodeRadiusRetries :: Encode RadiusRetries where encode = genericEncod
 
 -- | <p>Contains information about a Remote Authentication Dial In User Service (RADIUS) server.</p>
 newtype RadiusSettings = RadiusSettings 
-  { "RadiusServers" :: NullOrUndefined (Servers)
-  , "RadiusPort" :: NullOrUndefined (PortNumber)
-  , "RadiusTimeout" :: NullOrUndefined (RadiusTimeout)
-  , "RadiusRetries" :: NullOrUndefined (RadiusRetries)
-  , "SharedSecret" :: NullOrUndefined (RadiusSharedSecret)
-  , "AuthenticationProtocol" :: NullOrUndefined (RadiusAuthenticationProtocol)
-  , "DisplayLabel" :: NullOrUndefined (RadiusDisplayLabel)
-  , "UseSameUsername" :: NullOrUndefined (UseSameUsername)
+  { "RadiusServers" :: Maybe (Servers)
+  , "RadiusPort" :: Maybe (PortNumber)
+  , "RadiusTimeout" :: Maybe (RadiusTimeout)
+  , "RadiusRetries" :: Maybe (RadiusRetries)
+  , "SharedSecret" :: Maybe (RadiusSharedSecret)
+  , "AuthenticationProtocol" :: Maybe (RadiusAuthenticationProtocol)
+  , "DisplayLabel" :: Maybe (RadiusDisplayLabel)
+  , "UseSameUsername" :: Maybe (UseSameUsername)
   }
 derive instance newtypeRadiusSettings :: Newtype RadiusSettings _
 derive instance repGenericRadiusSettings :: Generic RadiusSettings _
@@ -2365,12 +2364,12 @@ instance encodeRadiusSettings :: Encode RadiusSettings where encode = genericEnc
 
 -- | Constructs RadiusSettings from required parameters
 newRadiusSettings :: RadiusSettings
-newRadiusSettings  = RadiusSettings { "AuthenticationProtocol": (NullOrUndefined Nothing), "DisplayLabel": (NullOrUndefined Nothing), "RadiusPort": (NullOrUndefined Nothing), "RadiusRetries": (NullOrUndefined Nothing), "RadiusServers": (NullOrUndefined Nothing), "RadiusTimeout": (NullOrUndefined Nothing), "SharedSecret": (NullOrUndefined Nothing), "UseSameUsername": (NullOrUndefined Nothing) }
+newRadiusSettings  = RadiusSettings { "AuthenticationProtocol": Nothing, "DisplayLabel": Nothing, "RadiusPort": Nothing, "RadiusRetries": Nothing, "RadiusServers": Nothing, "RadiusTimeout": Nothing, "SharedSecret": Nothing, "UseSameUsername": Nothing }
 
 -- | Constructs RadiusSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRadiusSettings' :: ( { "RadiusServers" :: NullOrUndefined (Servers) , "RadiusPort" :: NullOrUndefined (PortNumber) , "RadiusTimeout" :: NullOrUndefined (RadiusTimeout) , "RadiusRetries" :: NullOrUndefined (RadiusRetries) , "SharedSecret" :: NullOrUndefined (RadiusSharedSecret) , "AuthenticationProtocol" :: NullOrUndefined (RadiusAuthenticationProtocol) , "DisplayLabel" :: NullOrUndefined (RadiusDisplayLabel) , "UseSameUsername" :: NullOrUndefined (UseSameUsername) } -> {"RadiusServers" :: NullOrUndefined (Servers) , "RadiusPort" :: NullOrUndefined (PortNumber) , "RadiusTimeout" :: NullOrUndefined (RadiusTimeout) , "RadiusRetries" :: NullOrUndefined (RadiusRetries) , "SharedSecret" :: NullOrUndefined (RadiusSharedSecret) , "AuthenticationProtocol" :: NullOrUndefined (RadiusAuthenticationProtocol) , "DisplayLabel" :: NullOrUndefined (RadiusDisplayLabel) , "UseSameUsername" :: NullOrUndefined (UseSameUsername) } ) -> RadiusSettings
-newRadiusSettings'  customize = (RadiusSettings <<< customize) { "AuthenticationProtocol": (NullOrUndefined Nothing), "DisplayLabel": (NullOrUndefined Nothing), "RadiusPort": (NullOrUndefined Nothing), "RadiusRetries": (NullOrUndefined Nothing), "RadiusServers": (NullOrUndefined Nothing), "RadiusTimeout": (NullOrUndefined Nothing), "SharedSecret": (NullOrUndefined Nothing), "UseSameUsername": (NullOrUndefined Nothing) }
+newRadiusSettings' :: ( { "RadiusServers" :: Maybe (Servers) , "RadiusPort" :: Maybe (PortNumber) , "RadiusTimeout" :: Maybe (RadiusTimeout) , "RadiusRetries" :: Maybe (RadiusRetries) , "SharedSecret" :: Maybe (RadiusSharedSecret) , "AuthenticationProtocol" :: Maybe (RadiusAuthenticationProtocol) , "DisplayLabel" :: Maybe (RadiusDisplayLabel) , "UseSameUsername" :: Maybe (UseSameUsername) } -> {"RadiusServers" :: Maybe (Servers) , "RadiusPort" :: Maybe (PortNumber) , "RadiusTimeout" :: Maybe (RadiusTimeout) , "RadiusRetries" :: Maybe (RadiusRetries) , "SharedSecret" :: Maybe (RadiusSharedSecret) , "AuthenticationProtocol" :: Maybe (RadiusAuthenticationProtocol) , "DisplayLabel" :: Maybe (RadiusDisplayLabel) , "UseSameUsername" :: Maybe (UseSameUsername) } ) -> RadiusSettings
+newRadiusSettings'  customize = (RadiusSettings <<< customize) { "AuthenticationProtocol": Nothing, "DisplayLabel": Nothing, "RadiusPort": Nothing, "RadiusRetries": Nothing, "RadiusServers": Nothing, "RadiusTimeout": Nothing, "SharedSecret": Nothing, "UseSameUsername": Nothing }
 
 
 
@@ -2590,13 +2589,13 @@ instance encodeSchemaExtensionId :: Encode SchemaExtensionId where encode = gene
 
 -- | <p>Information about a schema extension.</p>
 newtype SchemaExtensionInfo = SchemaExtensionInfo 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId)
-  , "Description" :: NullOrUndefined (Description)
-  , "SchemaExtensionStatus" :: NullOrUndefined (SchemaExtensionStatus)
-  , "SchemaExtensionStatusReason" :: NullOrUndefined (SchemaExtensionStatusReason)
-  , "StartDateTime" :: NullOrUndefined (StartDateTime)
-  , "EndDateTime" :: NullOrUndefined (EndDateTime)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "SchemaExtensionId" :: Maybe (SchemaExtensionId)
+  , "Description" :: Maybe (Description)
+  , "SchemaExtensionStatus" :: Maybe (SchemaExtensionStatus)
+  , "SchemaExtensionStatusReason" :: Maybe (SchemaExtensionStatusReason)
+  , "StartDateTime" :: Maybe (StartDateTime)
+  , "EndDateTime" :: Maybe (EndDateTime)
   }
 derive instance newtypeSchemaExtensionInfo :: Newtype SchemaExtensionInfo _
 derive instance repGenericSchemaExtensionInfo :: Generic SchemaExtensionInfo _
@@ -2606,12 +2605,12 @@ instance encodeSchemaExtensionInfo :: Encode SchemaExtensionInfo where encode = 
 
 -- | Constructs SchemaExtensionInfo from required parameters
 newSchemaExtensionInfo :: SchemaExtensionInfo
-newSchemaExtensionInfo  = SchemaExtensionInfo { "Description": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "SchemaExtensionId": (NullOrUndefined Nothing), "SchemaExtensionStatus": (NullOrUndefined Nothing), "SchemaExtensionStatusReason": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newSchemaExtensionInfo  = SchemaExtensionInfo { "Description": Nothing, "DirectoryId": Nothing, "EndDateTime": Nothing, "SchemaExtensionId": Nothing, "SchemaExtensionStatus": Nothing, "SchemaExtensionStatusReason": Nothing, "StartDateTime": Nothing }
 
 -- | Constructs SchemaExtensionInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchemaExtensionInfo' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) , "Description" :: NullOrUndefined (Description) , "SchemaExtensionStatus" :: NullOrUndefined (SchemaExtensionStatus) , "SchemaExtensionStatusReason" :: NullOrUndefined (SchemaExtensionStatusReason) , "StartDateTime" :: NullOrUndefined (StartDateTime) , "EndDateTime" :: NullOrUndefined (EndDateTime) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) , "Description" :: NullOrUndefined (Description) , "SchemaExtensionStatus" :: NullOrUndefined (SchemaExtensionStatus) , "SchemaExtensionStatusReason" :: NullOrUndefined (SchemaExtensionStatusReason) , "StartDateTime" :: NullOrUndefined (StartDateTime) , "EndDateTime" :: NullOrUndefined (EndDateTime) } ) -> SchemaExtensionInfo
-newSchemaExtensionInfo'  customize = (SchemaExtensionInfo <<< customize) { "Description": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "SchemaExtensionId": (NullOrUndefined Nothing), "SchemaExtensionStatus": (NullOrUndefined Nothing), "SchemaExtensionStatusReason": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newSchemaExtensionInfo' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "SchemaExtensionId" :: Maybe (SchemaExtensionId) , "Description" :: Maybe (Description) , "SchemaExtensionStatus" :: Maybe (SchemaExtensionStatus) , "SchemaExtensionStatusReason" :: Maybe (SchemaExtensionStatusReason) , "StartDateTime" :: Maybe (StartDateTime) , "EndDateTime" :: Maybe (EndDateTime) } -> {"DirectoryId" :: Maybe (DirectoryId) , "SchemaExtensionId" :: Maybe (SchemaExtensionId) , "Description" :: Maybe (Description) , "SchemaExtensionStatus" :: Maybe (SchemaExtensionStatus) , "SchemaExtensionStatusReason" :: Maybe (SchemaExtensionStatusReason) , "StartDateTime" :: Maybe (StartDateTime) , "EndDateTime" :: Maybe (EndDateTime) } ) -> SchemaExtensionInfo
+newSchemaExtensionInfo'  customize = (SchemaExtensionInfo <<< customize) { "Description": Nothing, "DirectoryId": Nothing, "EndDateTime": Nothing, "SchemaExtensionId": Nothing, "SchemaExtensionStatus": Nothing, "SchemaExtensionStatusReason": Nothing, "StartDateTime": Nothing }
 
 
 
@@ -2671,8 +2670,8 @@ instance encodeServers :: Encode Servers where encode = genericEncode options
 
 -- | <p>An exception has occurred in AWS Directory Service.</p>
 newtype ServiceException = ServiceException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeServiceException :: Newtype ServiceException _
 derive instance repGenericServiceException :: Generic ServiceException _
@@ -2682,23 +2681,23 @@ instance encodeServiceException :: Encode ServiceException where encode = generi
 
 -- | Constructs ServiceException from required parameters
 newServiceException :: ServiceException
-newServiceException  = ServiceException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newServiceException  = ServiceException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs ServiceException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> ServiceException
-newServiceException'  customize = (ServiceException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newServiceException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> ServiceException
+newServiceException'  customize = (ServiceException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>Describes a directory snapshot.</p>
 newtype Snapshot = Snapshot 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "SnapshotId" :: NullOrUndefined (SnapshotId)
-  , "Type" :: NullOrUndefined (SnapshotType)
-  , "Name" :: NullOrUndefined (SnapshotName)
-  , "Status" :: NullOrUndefined (SnapshotStatus)
-  , "StartTime" :: NullOrUndefined (StartTime)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "SnapshotId" :: Maybe (SnapshotId)
+  , "Type" :: Maybe (SnapshotType)
+  , "Name" :: Maybe (SnapshotName)
+  , "Status" :: Maybe (SnapshotStatus)
+  , "StartTime" :: Maybe (StartTime)
   }
 derive instance newtypeSnapshot :: Newtype Snapshot _
 derive instance repGenericSnapshot :: Generic Snapshot _
@@ -2708,12 +2707,12 @@ instance encodeSnapshot :: Encode Snapshot where encode = genericEncode options
 
 -- | Constructs Snapshot from required parameters
 newSnapshot :: Snapshot
-newSnapshot  = Snapshot { "DirectoryId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newSnapshot  = Snapshot { "DirectoryId": Nothing, "Name": Nothing, "SnapshotId": Nothing, "StartTime": Nothing, "Status": Nothing, "Type": Nothing }
 
 -- | Constructs Snapshot's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshot' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "SnapshotId" :: NullOrUndefined (SnapshotId) , "Type" :: NullOrUndefined (SnapshotType) , "Name" :: NullOrUndefined (SnapshotName) , "Status" :: NullOrUndefined (SnapshotStatus) , "StartTime" :: NullOrUndefined (StartTime) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "SnapshotId" :: NullOrUndefined (SnapshotId) , "Type" :: NullOrUndefined (SnapshotType) , "Name" :: NullOrUndefined (SnapshotName) , "Status" :: NullOrUndefined (SnapshotStatus) , "StartTime" :: NullOrUndefined (StartTime) } ) -> Snapshot
-newSnapshot'  customize = (Snapshot <<< customize) { "DirectoryId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newSnapshot' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "SnapshotId" :: Maybe (SnapshotId) , "Type" :: Maybe (SnapshotType) , "Name" :: Maybe (SnapshotName) , "Status" :: Maybe (SnapshotStatus) , "StartTime" :: Maybe (StartTime) } -> {"DirectoryId" :: Maybe (DirectoryId) , "SnapshotId" :: Maybe (SnapshotId) , "Type" :: Maybe (SnapshotType) , "Name" :: Maybe (SnapshotName) , "Status" :: Maybe (SnapshotStatus) , "StartTime" :: Maybe (StartTime) } ) -> Snapshot
+newSnapshot'  customize = (Snapshot <<< customize) { "DirectoryId": Nothing, "Name": Nothing, "SnapshotId": Nothing, "StartTime": Nothing, "Status": Nothing, "Type": Nothing }
 
 
 
@@ -2738,8 +2737,8 @@ instance encodeSnapshotIds :: Encode SnapshotIds where encode = genericEncode op
 
 -- | <p>The maximum number of manual snapshots for the directory has been reached. You can use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>
 newtype SnapshotLimitExceededException = SnapshotLimitExceededException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeSnapshotLimitExceededException :: Newtype SnapshotLimitExceededException _
 derive instance repGenericSnapshotLimitExceededException :: Generic SnapshotLimitExceededException _
@@ -2749,20 +2748,20 @@ instance encodeSnapshotLimitExceededException :: Encode SnapshotLimitExceededExc
 
 -- | Constructs SnapshotLimitExceededException from required parameters
 newSnapshotLimitExceededException :: SnapshotLimitExceededException
-newSnapshotLimitExceededException  = SnapshotLimitExceededException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newSnapshotLimitExceededException  = SnapshotLimitExceededException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs SnapshotLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshotLimitExceededException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> SnapshotLimitExceededException
-newSnapshotLimitExceededException'  customize = (SnapshotLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newSnapshotLimitExceededException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> SnapshotLimitExceededException
+newSnapshotLimitExceededException'  customize = (SnapshotLimitExceededException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
 -- | <p>Contains manual snapshot limit information for a directory.</p>
 newtype SnapshotLimits = SnapshotLimits 
-  { "ManualSnapshotsLimit" :: NullOrUndefined (Limit)
-  , "ManualSnapshotsCurrentCount" :: NullOrUndefined (Limit)
-  , "ManualSnapshotsLimitReached" :: NullOrUndefined (ManualSnapshotsLimitReached)
+  { "ManualSnapshotsLimit" :: Maybe (Limit)
+  , "ManualSnapshotsCurrentCount" :: Maybe (Limit)
+  , "ManualSnapshotsLimitReached" :: Maybe (ManualSnapshotsLimitReached)
   }
 derive instance newtypeSnapshotLimits :: Newtype SnapshotLimits _
 derive instance repGenericSnapshotLimits :: Generic SnapshotLimits _
@@ -2772,12 +2771,12 @@ instance encodeSnapshotLimits :: Encode SnapshotLimits where encode = genericEnc
 
 -- | Constructs SnapshotLimits from required parameters
 newSnapshotLimits :: SnapshotLimits
-newSnapshotLimits  = SnapshotLimits { "ManualSnapshotsCurrentCount": (NullOrUndefined Nothing), "ManualSnapshotsLimit": (NullOrUndefined Nothing), "ManualSnapshotsLimitReached": (NullOrUndefined Nothing) }
+newSnapshotLimits  = SnapshotLimits { "ManualSnapshotsCurrentCount": Nothing, "ManualSnapshotsLimit": Nothing, "ManualSnapshotsLimitReached": Nothing }
 
 -- | Constructs SnapshotLimits's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshotLimits' :: ( { "ManualSnapshotsLimit" :: NullOrUndefined (Limit) , "ManualSnapshotsCurrentCount" :: NullOrUndefined (Limit) , "ManualSnapshotsLimitReached" :: NullOrUndefined (ManualSnapshotsLimitReached) } -> {"ManualSnapshotsLimit" :: NullOrUndefined (Limit) , "ManualSnapshotsCurrentCount" :: NullOrUndefined (Limit) , "ManualSnapshotsLimitReached" :: NullOrUndefined (ManualSnapshotsLimitReached) } ) -> SnapshotLimits
-newSnapshotLimits'  customize = (SnapshotLimits <<< customize) { "ManualSnapshotsCurrentCount": (NullOrUndefined Nothing), "ManualSnapshotsLimit": (NullOrUndefined Nothing), "ManualSnapshotsLimitReached": (NullOrUndefined Nothing) }
+newSnapshotLimits' :: ( { "ManualSnapshotsLimit" :: Maybe (Limit) , "ManualSnapshotsCurrentCount" :: Maybe (Limit) , "ManualSnapshotsLimitReached" :: Maybe (ManualSnapshotsLimitReached) } -> {"ManualSnapshotsLimit" :: Maybe (Limit) , "ManualSnapshotsCurrentCount" :: Maybe (Limit) , "ManualSnapshotsLimitReached" :: Maybe (ManualSnapshotsLimitReached) } ) -> SnapshotLimits
+newSnapshotLimits'  customize = (SnapshotLimits <<< customize) { "ManualSnapshotsCurrentCount": Nothing, "ManualSnapshotsLimit": Nothing, "ManualSnapshotsLimitReached": Nothing }
 
 
 
@@ -2869,7 +2868,7 @@ newStartSchemaExtensionRequest' _CreateSnapshotBeforeSchemaExtension _Descriptio
 
 
 newtype StartSchemaExtensionResult = StartSchemaExtensionResult 
-  { "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId)
+  { "SchemaExtensionId" :: Maybe (SchemaExtensionId)
   }
 derive instance newtypeStartSchemaExtensionResult :: Newtype StartSchemaExtensionResult _
 derive instance repGenericStartSchemaExtensionResult :: Generic StartSchemaExtensionResult _
@@ -2879,12 +2878,12 @@ instance encodeStartSchemaExtensionResult :: Encode StartSchemaExtensionResult w
 
 -- | Constructs StartSchemaExtensionResult from required parameters
 newStartSchemaExtensionResult :: StartSchemaExtensionResult
-newStartSchemaExtensionResult  = StartSchemaExtensionResult { "SchemaExtensionId": (NullOrUndefined Nothing) }
+newStartSchemaExtensionResult  = StartSchemaExtensionResult { "SchemaExtensionId": Nothing }
 
 -- | Constructs StartSchemaExtensionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartSchemaExtensionResult' :: ( { "SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) } -> {"SchemaExtensionId" :: NullOrUndefined (SchemaExtensionId) } ) -> StartSchemaExtensionResult
-newStartSchemaExtensionResult'  customize = (StartSchemaExtensionResult <<< customize) { "SchemaExtensionId": (NullOrUndefined Nothing) }
+newStartSchemaExtensionResult' :: ( { "SchemaExtensionId" :: Maybe (SchemaExtensionId) } -> {"SchemaExtensionId" :: Maybe (SchemaExtensionId) } ) -> StartSchemaExtensionResult
+newStartSchemaExtensionResult'  customize = (StartSchemaExtensionResult <<< customize) { "SchemaExtensionId": Nothing }
 
 
 
@@ -2966,8 +2965,8 @@ instance encodeTagKeys :: Encode TagKeys where encode = genericEncode options
 
 -- | <p>The maximum allowed number of tags was exceeded.</p>
 newtype TagLimitExceededException = TagLimitExceededException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeTagLimitExceededException :: Newtype TagLimitExceededException _
 derive instance repGenericTagLimitExceededException :: Generic TagLimitExceededException _
@@ -2977,12 +2976,12 @@ instance encodeTagLimitExceededException :: Encode TagLimitExceededException whe
 
 -- | Constructs TagLimitExceededException from required parameters
 newTagLimitExceededException :: TagLimitExceededException
-newTagLimitExceededException  = TagLimitExceededException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newTagLimitExceededException  = TagLimitExceededException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs TagLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTagLimitExceededException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> TagLimitExceededException
-newTagLimitExceededException'  customize = (TagLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newTagLimitExceededException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> TagLimitExceededException
+newTagLimitExceededException'  customize = (TagLimitExceededException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -3042,16 +3041,16 @@ instance encodeTopicStatus :: Encode TopicStatus where encode = genericEncode op
 
 -- | <p>Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain.</p>
 newtype Trust = Trust 
-  { "DirectoryId" :: NullOrUndefined (DirectoryId)
-  , "TrustId" :: NullOrUndefined (TrustId)
-  , "RemoteDomainName" :: NullOrUndefined (RemoteDomainName)
-  , "TrustType" :: NullOrUndefined (TrustType)
-  , "TrustDirection" :: NullOrUndefined (TrustDirection)
-  , "TrustState" :: NullOrUndefined (TrustState)
-  , "CreatedDateTime" :: NullOrUndefined (CreatedDateTime)
-  , "LastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime)
-  , "StateLastUpdatedDateTime" :: NullOrUndefined (StateLastUpdatedDateTime)
-  , "TrustStateReason" :: NullOrUndefined (TrustStateReason)
+  { "DirectoryId" :: Maybe (DirectoryId)
+  , "TrustId" :: Maybe (TrustId)
+  , "RemoteDomainName" :: Maybe (RemoteDomainName)
+  , "TrustType" :: Maybe (TrustType)
+  , "TrustDirection" :: Maybe (TrustDirection)
+  , "TrustState" :: Maybe (TrustState)
+  , "CreatedDateTime" :: Maybe (CreatedDateTime)
+  , "LastUpdatedDateTime" :: Maybe (LastUpdatedDateTime)
+  , "StateLastUpdatedDateTime" :: Maybe (StateLastUpdatedDateTime)
+  , "TrustStateReason" :: Maybe (TrustStateReason)
   }
 derive instance newtypeTrust :: Newtype Trust _
 derive instance repGenericTrust :: Generic Trust _
@@ -3061,12 +3060,12 @@ instance encodeTrust :: Encode Trust where encode = genericEncode options
 
 -- | Constructs Trust from required parameters
 newTrust :: Trust
-newTrust  = Trust { "CreatedDateTime": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "LastUpdatedDateTime": (NullOrUndefined Nothing), "RemoteDomainName": (NullOrUndefined Nothing), "StateLastUpdatedDateTime": (NullOrUndefined Nothing), "TrustDirection": (NullOrUndefined Nothing), "TrustId": (NullOrUndefined Nothing), "TrustState": (NullOrUndefined Nothing), "TrustStateReason": (NullOrUndefined Nothing), "TrustType": (NullOrUndefined Nothing) }
+newTrust  = Trust { "CreatedDateTime": Nothing, "DirectoryId": Nothing, "LastUpdatedDateTime": Nothing, "RemoteDomainName": Nothing, "StateLastUpdatedDateTime": Nothing, "TrustDirection": Nothing, "TrustId": Nothing, "TrustState": Nothing, "TrustStateReason": Nothing, "TrustType": Nothing }
 
 -- | Constructs Trust's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTrust' :: ( { "DirectoryId" :: NullOrUndefined (DirectoryId) , "TrustId" :: NullOrUndefined (TrustId) , "RemoteDomainName" :: NullOrUndefined (RemoteDomainName) , "TrustType" :: NullOrUndefined (TrustType) , "TrustDirection" :: NullOrUndefined (TrustDirection) , "TrustState" :: NullOrUndefined (TrustState) , "CreatedDateTime" :: NullOrUndefined (CreatedDateTime) , "LastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) , "StateLastUpdatedDateTime" :: NullOrUndefined (StateLastUpdatedDateTime) , "TrustStateReason" :: NullOrUndefined (TrustStateReason) } -> {"DirectoryId" :: NullOrUndefined (DirectoryId) , "TrustId" :: NullOrUndefined (TrustId) , "RemoteDomainName" :: NullOrUndefined (RemoteDomainName) , "TrustType" :: NullOrUndefined (TrustType) , "TrustDirection" :: NullOrUndefined (TrustDirection) , "TrustState" :: NullOrUndefined (TrustState) , "CreatedDateTime" :: NullOrUndefined (CreatedDateTime) , "LastUpdatedDateTime" :: NullOrUndefined (LastUpdatedDateTime) , "StateLastUpdatedDateTime" :: NullOrUndefined (StateLastUpdatedDateTime) , "TrustStateReason" :: NullOrUndefined (TrustStateReason) } ) -> Trust
-newTrust'  customize = (Trust <<< customize) { "CreatedDateTime": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "LastUpdatedDateTime": (NullOrUndefined Nothing), "RemoteDomainName": (NullOrUndefined Nothing), "StateLastUpdatedDateTime": (NullOrUndefined Nothing), "TrustDirection": (NullOrUndefined Nothing), "TrustId": (NullOrUndefined Nothing), "TrustState": (NullOrUndefined Nothing), "TrustStateReason": (NullOrUndefined Nothing), "TrustType": (NullOrUndefined Nothing) }
+newTrust' :: ( { "DirectoryId" :: Maybe (DirectoryId) , "TrustId" :: Maybe (TrustId) , "RemoteDomainName" :: Maybe (RemoteDomainName) , "TrustType" :: Maybe (TrustType) , "TrustDirection" :: Maybe (TrustDirection) , "TrustState" :: Maybe (TrustState) , "CreatedDateTime" :: Maybe (CreatedDateTime) , "LastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) , "StateLastUpdatedDateTime" :: Maybe (StateLastUpdatedDateTime) , "TrustStateReason" :: Maybe (TrustStateReason) } -> {"DirectoryId" :: Maybe (DirectoryId) , "TrustId" :: Maybe (TrustId) , "RemoteDomainName" :: Maybe (RemoteDomainName) , "TrustType" :: Maybe (TrustType) , "TrustDirection" :: Maybe (TrustDirection) , "TrustState" :: Maybe (TrustState) , "CreatedDateTime" :: Maybe (CreatedDateTime) , "LastUpdatedDateTime" :: Maybe (LastUpdatedDateTime) , "StateLastUpdatedDateTime" :: Maybe (StateLastUpdatedDateTime) , "TrustStateReason" :: Maybe (TrustStateReason) } ) -> Trust
+newTrust'  customize = (Trust <<< customize) { "CreatedDateTime": Nothing, "DirectoryId": Nothing, "LastUpdatedDateTime": Nothing, "RemoteDomainName": Nothing, "StateLastUpdatedDateTime": Nothing, "TrustDirection": Nothing, "TrustId": Nothing, "TrustState": Nothing, "TrustStateReason": Nothing, "TrustType": Nothing }
 
 
 
@@ -3144,8 +3143,8 @@ instance encodeTrusts :: Encode Trusts where encode = genericEncode options
 
 -- | <p>The operation is not supported.</p>
 newtype UnsupportedOperationException = UnsupportedOperationException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
-  , "RequestId" :: NullOrUndefined (RequestId)
+  { "Message" :: Maybe (ExceptionMessage)
+  , "RequestId" :: Maybe (RequestId)
   }
 derive instance newtypeUnsupportedOperationException :: Newtype UnsupportedOperationException _
 derive instance repGenericUnsupportedOperationException :: Generic UnsupportedOperationException _
@@ -3155,12 +3154,12 @@ instance encodeUnsupportedOperationException :: Encode UnsupportedOperationExcep
 
 -- | Constructs UnsupportedOperationException from required parameters
 newUnsupportedOperationException :: UnsupportedOperationException
-newUnsupportedOperationException  = UnsupportedOperationException { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newUnsupportedOperationException  = UnsupportedOperationException { "Message": Nothing, "RequestId": Nothing }
 
 -- | Constructs UnsupportedOperationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedOperationException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } -> {"Message" :: NullOrUndefined (ExceptionMessage) , "RequestId" :: NullOrUndefined (RequestId) } ) -> UnsupportedOperationException
-newUnsupportedOperationException'  customize = (UnsupportedOperationException <<< customize) { "Message": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing) }
+newUnsupportedOperationException' :: ( { "Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } -> {"Message" :: Maybe (ExceptionMessage) , "RequestId" :: Maybe (RequestId) } ) -> UnsupportedOperationException
+newUnsupportedOperationException'  customize = (UnsupportedOperationException <<< customize) { "Message": Nothing, "RequestId": Nothing }
 
 
 
@@ -3309,7 +3308,7 @@ newVerifyTrustRequest' _TrustId customize = (VerifyTrustRequest <<< customize) {
 
 -- | <p>Result of a VerifyTrust request.</p>
 newtype VerifyTrustResult = VerifyTrustResult 
-  { "TrustId" :: NullOrUndefined (TrustId)
+  { "TrustId" :: Maybe (TrustId)
   }
 derive instance newtypeVerifyTrustResult :: Newtype VerifyTrustResult _
 derive instance repGenericVerifyTrustResult :: Generic VerifyTrustResult _
@@ -3319,12 +3318,12 @@ instance encodeVerifyTrustResult :: Encode VerifyTrustResult where encode = gene
 
 -- | Constructs VerifyTrustResult from required parameters
 newVerifyTrustResult :: VerifyTrustResult
-newVerifyTrustResult  = VerifyTrustResult { "TrustId": (NullOrUndefined Nothing) }
+newVerifyTrustResult  = VerifyTrustResult { "TrustId": Nothing }
 
 -- | Constructs VerifyTrustResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVerifyTrustResult' :: ( { "TrustId" :: NullOrUndefined (TrustId) } -> {"TrustId" :: NullOrUndefined (TrustId) } ) -> VerifyTrustResult
-newVerifyTrustResult'  customize = (VerifyTrustResult <<< customize) { "TrustId": (NullOrUndefined Nothing) }
+newVerifyTrustResult' :: ( { "TrustId" :: Maybe (TrustId) } -> {"TrustId" :: Maybe (TrustId) } ) -> VerifyTrustResult
+newVerifyTrustResult'  customize = (VerifyTrustResult <<< customize) { "TrustId": Nothing }
 
 
 
